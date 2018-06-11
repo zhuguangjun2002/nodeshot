@@ -1,0 +1,11 @@
+--------------------
+https://wizardforcel.gitbooks.io/django-chinese-docs-18/content/2_6_3_Providing%20initial%20data.html
+--------------------
+
+自动加载初始数据的fixtures
+-----------------------
+1.7中废除：
+
+如果一个应用使用了迁移，将不会自动加载fixtures。由于Django 1.9中，迁移将会是必要的，这一行为经权衡之后被废除。 如果你想在一个应用中加载初始数据，考虑在数据迁移中加载它们。
+-----------------------
+如果你创建了一个命名为 initial_data.[xml/yaml/json]的fixtrue，在你每次运行migrate命令时，fixtrue都会被加载。这非常方面，但是要注意：记住数据在你每次运行migrate命令后都会被刷新。So don’t use initial_data for data you’ll want to edit.
