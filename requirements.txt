@@ -76,3 +76,8 @@ tld
 
 # avoid breaking the build
 pyOpenSSL==16.2.0
+
+# slug for chinese
+django-uuslug==1.1.8
+python-slugify==1.2.5
+Unidecode==1.0.22

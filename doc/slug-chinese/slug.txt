@@ -1,0 +1,9 @@
+为了让`slug`能更好的支持`中文`，我们把项目中的`slugify`进行替换。
+--------------------
+from django.template.defaultfilters import slugify
+--------------------
+替换为：
+
+--------------------
+from uuslug import slugify
+--------------------
