@@ -33,3 +33,45 @@ pip install django-rosetta==0.7.6
 我们已经放到`requirement.txt`文件中。
 ========================================
 
+
+========================================
+3. 禁用`django-revresion`
+否则，在我们使用`loaddata`，加载完成一些数据之后，不知道什么原因，总是提示错误。
+-------------------
+http://127.0.0.1:8000/admin/nodes/node/add/
+
+IntegrityError at /admin/nodes/node/add/
+duplicate key value violates unique constraint "participation_node_settings_node_id_key"
+DETAIL:  Key (node_id)=(4) already exists.
+
+/home/user/project/nodeshot/env/local/lib/python2.7/site-packages/reversion/admin.py in add_view
+                        return super(VersionAdmin, self).add_view(request, form_url, extra_context) 
+---------------------
+我们看到，似乎是跟`reversion`模块有关。我们暂时先禁用它。
+
+在项目目录搜索如下内容：
+---------------------
+rg REVERSION_ENABLED
+---------------------
+
+结果如下：
+---------------------
+nodeshot/core/layers/settings.py
+6:REVERSION_ENABLED = getattr(settings, 'NODESHOT_LAYERS_REVERSION_ENABLED', True)
+
+nodeshot/core/nodes/settings.py
+5:REVERSION_ENABLED = getattr(settings, 'NODESHOT_NODES_REVERSION_ENABLED', True)
+---------------------
+
+我们需要将其修改为`False`.
+参见文档：
+
+---------------------
+http://docs.nodeshot.org/en/latest/topics/nodes.html
+`NODESHOT_NODES_REVERSION_ENABLED`部分
+
+http://docs.nodeshot.org/en/latest/topics/layers.html
+NODESHOT_LAYERS_REVERSION_ENABLED
+---------------------
+
+========================================
