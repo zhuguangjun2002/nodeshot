@@ -1,0 +1,84 @@
+======================================
+### 创建一个新的Node节点
+通过访问`API Endpoint`，实现该功能。
+创建`node`,使用`POST`方法。
+
+-------------------------
+http://localhost:8000/api/v1/nodes/
+-------------------------
+
+因为不清楚，如何填写`geometry`,
+所以，我们使用的是`Raw data`,
+`Media type:`选择的是`application/json`
+`Content:`的内容如下：
+你需要直接拷贝即可。
+-------------------------
+{
+    "name": "奇山小学",
+    "slug": "",
+    "layer": "school",
+    "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    121.3950365781784,
+                    37.51909122467947
+                ]
+            },
+    "elev": 0.0,
+    "address": "芝罘区奇山中街65号",
+    "description": ""
+}
+-------------------------
+
+======================================
+提交的结果如下：
+
+===============================
+POST
+
+Create a new node. Requires authentication.
+
+POST /api/v1/nodes/
+HTTP 201 Created
+Content-Type: application/json
+Vary: Accept
+Allow: GET, POST, HEAD, OPTIONS
+
+-------------------------
+{
+    "name": "奇山小学",
+    "slug": "qi-shan-xiao-xue",
+    "layer": "school",
+    "layer_name": "school",
+    "user": "worker",
+    "status": "potential",
+    "geometry": {
+        "type": "Point",
+        "coordinates": [
+            121.3950365781784,
+            37.51909122467947
+        ]
+    },
+    "elev": 0.0,
+    "address": "芝罘区奇山中街65号",
+    "description": "",
+    "updated": "2018-06-12T13:18:44.360543Z",
+    "added": "2018-06-12T13:18:44.358652Z",
+    "details": "http://localhost:8000/api/v1/nodes/qi-shan-xiao-xue/"
+}
+-------------------------
+===============================
+你发现，我们没有提供`slug`,只提供了`name`,系统会自自动生成`slug`.
+我们提供了`layer`，系统返回给我们`layer_name`字段。
+系统，返给我们`user`字段，就是带`认证信息`的那个人，返回的是`worker`.
+`status`,默认是`potential`.
+我们通过`geometry`字段，提供了一个点`Point`，这个坐标，是我通过网站：
+------------------
+http://geojson.io
+------------------
+找到的该小学的坐标值。
+第一个值是`经度`，第二个值是`纬度`。
+`address`,地址，我们填写的是`芝罘区奇山中街65号`。
+==================================
+
+

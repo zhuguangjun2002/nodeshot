@@ -1,0 +1,204 @@
+-------------------------------------
+https://github.com/djangonauts/django-rest-framework-gis/blob/master/tests/django_restframework_gis_tests/tests.py
+-------------------------------------
+
+代码`test.py`中，讲了几种提交格式：
+
+
+---------------------------------------------------------
+----------------------------
+http://homeway.me/2015/07/19/understand-http-about-content-type/
+----------------------------
+
+基本知识介绍：
+0x02.Content-Type
+Content-Type用于指定内容类型，一般是指网页中存在的Content-Type，Content-Type属性指定请求和响应的HTTP内容类型。如果未指定 ContentType，默认为text/html。
+
+在nginx中有个配置文件mime.types，主要是标示Content-Type的文件格式。
+
+下面是几个常见的Content-Type:
+
+1.text/html
+2.text/plain
+3.text/css
+4.text/javascript
+5.application/x-www-form-urlencoded
+6.multipart/form-data
+7.application/json
+8.application/xml
+…
+---------------------------------------------------------
+
+
+总结规律：
+'application/json' 格式的数据，发送之前，总是要用`json.dumps(data)`，将python的`字典`类型，转为`json`字符流。
+
+====================================================
+### geojson提交，最终是以`json`提交的。
+--------------------------------------------
+def test_post_location_list_geojson(self):
+
+# 定义了一个词典对象`data`
+# 其`geometry`里面，`type`就是`GeometryCollection`,是一个集合。
+## 然后，`geometries`,里面列出所有的`geometry`。
+# 其`geometry`里面是`geometries`。
+        data = {
+            "name": "geojson input test",
+            "geometry": {
+                "type": "GeometryCollection",
+                "geometries": [
+                    {
+                        "type": "Point",
+                        "coordinates": [
+                            12.492324113849,
+                            41.890307434153
+                        ]
+                    }
+                ]
+## 执行post操作，数据格式为`json` ，使用json.dump,把字典类型的`data` ,转为为`json`格式的数据流。
+        response = self.client.post(self.location_list_url, data=json.dumps(data), content_type='application/json')
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(Location.objects.count(), 1)
+
+# 定义了一个词典对象`data`
+# 其`geometry`里面，`type`就是`Point`,然后给出`坐标`-`coordinates`。
+        data = {
+            "name": "geojson input test2",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    12.492324113849,
+                    41.890307434153
+                ]
+            }
+        }
+## 执行post操作，数据格式为`json` ，使用json.dump,把字典类型的`data` ,转为为`json`格式的数据流。
+        response = self.client.post(self.location_list_url, data=json.dumps(data), content_type='application/json')
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(Location.objects.count(), 2)
+--------------------------------------------
+====================================================
+
+====================================================
+### `multipartformdata`方式提交
+--------------------------------------------
+ def test_post_location_list_geojson_as_multipartformdata(self):
+        """ emulate sending geojson string in webform """
+## 模拟发送geojson字符串，以webform形式
+     
+        self.assertEqual(Location.objects.count(), 0)
+        data = {
+            "name": "geojson input test",
+            "geometry": json.dumps({
+                "type": "GeometryCollection",
+                "geometries": [
+                    {
+                        "type": "Point",
+                        "coordinates": [
+                            12.492324113849,
+                            41.890307434153
+                        ]
+                    }
+                ]
+            })
+        }
+## 执行post操作，数据格式,没有写明 ，把字典类型的`data` ,直接传输过去。因为我们对`geometry`字段，进行了json处理。
+## 所以发了原始数据过去，让其进行解析。
+        response = self.client.post(self.location_list_url, data)
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(Location.objects.count(), 1)
+--------------------------------------------
+====================================================
+
+====================================================
+### `browsable_api`方式提交
+--------------------------------------------
+    def test_post_HTML_browsable_api(self):
+        self.assertEqual(Location.objects.count(), 0)
+        data = {
+            "name": "geojson input test2",
+            "slug": "prova",
+            "geometry": json.dumps({
+                "type": "GeometryCollection",
+                "geometries": [
+                    {
+                        "type": "Point",
+                        "coordinates": [
+                            12.492324113849,
+                            41.890307434153
+                        ]
+                    }
+                ]
+            })
+        }
+## 执行post操作，数据格式,没有写明 ，把字典类型的`data` ,直接传输过去。因为我们对`geometry`字段，进行了`json处理`。
+##　告知，我们接收的格式的是`HTTP_ACCEPT='text/html'`,html格式。
+        response = self.client.post(self.location_list_url, data, HTTP_ACCEPT='text/html')
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(Location.objects.count(), 1)
+        location = Location.objects.all()[0]
+        self.assertEqual(location.name, 'geojson input test2')
+        self.assertEqual(location.slug, 'prova')
+--------------------------------------------
+====================================================
+
+====================================================
+### wkt格式
+--------------------------------------------
+    def test_post_location_list_WKT(self):
+        self.assertEqual(Location.objects.count(), 0)
+# 定义了一个词典对象`data`
+# 其`geometry`里面，就是'POINT (12.492324113849 41.890307434153)'
+
+        data = {
+            'name': 'WKT input test',
+            'geometry': 'POINT (12.492324113849 41.890307434153)'
+        }
+        response = self.client.post(self.location_list_url, data)
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(Location.objects.count(), 1)
+--------------------------------------------
+
+--------------------------------------------
+## wkt 正确的格式
+POINT (12.492324113849 41.890307434153)
+## wkt 错误的格式
+POINT (12.492324113849, 41.890307434153)
+原因是使用了`逗号`，分割了`经度`和`纬度`，应该使用`空格`。
+--------------------------------------------
+
+### wkt格式，以`json`格式发送出去
+--------------------------------------------
+    def test_post_location_list_WKT_as_json(self):
+        self.assertEqual(Location.objects.count(), 0)
+# 定义了一个词典对象`data`
+# 其`geometry`里面，就是'POINT (12.492324113849 41.890307434153)'
+        data = {
+            'name': 'WKT input test',
+            'geometry': 'POINT (12.492324113849 41.890307434153)'
+        }
+## 执行post操作，数据格式,没有写明 ，把`字典`类型的`data` ,先进行了`json处理`，然后传输类型为：`'application/json'`。
+        response = self.client.post(self.location_list_url, data=json.dumps(data), content_type='application/json')
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(Location.objects.count(), 1)
+--------------------------------------------
+
+### ewkt格式
+--------------------------------------------
+    def test_post_location_list_EWKT(self):
+        self.assertEqual(Location.objects.count(), 0)
+# 定义了一个词典对象`data`
+# 其`geometry`里面，就是'SRID=28992;POINT(221160 600204)'
+# 多了一个SRID，指示坐标系的变量。
+        data = {
+            'name': 'EWKT input test',
+            'geometry': 'SRID=28992;POINT(221160 600204)'
+        }
+        response = self.client.post(self.location_list_url, data)
+        expected_coords = (6.381495826183805, 53.384066927384985)
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(Location.objects.count(), 1)
+        for l, e in zip(Location.objects.get(name='EWKT input test').geometry.coords, expected_coords):
+            self.assertAlmostEqual(l, e, places=5)
+--------------------------------------------
+====================================================
