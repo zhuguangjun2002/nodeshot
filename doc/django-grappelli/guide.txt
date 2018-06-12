@@ -1,0 +1,251 @@
+================================================
+------------------------
+http://django-grappelli.readthedocs.io/en/latest/customization.html
+------------------------
+================================================
+
+
+============================================================
+###1.`自动补全`功能：
+================================================
+`Autocomplete Lookups`
+
+Autocomplete lookups are an alternative to related lookups (for foreign keys, many–to-many relations and generic relations).
+
+Add the `staticmethod` `autocomplete_search_fields` to all `models` you want to search for:
+将`staticmethod` `autocomplete_search_fields`,添加到您要搜索的所有`模型`中：
+
+----------------------------------
+class MyModel(models.Model):
+    name = models.CharField(u"Name", max_length=50)
+
+    @staticmethod
+    def autocomplete_search_fields():
+        return ("id__iexact", "name__icontains",)
+----------------------------------
+
+If the staticmethod is not given, GRAPPELLI_AUTOCOMPLETE_SEARCH_FIELDS will be used if the app/model is defined:
+如果没有给出`静态方法`，则在定义应用/模型时将使用`GRAPPELLI_AUTOCOMPLETE_SEARCH_FIELDS`：
+--------------------------------
+GRAPPELLI_AUTOCOMPLETE_SEARCH_FIELDS = {
+    "myapp": {
+        "mymodel": ("id__iexact", "name__icontains",)
+    }
+}
+--------------------------------
+
+作者在`models/node.py`和`models/layers.py`中，都定义该`静态函数`：
+-------------------------
+
+class Node(BaseAccessLevel):
+    """
+    Nodes are generic geo-referenced records
+    Can be assigned to 'Layers' if nodeshot.core.layers is installed
+    Can belong to 'Users'
+    """
+    name = models.CharField(_('name'), max_length=75, unique=True)
+    slug = models.SlugField(max_length=75, db_index=True, unique=True, blank=True)
+    status = models.ForeignKey(Status, blank=True, null=True)
+    is_published = models.BooleanField(default=PUBLISHED_DEFAULT)
+
+
+    if 'grappelli' in settings.INSTALLED_APPS:
+        @staticmethod
+        def autocomplete_search_fields():
+            return ('name__icontains', 'slug__icontains', 'address__icontains')
+-------------------------
+================================================
+
+
+============================================================
+Dashboard Setup
+仪表板设置
+------------------------
+http://django-grappelli.readthedocs.io/en/latest/dashboard_setup.html
+------------------------
+
+With the Django admin interface, the admin index page reflects the structure of your applications/models. With grappelli.dashboard you are able to change that structure and rearrange (or group) apps and models.
+
+
+使用i`Django管理界面`，`admin索引页面`反映了您的`应用程序/模型`的`结构`。
+借助`grappelli.dashboard`，您可以`更改`该`结构`并`重新排列`（或`分组`）`应用程序`和`模型`。
+
+
+===========================
+在文件`nodeshot/dashboard.py`中，修改`仪表盘`的结构。
+
+我们可以去掉一些无关的`应用程序`,
+例如,`Nodeshot Networking`,`Support`.
+注释掉这些代码即可。
+-----------------------------
+    ┆   # self.children.append(modules.AppList(
+    ┆   ┆   # _('Nodeshot Networking'),
+    ┆   ┆   # collapsible=True,
+    ┆   ┆   # column=1,
+    ┆   ┆   # models=('nodeshot.networking.*',),
+    ┆   # ))
+
+    ┆   # # append another link list module for "support".
+    ┆   # self.children.append(modules.LinkList(
+    ┆   ┆   # _('Support'),
+    ┆   ┆   # column=3,
+    ┆   ┆   # children=[
+    ┆   ┆   ┆   # {
+    ┆   ┆   ┆   ┆   # 'title': _('Nodeshot Documentation'),
+    ┆   ┆   ┆   ┆   # 'url': 'http://nodeshot.rtfd.org/',
+    ┆   ┆   ┆   ┆   # 'external': True,
+    ┆   ┆   ┆   # },
+    ┆   ┆   ┆   # {
+    ┆   ┆   ┆   ┆   # 'title': _('Django Documentation'),
+    ┆   ┆   ┆   ┆   # 'url': 'http://docs.djangoproject.com/',
+    ┆   ┆   ┆   ┆   # 'external': True,
+    ┆   ┆   ┆   # },
+    ┆   ┆   ┆   # {
+    ┆   ┆   ┆   ┆   # 'title': _('Grappelli Documentation'),
+    ┆   ┆   ┆   ┆   # 'url': 'http://packages.python.org/django-grappelli/',
+    ┆   ┆   ┆   ┆   # 'external': True,
+    ┆   ┆   ┆   # },
+    ┆   ┆   # ]
+    ┆   # ))
+---------------------------------------
+最终，在管理页面：`http://127.0.0.1:8000/admin/`
+你会发现，这些注释掉的模块没有了。
+
+===========================
+Custom dashboard
+
+执行命令：
+-------------------------
+python manage.py help
+-------------------------
+显示结果如下：
+-------------------------
+(env) user@osgeolive:~/project/nodeshot/nodeshot/dev$ python manage.py help
+
+Type 'manage.py help <subcommand>' for help on a specific subcommand.
+
+Available subcommands:
+
+[auth]
+    changepassword
+    createsuperuser
+
+[dashboard]
+    customdashboard
+
+[django]
+    check
+    clean_kombu_messages
+-------------------------
+你发现`[dashboard]`,下面有一个命令`customdashboard`.
+
+-------------------------
+$ python manage.py customdashboard  # creates dashboard.py
+$ python manage.py customdashboard somefile.py  # creates somefile.py
+$ python manage.py customdashboard projdir/somefile.py  # creates somefile.py in projdir
+-------------------------
+注意，`项目作者`没有使用该技术。
+============================================================
+
+============================================================
+Dashboard API
+-------------------------
+http://django-grappelli.readthedocs.io/en/latest/dashboard_api.html
+-------------------------
+The Dashboard class
+
+====================
+title
+标题
+The dashboard title, by default, it is displayed above the dashboard in a h2 tag. Default: Dashboard
+====================
+
+====================
+The Group class
+
+表示一组class，项目中的`support`用了该技术。
+----------------------
+from grappelli.dashboard import modules, Dashboard
+
+class MyDashboard(Dashboard):
+    def __init__(self, **kwargs):
+        Dashboard.__init__(self, **kwargs)
+        self.children.append(modules.Group(
+            title="My group",
+            column=1,
+            collapsible=True,
+            children=[
+                modules.AppList(
+                    title='Administration',
+                    models=('django.contrib.*',)
+                ),
+                modules.AppList(
+                    title='Applications',
+                    exclude=('django.contrib.*',)
+                )
+            ]
+        ))
+--------------------------
+====================
+
+====================
+The LinkList class
+
+A module that displays a list of links.
+一个模块，显示一个links列表。
+项目里用到了该技术。
+====================
+============================================================
+
+
+
+============================================================
+Javascripts
+-------------------------------
+http://django-grappelli.readthedocs.io/en/latest/javascripts.html
+-------------------------------
+
+Grappelli only uses a subset of the original admin javascripts.
+Grappelli仅使用一个`原始的admin avaScript`的`子集`。
+--------------------
+++ If there’s only minor modifications, we use the original javascript (e.g. RelatedObjectLookups.js).
+++ If we add functionality, we use our own jQuery-plugins (e.g. jquery.grp_collapsible.js) or jQuery-widgets (e.g. jquery.grp_timepicker.js)
+++ If there are major modifications, we use our own files as well (e.g. jquery.grp_inlines.js).
+--------------------
+============================================================
+
+
+============================================================
+Third Party Applications
+第三方应用程序
+-----------------
+http://django-grappelli.readthedocs.io/en/latest/thirdparty.html
+-----------------
+
+==================
+Django FileBrowser
+==================
+
+==================
+Django Reversion
+
+Grappelli includes all necessary templates for Django Reversion.
+`Grappelli`包含了`Django Reversion`的所有的`必要`的`模板`。
+
+grappelli needs to be before reversion within INSTALLED_APPS.
+在`INSTALLED_APPS`内,`grappelli`需要放在`reversion`之前。
+==================
+
+==================
+Django Smuggler
+
+Grappelli includes all necessary templates for Django Smuggler.
+`Grappelli`包含了`Django Smuggler`的所有的`必要`的`模板`。
+
+Note
+
+grappelli needs to be before smuggler within INSTALLED_APPS.
+在`INSTALLED_APPS`内,`grappelli`需要放在`smuggler`之前。
+==================
+
+============================================================

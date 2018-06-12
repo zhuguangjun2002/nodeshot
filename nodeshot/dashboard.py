@@ -33,12 +33,12 @@ class NodeshotDashboard(Dashboard):
             models=('nodeshot.core.*',),
         ))
 
-        self.children.append(modules.AppList(
-            _('Nodeshot Networking'),
-            collapsible=True,
-            column=1,
-            models=('nodeshot.networking.*',),
-        ))
+        # self.children.append(modules.AppList(
+            # _('Nodeshot Networking'),
+            # collapsible=True,
+            # column=1,
+            # models=('nodeshot.networking.*',),
+        # ))
 
         self.children.append(modules.AppList(
             _('Nodeshot Community'),
@@ -137,25 +137,25 @@ class NodeshotDashboard(Dashboard):
             ]
         ))
 
-        # append another link list module for "support".
-        self.children.append(modules.LinkList(
-            _('Support'),
-            column=3,
-            children=[
-                {
-                    'title': _('Nodeshot Documentation'),
-                    'url': 'http://nodeshot.rtfd.org/',
-                    'external': True,
-                },
-                {
-                    'title': _('Django Documentation'),
-                    'url': 'http://docs.djangoproject.com/',
-                    'external': True,
-                },
-                {
-                    'title': _('Grappelli Documentation'),
-                    'url': 'http://packages.python.org/django-grappelli/',
-                    'external': True,
-                },
-            ]
-        ))
+        # # append another link list module for "support".
+        # self.children.append(modules.LinkList(
+            # _('Support'),
+            # column=3,
+            # children=[
+                # {
+                    # 'title': _('Nodeshot Documentation'),
+                    # 'url': 'http://nodeshot.rtfd.org/',
+                    # 'external': True,
+                # },
+                # {
+                    # 'title': _('Django Documentation'),
+                    # 'url': 'http://docs.djangoproject.com/',
+                    # 'external': True,
+                # },
+                # {
+                    # 'title': _('Grappelli Documentation'),
+                    # 'url': 'http://packages.python.org/django-grappelli/',
+                    # 'external': True,
+                # },
+            # ]
+        # ))
