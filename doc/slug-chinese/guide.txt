@@ -2,3 +2,78 @@
 -----------------
 https://www.jianshu.com/p/2131400102a9
 -----------------
+
+slug 翻译过来就是：标称， 单位的意思。
+在 django 中，slug 指`有效` URL 的一部分，能使 URL 更加清晰易懂。
+比如有这样一篇文章，标题是"13岁的孩子"，它的 URL 地址是"/posts/13-sui-de-hai-zi"，后面这一部分便是 `slug`。
+
+举例说明：
+--------------------------
+# coding:utf-8
+from django.db import models
+from django.template.defaultfilters import slugify
+
+
+class Post(models.Model):
+    title = models.CharField('标题', max_length=100)
+    content = models.TextField('内容')
+    publish_date = models.DateTimeField('发布日期')
+    url_slug = models.SlugField(editable=False)
+
+    def __unicode__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        self.url_slug = slugify(self.title)
+        super(Post, self).save(*args, **kwargs)
+--------------------------
+
+在 `shell` 中进行查看：
+--------------------------
+>>> from django.template.defaultfilters import slugify
+>>> slugify('hello world')
+u'hello-world'
+>>> slugify('你好世界')
+u''
+--------------------------
+
+可以看到，对于`中文`就会`忽略`。怎么解决这个问题？
+`django-uuslug`是一个很方便的将`中文`转化成`拼音` `slug` 的`插件`。
+通过使用 `django-uuslug`，可以确保 `slug` 是`唯一的`，并且都是 `unicode` `编码`的。
+
+Github地址: `django-uuslug`，方便查看。
+
+安装
+--------------------------
+pip install django-uuslug
+--------------------------
+版本：django-uuslug == 1.1.8
+
+--------------------------
+# coding:utf-8
+from django.db import models
+from uuslug import slugify
+
+
+class Post(models.Model):
+    title = models.CharField('标题', max_length=100)
+    content = models.TextField('内容')
+    publish_date = models.DateTimeField('发布日期')
+    url_slug = models.SlugField(editable=False)
+
+    def __unicode__(self):
+        return self.title
+
+    def save(self, *args, **kwargs):
+        self.url_slug = slugify(self.title)
+        super(Post, self).save(*args, **kwargs)
+--------------------------
+
+在 shell 中进行查看：
+-------------------------
+>>> from uuslug import slugify
+>>> slugify('hello world')
+u'hello-world'
+>>> slugify('你好世界')
+u'ni-hao-shi-jie'
+-------------------------
