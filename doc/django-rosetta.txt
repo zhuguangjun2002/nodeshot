@@ -1,6 +1,0 @@
-
-查看CHANGES
---------------------
-https://github.com/mbi/django-rosetta/blob/develop/CHANGES
---------------------
-

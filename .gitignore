@@ -37,7 +37,10 @@ nodeshot.egg-info/
 deploy
 docs/_*
 /manage.py
-/dev
+# for search using ripgrep or ag,they not search `/dev`
+#/dev
 
 # ignore ctags
 tags
+# doc by me
+/doc

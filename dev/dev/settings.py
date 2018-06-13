@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-
+from django.utils.translation import gettext_lazy as _
 
 # ------ BEGIN DON'T TOUCH AREA ------ #
 
@@ -18,7 +18,9 @@ WSGI_APPLICATION = 'dev.wsgi.application'
 DEBUG = True
 DOMAIN = 'localhost'
 SUBDIR = '/'  # edit this line if you are installing in a sub directory, like /nodeshot
-SITE_NAME = 'dev'  # site name, you can change this
+#SITE_NAME = 'dev'  # site name, you can change this
+#SITE_NAME = 'china mobile'  # site name, you can change this
+SITE_NAME = '中国移动设备管理平台'  # site name, you can change this
 
 DATABASES = {
     'default': {
@@ -64,13 +66,27 @@ from nodeshot.conf.settings import *
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'Europe/Amsterdam'
+#TIME_ZONE = 'Europe/Amsterdam'
+# 上海时区
+TIME_ZONE = 'Asia/Shanghai'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 #LANGUAGE_CODE = 'en-gb'
-# 添加中文语言支持
-LANGUAGE_CODE = 'zh-Hans'
+# 汉语
+# django1.8,使用`zh-cn`
+LANGUAGE_CODE = 'zh-cn'
+
+# 添加`语言选项`
+
+LANGUAGES = (
+('en', 'English'),
+('es', 'Spanish'),
+('de', 'Germany'),
+('ca', 'Catalan'),
+('it', 'Italy'),
+('zh-cn', 'Chinese Simplified'),
+)
 
 ADMINS = (
     #('Your name', 'your@email.com'),

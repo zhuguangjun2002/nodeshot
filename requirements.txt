@@ -68,7 +68,8 @@ raven
 
 # translation
 #django-rosetta
-django-rosetta==0.7.6
+#django-rosetta==0.7.6
+django-rosetta==0.7.13
 
 # metrics
 influxdb==2.9.2
