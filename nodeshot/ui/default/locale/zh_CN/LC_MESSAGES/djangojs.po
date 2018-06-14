@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-14 00:20+0800\n"
-"PO-Revision-Date: 2018-06-14 09:15+0806\n"
+"POT-Creation-Date: 2018-06-14 15:10+0800\n"
+"PO-Revision-Date: 2018-06-14 14:59+0806\n"
 "Last-Translator:   <admin@maiaktor.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -123,7 +123,7 @@ msgstr "没有找到"
 #: static/ui/nodeshot/js/views/map.js:933
 #: static/ui/nodeshot/js/views/node-list.js:128
 msgid "not implemented yet"
-msgstr "尚未实现"
+msgstr "功能尚未实现"
 
 #: static/ui/nodeshot/js/views/map.js:1117
 #: static/ui/nodeshot/js/views/map.js:1129

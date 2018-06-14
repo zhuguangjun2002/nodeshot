@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nodeshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-13 23:53+0800\n"
+"POT-Creation-Date: 2018-06-14 15:08+0800\n"
 "PO-Revision-Date: 2015-05-07 17:23+0000\n"
 "Last-Translator: Federico Capoano <federico.capoano@teletu.it>\n"
 "Language-Team: Italian (http://www.transifex.com/projects/p/nodeshot/"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/base.html:69 templates/index.html:274
+#: templates/base.html:69 templates/index.html:276
 msgid "Loading"
 msgstr "Caricamento"
 
@@ -512,7 +512,7 @@ msgstr "Ultima volta online il"
 msgid "Search for data"
 msgstr "Cerca dati"
 
-#: templates/index.html:42 templates/index.html.py:196 templates/index.html:225
+#: templates/index.html:42 templates/index.html.py:198 templates/index.html:227
 msgid "nothing found"
 msgstr "nessun risultato trovato"
 
@@ -536,35 +536,35 @@ msgstr "Nessun elemento del menu presente"
 msgid "Notifications"
 msgstr "Notifiche"
 
-#: templates/index.html:143
+#: templates/index.html:143 templates/index.html.py:145
 msgid "See all"
 msgstr "Vedi tutte"
 
-#: templates/index.html:144
+#: templates/index.html:144 templates/index.html.py:146
 msgid "Settings"
 msgstr "Impostazioni"
 
-#: templates/index.html:159
+#: templates/index.html:161
 msgid "Nothing interesting yet!"
 msgstr "Ancora nulla di interessante!"
 
-#: templates/index.html:241 templates/index.html.py:256
+#: templates/index.html:243 templates/index.html.py:258
 msgid "Save"
 msgstr "Salva"
 
-#: templates/index.html:245 templates/index.html.py:260
+#: templates/index.html:247 templates/index.html.py:262
 msgid "Cancel"
 msgstr "Annulla"
 
-#: templates/index.html:275
+#: templates/index.html:277
 msgid "cancel&nbsp;operation"
 msgstr "annnulla&nbsp;operazione"
 
-#: templates/index.html:294
+#: templates/index.html:296
 msgid "Email sent successfully!"
 msgstr "Email inviata correttamente!"
 
-#: templates/index.html:295
+#: templates/index.html:297
 msgid "Take me back to"
 msgstr "Riportami a"
 

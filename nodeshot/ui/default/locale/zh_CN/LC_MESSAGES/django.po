@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-14 00:07+0800\n"
+"POT-Creation-Date: 2018-06-14 15:08+0800\n"
 "PO-Revision-Date: 2018-06-14 08:57+0806\n"
 "Last-Translator:   <admin@maiaktor.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Translated-Using: django-rosetta 0.7.13\n"
 
-#: templates/base.html:69 templates/index.html:274
+#: templates/base.html:69 templates/index.html:276
 msgid "Loading"
 msgstr "加载"
 
@@ -33,11 +33,10 @@ msgstr "这个网站需要JavaScript才能工作。"
 #: templates/base.html:130
 #, python-format
 msgid ""
-"By signing up you declare to have accepted our <a "
-"href=\"%(PRIVACY_POLICY_LINK)s\" class=\"js-"
-"dismiss\">privacy&nbsp;policy</a><br />and <a "
-"href=\"%(TERMS_OF_SERVICE_LINK)s\" class=\"js-"
-"dismiss\">terms&nbsp;of&nbsp;service</a>."
+"By signing up you declare to have accepted our <a href="
+"\"%(PRIVACY_POLICY_LINK)s\" class=\"js-dismiss\">privacy&nbsp;policy</a><br /"
+">and <a href=\"%(TERMS_OF_SERVICE_LINK)s\" class=\"js-dismiss\">terms&nbsp;"
+"of&nbsp;service</a>."
 msgstr ""
 
 #: templates/base.html:138
@@ -140,9 +139,8 @@ msgstr ""
 
 #: templates/includes/account.html:41
 msgid ""
-"If you don't have one yet, create an account on "
-"<strong>gravatar.com</strong> and associate your current email address to "
-"it."
+"If you don't have one yet, create an account on <strong>gravatar.com</"
+"strong> and associate your current email address to it."
 msgstr ""
 
 #: templates/includes/account.html:42
@@ -351,8 +349,8 @@ msgstr "编辑"
 msgid "General info"
 msgstr "通用信息"
 
-#: templates/includes/node-details.html:61
-#: templates/includes/node-list.html:48 templates/includes/node-list.html:100
+#: templates/includes/node-details.html:61 templates/includes/node-list.html:48
+#: templates/includes/node-list.html:100
 msgid "Status"
 msgstr "状态"
 
@@ -505,8 +503,7 @@ msgstr "最近一次看见"
 msgid "Search for data"
 msgstr "搜索数据"
 
-#: templates/index.html:42 templates/index.html.py:196
-#: templates/index.html:225
+#: templates/index.html:42 templates/index.html.py:198 templates/index.html:227
 msgid "nothing found"
 msgstr "没有找到"
 
@@ -530,35 +527,35 @@ msgstr "没有菜单条目"
 msgid "Notifications"
 msgstr "通知"
 
-#: templates/index.html:143
+#: templates/index.html:143 templates/index.html.py:145
 msgid "See all"
 msgstr "查看所有"
 
-#: templates/index.html:144
+#: templates/index.html:144 templates/index.html.py:146
 msgid "Settings"
 msgstr "设置"
 
-#: templates/index.html:159
+#: templates/index.html:161
 msgid "Nothing interesting yet!"
 msgstr "没有有趣的！"
 
-#: templates/index.html:241 templates/index.html.py:256
+#: templates/index.html:243 templates/index.html.py:258
 msgid "Save"
 msgstr "保存"
 
-#: templates/index.html:245 templates/index.html.py:260
+#: templates/index.html:247 templates/index.html.py:262
 msgid "Cancel"
 msgstr "取消"
 
-#: templates/index.html:275
+#: templates/index.html:277
 msgid "cancel&nbsp;operation"
 msgstr ""
 
-#: templates/index.html:294
+#: templates/index.html:296
 msgid "Email sent successfully!"
 msgstr "邮件发送成功！"
 
-#: templates/index.html:295
+#: templates/index.html:297
 msgid "Take me back to"
 msgstr "带我回去"
 

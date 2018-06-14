@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nodeshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-13 23:53+0800\n"
+"POT-Creation-Date: 2018-06-14 15:08+0800\n"
 "PO-Revision-Date: 2015-05-08 12:10+0000\n"
 "Last-Translator: alfinal <al@blogmail.cc>\n"
 "Language-Team: Spanish (http://www.transifex.com/projects/p/nodeshot/"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/base.html:69 templates/index.html:274
+#: templates/base.html:69 templates/index.html:276
 msgid "Loading"
 msgstr "Cargando"
 
@@ -513,7 +513,7 @@ msgstr "Visto por última vez"
 msgid "Search for data"
 msgstr "Buscar datos"
 
-#: templates/index.html:42 templates/index.html.py:196 templates/index.html:225
+#: templates/index.html:42 templates/index.html.py:198 templates/index.html:227
 msgid "nothing found"
 msgstr "No se han encontrado resultados"
 
@@ -537,35 +537,35 @@ msgstr "Todavía no hay ítem para este menú"
 msgid "Notifications"
 msgstr "Notificaciones"
 
-#: templates/index.html:143
+#: templates/index.html:143 templates/index.html.py:145
 msgid "See all"
 msgstr "Ver todo"
 
-#: templates/index.html:144
+#: templates/index.html:144 templates/index.html.py:146
 msgid "Settings"
 msgstr "Parámetros"
 
-#: templates/index.html:159
+#: templates/index.html:161
 msgid "Nothing interesting yet!"
 msgstr "¡Todavía no hay nada interesante!"
 
-#: templates/index.html:241 templates/index.html.py:256
+#: templates/index.html:243 templates/index.html.py:258
 msgid "Save"
 msgstr "Guardar"
 
-#: templates/index.html:245 templates/index.html.py:260
+#: templates/index.html:247 templates/index.html.py:262
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: templates/index.html:275
+#: templates/index.html:277
 msgid "cancel&nbsp;operation"
 msgstr "Cancelar&nbsp;operación"
 
-#: templates/index.html:294
+#: templates/index.html:296
 msgid "Email sent successfully!"
 msgstr "¡Email enviado correctamente!"
 
-#: templates/index.html:295
+#: templates/index.html:297
 msgid "Take me back to"
 msgstr "Llévame atrás a"
 

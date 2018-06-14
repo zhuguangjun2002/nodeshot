@@ -46,4 +46,5 @@ tags
 /doc
 
 # ignore meessage file
-.mo
+*.mo
+*.po
