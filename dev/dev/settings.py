@@ -73,20 +73,45 @@ TIME_ZONE = 'Asia/Shanghai'
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 #LANGUAGE_CODE = 'en-gb'
-# 汉语
-# django1.8,使用`zh-cn`
+# 简体中文
+# django1.8,使用`zh-cn`,或者`zh-Hans`
 LANGUAGE_CODE = 'zh-cn'
 
-# 添加`语言选项`
+# `zh-Hans` also work well
+# you need create a directory in `locale`,called `zh_Hans`
+#LANGUAGE_CODE = 'zh-Hans'
 
-LANGUAGES = (
-('en', 'English'),
-('es', 'Spanish'),
-('de', 'Germany'),
-('ca', 'Catalan'),
-('it', 'Italy'),
-('zh-cn', 'Chinese Simplified'),
-)
+# LANGUAGE_CODE = 'es'
+
+# `语言选项`
+# 如果什么也不加，那么就会是所有的语言都支持，
+#只要其被翻译了，`locale`文件夹下有其对应的目录，即可。
+
+# 添加`语言选项`
+# 只支持: 中文简体,英文，
+# 不支持: 意大利文，西班牙文，加泰罗尼亚文
+# LANGUAGES = (
+    # ('zh-cn', 'Chinese Simplified'),
+    # ('en', 'English'),
+# )
+
+# 添加`语言选项`
+# 支持: 中文简体,英文，意大利文，西班牙文，加泰罗尼亚文
+# LANGUAGES = (
+    # ('zh-cn', 'Chinese Simplified'),
+    # ('en', 'English'),
+    # ('es', 'Spanish'),
+    # ('de', 'Germany'),
+    # ('ca', 'Catalan'),
+    # ('it', 'Italy'),
+# )
+
+# 表明我们的 locale 文件默认会放在 app 目录中的 locale 目录下
+# 注释掉，实际测试，不需要，默认就是会搜索`app`下面的目录。
+# LOCALE_PATHS = (
+    # 'locale',
+# )
+
 
 ADMINS = (
     #('Your name', 'your@email.com'),

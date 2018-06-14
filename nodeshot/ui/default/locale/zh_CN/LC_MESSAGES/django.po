@@ -1,595 +1,586 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# Translators:
-# alfinal <al@blogmail.cc>, 2015
-# Roger Pueyo Centelles <transifex@rogerpueyo.com>, 2015
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: nodeshot\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-13 23:53+0800\n"
-"PO-Revision-Date: 2015-05-08 15:30+0000\n"
-"Last-Translator: Roger Pueyo Centelles <transifex@rogerpueyo.com>\n"
-"Language-Team: Catalan (http://www.transifex.com/projects/p/nodeshot/"
-"language/ca/)\n"
-"Language: ca\n"
+"POT-Creation-Date: 2018-06-14 00:07+0800\n"
+"PO-Revision-Date: 2018-06-14 08:57+0806\n"
+"Last-Translator:   <admin@maiaktor.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.7.13\n"
 
 #: templates/base.html:69 templates/index.html:274
 msgid "Loading"
-msgstr "Carregant"
+msgstr "加载"
 
 #: templates/base.html:70
 msgid "Warning: javascript disabled!"
-msgstr "Atenció: javascript està deshabilitat!"
+msgstr ""
 
 #: templates/base.html:70
 msgid "This website needs javascript in order to work."
-msgstr "Aquesta web necessita javascript per a funcionar."
+msgstr "这个网站需要JavaScript才能工作。"
 
 #: templates/base.html:130
 #, python-format
 msgid ""
-"By signing up you declare to have accepted our <a href="
-"\"%(PRIVACY_POLICY_LINK)s\" class=\"js-dismiss\">privacy&nbsp;policy</a><br /"
-">and <a href=\"%(TERMS_OF_SERVICE_LINK)s\" class=\"js-dismiss\">terms&nbsp;"
-"of&nbsp;service</a>."
+"By signing up you declare to have accepted our <a "
+"href=\"%(PRIVACY_POLICY_LINK)s\" class=\"js-"
+"dismiss\">privacy&nbsp;policy</a><br />and <a "
+"href=\"%(TERMS_OF_SERVICE_LINK)s\" class=\"js-"
+"dismiss\">terms&nbsp;of&nbsp;service</a>."
 msgstr ""
-"Registrant-te declares que acceptes les nostres <a href="
-"\"%(PRIVACY_POLICY_LINK)s\" class=\"js-dismiss\">polítiques&nbsp;de&nbsp;"
-"privacitat</a><br />i els nostres <a href=\"%(TERMS_OF_SERVICE_LINK)s\" "
-"class=\"js-dismiss\">termes&nbsp;de&nbsp;serveis</a>."
 
 #: templates/base.html:138
 msgid "Sign up with Facebook"
-msgstr "Registra't a través de Facebook"
+msgstr "用Facebook注册"
 
 #: templates/base.html:146
 msgid "Sign up with Google"
-msgstr "Registra't a través de Google"
+msgstr "用Google注册"
 
 #: templates/base.html:154
 msgid "Sign up with Github"
-msgstr "Registra't a través de Github"
+msgstr "用Github注册"
 
 #: templates/base.html:162 templates/base.html.py:239
 msgid "or"
-msgstr "o"
+msgstr ""
 
 #: templates/base.html:192 templates/base.html.py:270 templates/index.html:93
 msgid "Sign up"
-msgstr "Registrar-se"
+msgstr "注册"
 
 #: templates/base.html:195
 msgid "Already have an account?"
-msgstr "Ja tens un compte?"
+msgstr "已经有账户了吗？"
 
 #: templates/base.html:195 templates/base.html.py:265 templates/index.html:99
 msgid "Sign in"
-msgstr "Entrar"
+msgstr "登录"
 
 #: templates/base.html:215
 msgid "Sign in with Facebook"
-msgstr "Entrar a través de Facebook"
+msgstr "用Facebook登录"
 
 #: templates/base.html:223
 msgid "Sign in with Google"
-msgstr "Entrar a través de Google"
+msgstr "用Google登录"
 
 #: templates/base.html:231
 msgid "Sign in with Github"
-msgstr "Entrar a través de Github"
+msgstr "用Github登录"
 
 #: templates/base.html:262
 msgid "Stay signed in"
-msgstr "Romandre connectat."
+msgstr "保留登录"
 
 #: templates/base.html:268
 msgid "Forgot your password?"
-msgstr "Has oblidat la teva contrasenya?"
+msgstr "忘记密码了吗？"
 
 #: templates/base.html:270
 msgid "Don't have an account yet?"
-msgstr "Encara no tens un compte?"
+msgstr "还没有账户吗？"
 
 #: templates/includes/account.html:2 templates/index.html:71
 msgid "My account"
-msgstr "El meu compte"
+msgstr "我的帐户"
 
 #: templates/includes/account.html:4
 msgid "Profile"
-msgstr "Perfil"
+msgstr "简介"
 
 #: templates/includes/account.html:7
 msgid "First name"
-msgstr "Nom"
+msgstr "名"
 
 #: templates/includes/account.html:10
 msgid "Last name"
-msgstr "Cognoms"
+msgstr "姓"
 
 #: templates/includes/account.html:13
 msgid "City"
-msgstr "Ciutat"
+msgstr "城市"
 
 #: templates/includes/account.html:16
 msgid "Country"
-msgstr "País"
+msgstr "国家"
 
 #: templates/includes/account.html:20 templates/includes/user-details.html:27
 msgid "Bio"
-msgstr "Biografia"
+msgstr "个人简历"
 
 #: templates/includes/account.html:25 templates/includes/account.html.py:65
 msgid "Edit"
-msgstr "Editar"
+msgstr "编辑"
 
 #: templates/includes/account.html:28
 msgid "View"
-msgstr "Veure"
+msgstr "查看"
 
 #: templates/includes/account.html:31
 msgid "Change password"
-msgstr "Canviar contrasenya"
+msgstr "更改密码"
 
 #: templates/includes/account.html:40
 msgid ""
 "Avatars are managed through the popular <a href=\"https://gravatar.com\" "
 "target=\"_blank\">gravatar</a> service."
 msgstr ""
-"Els avatars són gestionats a partir del popular servei <a href=\"https://"
-"gravatar.com\" target=\"_blank\">gravatar</a>."
 
 #: templates/includes/account.html:41
 msgid ""
-"If you don't have one yet, create an account on <strong>gravatar.com</"
-"strong> and associate your current email address to it."
+"If you don't have one yet, create an account on "
+"<strong>gravatar.com</strong> and associate your current email address to "
+"it."
 msgstr ""
-"Si no tens un encara, crea't un compte a <strong>gravatar.com</strong> i "
-"associa el teu compte d'email actual a ell."
 
 #: templates/includes/account.html:42
 msgid "Edit on gravatar.com"
-msgstr "Editar a gravatar.com"
+msgstr "在gravatar.com上编辑"
 
 #: templates/includes/account.html:46 templates/includes/user-details.html:34
 msgid "Links"
-msgstr "Enllaços"
+msgstr "链接"
 
 #: templates/includes/account.html:53
 msgid "url"
-msgstr "URL"
+msgstr "url"
 
 #: templates/includes/account.html:54
 msgid "description"
-msgstr "Descripció"
+msgstr "描述"
 
 #: templates/includes/account.html:55 templates/includes/account.html.py:97
 msgid "actions"
-msgstr "Accions"
+msgstr "动作"
 
 #: templates/includes/account.html:68 templates/includes/account.html.py:120
 msgid "Delete"
-msgstr "Esborrar"
+msgstr "删除"
 
 #: templates/includes/account.html:74
 msgid "No links to show"
-msgstr "No hi ha enllaços per a mostrar"
+msgstr "没有链接需要显示"
 
 #: templates/includes/account.html:82 templates/includes/account.html.py:135
 msgid "Add"
-msgstr "Afegir"
+msgstr "添加"
 
 #: templates/includes/account.html:87
 msgid "Email addresses"
-msgstr "Direccions de mails"
+msgstr "邮箱地址"
 
 #: templates/includes/account.html:94
 msgid "email address"
-msgstr "direcció de e-mail"
+msgstr "邮箱地址"
 
 #: templates/includes/account.html:95
 msgid "verified"
-msgstr "Verificat"
+msgstr "已验证"
 
 #: templates/includes/account.html:96
 msgid "primary"
-msgstr "Primària"
+msgstr "主要的"
 
 #: templates/includes/account.html:110
 msgid "Resend confirmation"
-msgstr "Reenviar confirmació"
+msgstr "重新发送确认"
 
 #: templates/includes/account.html:115
 msgid "Make primary"
-msgstr "Convertir-la en primària"
+msgstr "变成主要的"
 
 #: templates/includes/account.html:127
 msgid "No email addresses"
-msgstr "No hi ha direccions de e-mails"
+msgstr "没有邮箱地址"
 
 #: templates/includes/layer-details.html:7
 #: templates/includes/node-details.html:26
 #: templates/includes/user-details.html:9
 msgid "contact"
-msgstr "Contacte"
+msgstr "联系"
 
 #: templates/includes/layer-details.html:9
 #: templates/includes/node-details.html:29
 #: templates/includes/user-details.html:12
 msgid "Press CTRL+C to copy"
-msgstr "Prem Ctrl+C per a copiar"
+msgstr "请按住CTRL+C以便进行拷贝"
 
 #: templates/includes/layer-details.html:9
 #: templates/includes/node-details.html:29
 #: templates/includes/user-details.html:12
 msgid "permalink"
-msgstr "Enllaç permanent"
+msgstr "永久链接"
 
 #: templates/includes/layer-details.html:26
 #: templates/includes/layer-list.html:12
 msgid "Organization"
-msgstr "Organització"
+msgstr "组织"
 
 #: templates/includes/layer-details.html:36
 msgid "Website"
-msgstr "Web"
+msgstr "网站"
 
 #: templates/includes/layer-details.html:45
 #: templates/includes/layer-list.html:13
 msgid "New nodes allowed?"
-msgstr "Permetre nous nodes?"
+msgstr "允许新增节点"
 
 #: templates/includes/layer-details.html:53
 msgid "Is external?"
-msgstr "Es extern?"
+msgstr "是外部的么？"
 
 #: templates/includes/layer-details.html:64
 msgid "Layer list"
-msgstr "Llista de capes"
+msgstr "图层列表"
 
 #: templates/includes/layer-list.html:4 templates/includes/map.html:76
 msgid "Layers"
-msgstr "Capes"
+msgstr "图层"
 
 #: templates/includes/layer-list.html:11 templates/includes/node-list.html:99
 msgid "Name"
-msgstr "Nom"
+msgstr "名字"
 
 #: templates/includes/layer-list.html:14
 msgid "External?"
-msgstr "És extern?"
+msgstr "外部的？"
 
 #: templates/includes/map.html:10
 msgid "Click on the map to indicate the location"
-msgstr "Clica al mapa per a indicar la ubicació"
+msgstr "点击地图指示位置"
 
 #: templates/includes/map.html:11 templates/includes/map.html.py:17
 msgid "cancel"
-msgstr "Canceŀlar"
+msgstr "取消"
 
 #: templates/includes/map.html:15
 msgid "Drag to adjust"
-msgstr "Arrossega per ajustar"
+msgstr "用拖动进行调整"
 
 #: templates/includes/map.html:16
 msgid "confirm"
-msgstr "Confirmar"
+msgstr "确认"
 
 #: templates/includes/map.html:25 templates/includes/map.html.py:89
 msgid "Legend"
-msgstr "Llegenda"
+msgstr "刻印文字"
 
 #: templates/includes/map.html:36
 msgid "Hide legend"
-msgstr "Ocultar llegenda"
+msgstr "隐藏刻印文字"
 
 #: templates/includes/map.html:40
 msgid "Control map data"
-msgstr "Controlar les dades del mapa"
+msgstr "控制地图数据"
 
 #: templates/includes/map.html:42 templates/includes/map.html.py:220
 msgid "Add new node"
-msgstr "Afegir nou node"
+msgstr "添加新的地点"
 
 #: templates/includes/map.html:45
 msgid "Toggle 3D view"
-msgstr "Commutar a la vista 3D"
+msgstr "切换3D视图"
 
 #: templates/includes/map.html:48
 msgid "Map tools"
-msgstr "Eines del mapa"
+msgstr "地图工具"
 
 #: templates/includes/map.html:51
 msgid "Map preferences"
-msgstr "Preferències del mapa"
+msgstr "地图偏好"
 
 #: templates/includes/map.html:53
 msgid "Toggle legend"
-msgstr "Commutar a la llegenda"
+msgstr "切换刻印文字"
 
 #: templates/includes/map.html:61
 msgid "Map base"
-msgstr "Mapa base"
+msgstr "基础地图"
 
 #: templates/includes/map.html:109
 msgid "measure distance"
-msgstr "Mesurar distància"
+msgstr "测量距离"
 
 #: templates/includes/map.html:116
 msgid "measure area"
-msgstr "Mesurar àrea"
+msgstr "测量区域"
 
 #: templates/includes/map.html:125
 msgid "elevation profile"
-msgstr "Perfil de l'alçada"
+msgstr "仰角剖面"
 
 #: templates/includes/map.html:133
 msgid "drop placeholder"
-msgstr "Deixa un marcador de posició"
+msgstr "放置占位符"
 
 #: templates/includes/map.html:209
 msgid "Details"
-msgstr "Detalls"
+msgstr "详细"
 
 #: templates/includes/map.html:214
 msgid "Metric type"
-msgstr "Tipus de mètrica"
+msgstr "度量类型"
 
 #: templates/includes/map.html:215
 msgid "Metric value"
-msgstr "Valor de la mètrica"
+msgstr "度量值"
 
 #: templates/includes/map.html:216 templates/includes/node-details.html:71
 #: templates/includes/node-list.html:38 templates/includes/node-list.html:101
 msgid "Layer"
-msgstr "Capa"
+msgstr "图层"
 
 #: templates/includes/node-details.html:31
 msgid "edit"
-msgstr "Editar"
+msgstr "编辑"
 
 #: templates/includes/node-details.html:36
 #: templates/includes/node-details.html:44
 msgid "General info"
-msgstr "Informació general"
+msgstr "通用信息"
 
-#: templates/includes/node-details.html:61 templates/includes/node-list.html:48
-#: templates/includes/node-list.html:100
+#: templates/includes/node-details.html:61
+#: templates/includes/node-list.html:48 templates/includes/node-list.html:100
 msgid "Status"
-msgstr "Estat"
+msgstr "状态"
 
 #: templates/includes/node-details.html:80
 msgid "Address"
-msgstr "Direcció"
+msgstr "地址"
 
 #: templates/includes/node-details.html:90
 msgid "Elevation"
-msgstr "Alçada"
+msgstr "高程"
 
 #: templates/includes/node-details.html:93
 msgid "meters"
-msgstr "metres"
+msgstr "米"
 
 #: templates/includes/node-details.html:116
 msgid "Added"
-msgstr "Afegit"
+msgstr "已添加"
 
 #: templates/includes/node-details.html:124
 #: templates/includes/node-list.html:104
 msgid "Updated"
-msgstr "Actualitzat"
+msgstr "更新"
 
 #: templates/includes/node-details.html:133
 msgid "Rating"
-msgstr "Valoració"
+msgstr "评级"
 
 #: templates/includes/node-details.html:143
 msgid "number of ratings"
-msgstr "Número de valoracions"
+msgstr "等级的数目"
 
 #: templates/includes/node-details.html:158
 msgid "Comments"
-msgstr "Comentaris"
+msgstr "评论"
 
 #: templates/includes/node-details.html:169
 msgid "Join the discussion..."
-msgstr "Unir-se a la discussió"
+msgstr "加入讨论"
 
 #: templates/includes/node-details.html:175
 msgid "leave comment"
-msgstr "Deixar un comentari"
+msgstr "离开评论"
 
 #: templates/includes/node-details.html:181
 msgid "Sign in to comment"
-msgstr "Entrar per a comentar"
+msgstr "登录进行评论"
 
 #: templates/includes/node-list.html:4
 msgid "Nodes"
-msgstr "Nodes"
+msgstr "地点"
 
 #: templates/includes/node-list.html:27
 msgid "Quick search"
-msgstr "Cerca ràpida"
+msgstr "快速搜索"
 
 #: templates/includes/node-list.html:33
 msgid "Filter"
-msgstr "Filtre"
+msgstr "过滤"
 
 #: templates/includes/node-list.html:40 templates/includes/node-list.html:50
 msgid "All"
-msgstr "Tot"
+msgstr "所有"
 
 #: templates/includes/node-list.html:58 templates/includes/node-list.html:102
 msgid "User"
-msgstr "Usuari"
+msgstr "用户"
 
 #: templates/includes/node-list.html:60
 msgid "Any user"
-msgstr "Algun usuari"
+msgstr "任意用户"
 
 #: templates/includes/node-list.html:66
 msgid "Created on"
-msgstr "Creat el"
+msgstr "创建于"
 
 #: templates/includes/node-list.html:68
 msgid "Any date"
-msgstr "Alguna data"
+msgstr "任何日期"
 
 #: templates/includes/node-list.html:69
 msgid "Today"
-msgstr "Avui"
+msgstr "今天"
 
 #: templates/includes/node-list.html:70
 msgid "Past 7 days"
-msgstr "ültims 7 dies"
+msgstr "过去7天"
 
 #: templates/includes/node-list.html:71
 msgid "This month"
-msgstr "Aquest mes"
+msgstr "本月"
 
 #: templates/includes/node-list.html:72
 msgid "This year"
-msgstr "Aquest any"
+msgstr "今年"
 
 #: templates/includes/node-list.html:80
 msgid "results"
-msgstr "Resultats"
+msgstr "结果"
 
 #: templates/includes/node-list.html:83
 msgid "reset filter settings"
-msgstr "Reiniciar paràmetres del filtre"
+msgstr "重置过滤设置"
 
 #: templates/includes/node-list.html:89
 msgid "Add node"
-msgstr "Afegir node"
+msgstr "添加节点"
 
 #: templates/includes/node-list.html:103
 msgid "Created"
-msgstr "Creat"
+msgstr "创建"
 
 #: templates/includes/node-list.html:116
 msgid "previous"
-msgstr "Previ"
+msgstr "前一个"
 
 #: templates/includes/node-list.html:119
 msgid "next"
-msgstr "Següent"
+msgstr "下一个"
 
 #: templates/includes/node-list.html:121
 msgid "of"
-msgstr "de"
+msgstr ""
 
 #: templates/includes/node-list.html:135
 msgid "Choose action"
-msgstr "Escull acció"
+msgstr "选择动作"
 
 #: templates/includes/node-list.html:146
 msgid "Select all"
-msgstr "Seleccionar tot"
+msgstr "选择所有"
 
 #: templates/includes/user-details.html:6
 msgid "my account"
-msgstr "El meu compte"
+msgstr "我的账号"
 
 #: templates/includes/user-details.html:11
 msgid "nodes"
-msgstr "Nodes"
+msgstr "节点"
 
 #: templates/includes/user-details.html:20
 msgid "Joined on"
-msgstr "Unit el"
+msgstr "加入"
 
 #: templates/includes/user-details.html:21
 msgid "Last seen on"
-msgstr "Vist per últim cop el"
+msgstr "最近一次看见"
 
 #: templates/index.html:31
 msgid "Search for data"
-msgstr "Cercar dades."
+msgstr "搜索数据"
 
-#: templates/index.html:42 templates/index.html.py:196 templates/index.html:225
+#: templates/index.html:42 templates/index.html.py:196
+#: templates/index.html:225
 msgid "nothing found"
-msgstr "No s'han trobat resultats"
+msgstr "没有找到"
 
 #: templates/index.html:66
 msgid "My profile"
-msgstr "El meu perfil"
+msgstr "我的简介"
 
 #: templates/index.html:77
 msgid "Admin site"
-msgstr "Administrador del lloc"
+msgstr "管理站点"
 
 #: templates/index.html:83
 msgid "Logout"
-msgstr "Sortir"
+msgstr "退出"
 
 #: templates/index.html:127
 msgid "No menu item yet"
-msgstr "No hi ha menu per aquest ítem encara"
+msgstr "没有菜单条目"
 
 #: templates/index.html:140
 msgid "Notifications"
-msgstr "Notificacions"
+msgstr "通知"
 
 #: templates/index.html:143
 msgid "See all"
-msgstr "Veure tot"
+msgstr "查看所有"
 
 #: templates/index.html:144
 msgid "Settings"
-msgstr "Paràmetres"
+msgstr "设置"
 
 #: templates/index.html:159
 msgid "Nothing interesting yet!"
-msgstr "Res d'interessant encara!"
+msgstr "没有有趣的！"
 
 #: templates/index.html:241 templates/index.html.py:256
 msgid "Save"
-msgstr "Desar"
+msgstr "保存"
 
 #: templates/index.html:245 templates/index.html.py:260
 msgid "Cancel"
-msgstr "Canceŀlar"
+msgstr "取消"
 
 #: templates/index.html:275
 msgid "cancel&nbsp;operation"
-msgstr "Canceŀlar&nbsp;operació"
+msgstr ""
 
 #: templates/index.html:294
 msgid "Email sent successfully!"
-msgstr "Email enviat correctament!"
+msgstr "邮件发送成功！"
 
 #: templates/index.html:295
 msgid "Take me back to"
-msgstr "Porta'm enrere a"
+msgstr "带我回去"
 
 #: templates/profiles/password_reset_from_key.html:7
 msgid "Bad Token"
-msgstr "Testimoni incorrecte - Bad token"
+msgstr "不好的令牌"
 
 #: templates/profiles/password_reset_from_key.html:7
 #: templates/profiles/password_reset_from_key.html:26
 msgid "Change Password"
-msgstr "Canviar contrasenya"
+msgstr "变更密码"
 
 #: templates/profiles/password_reset_from_key.html:11
 msgid ""
 "The password reset link is invalid, probably because it has already been "
 "used."
-msgstr ""
-"L'enllaç de reinicialització de la contrasenya és invàlid, probablement "
-"perquè ja ha estat utilitzat."
+msgstr "密码重置链接无效，可能是因为它已经被使用了。"
 
 #: templates/profiles/password_reset_from_key.html:30
 msgid "You successfully changed your password!"
-msgstr "Has canviat la teva contrasenya correctament"
+msgstr "您成功地更改了密码！"
 
 #: templates/profiles/password_reset_from_key.html:31
 msgid "Go to the homepage to login"
-msgstr "Ves a la pàgina d'inici per a entrar"
+msgstr "转到主页进行登录"

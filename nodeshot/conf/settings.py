@@ -63,7 +63,8 @@ if PROTOCOL == 'https':
 
 SENTRY_ENABLED = bool(getattr(settings, 'RAVEN_CONFIG', {}).get('dsn'))
 
-MIDDLEWARE_CLASSES = ['django.middleware.common.CommonMiddleware']
+# MIDDLEWARE_CLASSES = ['django.middleware.common.CommonMiddleware']
+MIDDLEWARE_CLASSES = []
 
 # load sentry-related middleware only if needed
 if SENTRY_ENABLED:
@@ -75,6 +76,8 @@ if SENTRY_ENABLED:
 __TMP_MIDDLEWARE__ = [
     ('django.middleware.security.SecurityMiddleware', 'notest'),
     ('django.contrib.sessions.middleware.SessionMiddleware', 'yestest'),
+    ('django.middleware.locale.LocaleMiddleware','notest'),
+    ('django.middleware.common.CommonMiddleware','notest'),
     ('django.middleware.csrf.CsrfViewMiddleware', 'notest'),
     ('django.contrib.auth.middleware.AuthenticationMiddleware', 'yestest'),
     ('django.contrib.auth.middleware.SessionAuthenticationMiddleware', 'notest'),

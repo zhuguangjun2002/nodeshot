@@ -1,7 +1,7 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # alfinal <al@blogmail.cc>, 2015
 # Pablo Castellano <pablo@anche.no>, 2015
@@ -9,154 +9,97 @@ msgid ""
 msgstr ""
 "Project-Id-Version: nodeshot\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-07 19:10+0200\n"
+"POT-Creation-Date: 2018-06-13 23:53+0800\n"
 "PO-Revision-Date: 2015-05-08 12:10+0000\n"
 "Last-Translator: alfinal <al@blogmail.cc>\n"
-"Language-Team: Spanish (http://www.transifex.com/projects/p/nodeshot/language/es/)\n"
+"Language-Team: Spanish (http://www.transifex.com/projects/p/nodeshot/"
+"language/es/)\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: templates/base.html:66 templates/index.html:274
+#: templates/base.html:69 templates/index.html:274
 msgid "Loading"
 msgstr "Cargando"
 
-#: templates/base.html:67
+#: templates/base.html:70
 msgid "Warning: javascript disabled!"
 msgstr "Atención: ¡javascript deshabilitado!"
 
-#: templates/base.html:67
+#: templates/base.html:70
 msgid "This website needs javascript in order to work."
 msgstr "Esta web necesita javascript para funcionar."
 
-#: templates/base.html:127
+#: templates/base.html:130
 #, python-format
 msgid ""
-"By signing up you declare to have accepted our <a "
-"href=\"%(PRIVACY_POLICY_LINK)s\" class=\"js-"
-"dismiss\">privacy&nbsp;policy</a><br />and <a "
-"href=\"%(TERMS_OF_SERVICE_LINK)s\" class=\"js-"
-"dismiss\">terms&nbsp;of&nbsp;service</a>."
-msgstr "Registrándote declaras que aceptas nuestras <a href=\"%(PRIVACY_POLICY_LINK)s\" class=\"js-dismiss\">políticas&nbsp;de&nbsp;privacidad</a><br />y nuestros <a href=\"%(TERMS_OF_SERVICE_LINK)s\" class=\"js-dismiss\">términos&nbsp;de&nbsp;servicio</a>."
+"By signing up you declare to have accepted our <a href="
+"\"%(PRIVACY_POLICY_LINK)s\" class=\"js-dismiss\">privacy&nbsp;policy</a><br /"
+">and <a href=\"%(TERMS_OF_SERVICE_LINK)s\" class=\"js-dismiss\">terms&nbsp;"
+"of&nbsp;service</a>."
+msgstr ""
+"Registrándote declaras que aceptas nuestras <a href=\"%(PRIVACY_POLICY_LINK)s"
+"\" class=\"js-dismiss\">políticas&nbsp;de&nbsp;privacidad</a><br />y "
+"nuestros <a href=\"%(TERMS_OF_SERVICE_LINK)s\" class=\"js-dismiss"
+"\">términos&nbsp;de&nbsp;servicio</a>."
 
-#: templates/base.html:135
+#: templates/base.html:138
 msgid "Sign up with Facebook"
 msgstr "Regístrate a través de Facebook"
 
-#: templates/base.html:143
+#: templates/base.html:146
 msgid "Sign up with Google"
 msgstr "Regístrate a través de Google"
 
-#: templates/base.html:151
+#: templates/base.html:154
 msgid "Sign up with Github"
 msgstr "Regístrate a través de Github"
 
-#: templates/base.html:159 templates/base.html.py:236
+#: templates/base.html:162 templates/base.html.py:239
 msgid "or"
 msgstr "o"
 
-#: templates/base.html:189 templates/base.html.py:267 templates/index.html:93
+#: templates/base.html:192 templates/base.html.py:270 templates/index.html:93
 msgid "Sign up"
 msgstr "Registrarse"
 
-#: templates/base.html:192
+#: templates/base.html:195
 msgid "Already have an account?"
 msgstr "Ya tienes una cuenta?"
 
-#: templates/base.html:192 templates/base.html.py:262 templates/index.html:100
+#: templates/base.html:195 templates/base.html.py:265 templates/index.html:99
 msgid "Sign in"
 msgstr "Entrar"
 
-#: templates/base.html:212
+#: templates/base.html:215
 msgid "Sign in with Facebook"
 msgstr "Entrar a través de Facebook"
 
-#: templates/base.html:220
+#: templates/base.html:223
 msgid "Sign in with Google"
 msgstr "Entrar a través de Google"
 
-#: templates/base.html:228
+#: templates/base.html:231
 msgid "Sign in with Github"
 msgstr "Entrar a través de Github"
 
-#: templates/base.html:259
+#: templates/base.html:262
 msgid "Stay signed in"
 msgstr "Permanecer conectado"
 
-#: templates/base.html:265
+#: templates/base.html:268
 msgid "Forgot your password?"
 msgstr "¿Olvidaste tu contraseña?"
 
-#: templates/base.html:267
+#: templates/base.html:270
 msgid "Don't have an account yet?"
 msgstr "¿Todavía no tienes una cuenta?"
 
-#: templates/index.html:31
-msgid "Search for data"
-msgstr "Buscar datos"
-
-#: templates/index.html:42 templates/index.html.py:196
-#: templates/index.html:225
-msgid "nothing found"
-msgstr "No se han encontrado resultados"
-
-#: templates/index.html:66
-msgid "My profile"
-msgstr "Mi perfil"
-
-#: templates/index.html:71 templates/includes/account.html:2
+#: templates/includes/account.html:2 templates/index.html:71
 msgid "My account"
 msgstr "Mi cuenta"
-
-#: templates/index.html:77
-msgid "Admin site"
-msgstr "Administrador del sitio"
-
-#: templates/index.html:83
-msgid "Logout"
-msgstr "Salir"
-
-#: templates/index.html:127
-msgid "No menu item yet"
-msgstr "Todavía no hay ítem para este menú"
-
-#: templates/index.html:140
-msgid "Notifications"
-msgstr "Notificaciones"
-
-#: templates/index.html:143
-msgid "See all"
-msgstr "Ver todo"
-
-#: templates/index.html:144
-msgid "Settings"
-msgstr "Parámetros"
-
-#: templates/index.html:159
-msgid "Nothing interesting yet!"
-msgstr "¡Todavía no hay nada interesante!"
-
-#: templates/index.html:241 templates/index.html.py:256
-msgid "Save"
-msgstr "Guardar"
-
-#: templates/index.html:245 templates/index.html.py:260
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: templates/index.html:275
-msgid "cancel&nbsp;operation"
-msgstr "Cancelar&nbsp;operación"
-
-#: templates/index.html:294
-msgid "Email sent successfully!"
-msgstr "¡Email enviado correctamente!"
-
-#: templates/index.html:295
-msgid "Take me back to"
-msgstr "Llévame atrás a"
 
 #: templates/includes/account.html:4
 msgid "Profile"
@@ -198,14 +141,17 @@ msgstr "Cambiar contraseña"
 msgid ""
 "Avatars are managed through the popular <a href=\"https://gravatar.com\" "
 "target=\"_blank\">gravatar</a> service."
-msgstr "Los avatares son gestionados a partir del popular servicio <a href=\"https://gravatar.com\" target=\"_blank\">gravatar</a>"
+msgstr ""
+"Los avatares son gestionados a partir del popular servicio <a href=\"https://"
+"gravatar.com\" target=\"_blank\">gravatar</a>"
 
 #: templates/includes/account.html:41
 msgid ""
-"If you don't have one yet, create an account on "
-"<strong>gravatar.com</strong> and associate your current email address to "
-"it."
-msgstr "Si no tienes uno todavía, créate una cuenta en <strong>gravatar.com</strong> y asocia tu dirección de email actual a ella."
+"If you don't have one yet, create an account on <strong>gravatar.com</"
+"strong> and associate your current email address to it."
+msgstr ""
+"Si no tienes uno todavía, créate una cuenta en <strong>gravatar.com</strong> "
+"y asocia tu dirección de email actual a ella."
 
 #: templates/includes/account.html:42
 msgid "Edit on gravatar.com"
@@ -227,7 +173,7 @@ msgstr "descripción"
 msgid "actions"
 msgstr "acciones"
 
-#: templates/includes/account.html:68 templates/includes/account.html:120
+#: templates/includes/account.html:68 templates/includes/account.html.py:120
 msgid "Delete"
 msgstr "Borrar"
 
@@ -235,7 +181,7 @@ msgstr "Borrar"
 msgid "No links to show"
 msgstr "No hay enlaces que mostrar"
 
-#: templates/includes/account.html:82 templates/includes/account.html:135
+#: templates/includes/account.html:82 templates/includes/account.html.py:135
 msgid "Add"
 msgstr "Añadir"
 
@@ -307,11 +253,11 @@ msgstr "¿Es externo?"
 msgid "Layer list"
 msgstr "Lista de capas"
 
-#: templates/includes/layer-list.html:4 templates/includes/map.html:74
+#: templates/includes/layer-list.html:4 templates/includes/map.html:76
 msgid "Layers"
 msgstr "Capas"
 
-#: templates/includes/layer-list.html:11 templates/includes/node-list.html:98
+#: templates/includes/layer-list.html:11 templates/includes/node-list.html:99
 msgid "Name"
 msgstr "Nombre"
 
@@ -335,7 +281,7 @@ msgstr "Arrastra para ajustar"
 msgid "confirm"
 msgstr "confirmar"
 
-#: templates/includes/map.html:25 templates/includes/map.html.py:87
+#: templates/includes/map.html:25 templates/includes/map.html.py:89
 msgid "Legend"
 msgstr "Leyenda"
 
@@ -347,60 +293,60 @@ msgstr "Esconder leyenda"
 msgid "Control map data"
 msgstr "Controlar datos del mapa"
 
-#: templates/includes/map.html:41 templates/includes/map.html.py:218
+#: templates/includes/map.html:42 templates/includes/map.html.py:220
 msgid "Add new node"
 msgstr "Añadir nuevo nodo"
 
-#: templates/includes/map.html:43
+#: templates/includes/map.html:45
 msgid "Toggle 3D view"
 msgstr "Activar vista 3D"
 
-#: templates/includes/map.html:46
+#: templates/includes/map.html:48
 msgid "Map tools"
 msgstr "Herramientas de mapa"
 
-#: templates/includes/map.html:49
+#: templates/includes/map.html:51
 msgid "Map preferences"
 msgstr "Preferencias de mapa"
 
-#: templates/includes/map.html:51
+#: templates/includes/map.html:53
 msgid "Toggle legend"
 msgstr "Activar leyenda"
 
-#: templates/includes/map.html:59
+#: templates/includes/map.html:61
 msgid "Map base"
 msgstr "Mapa base"
 
-#: templates/includes/map.html:107
+#: templates/includes/map.html:109
 msgid "measure distance"
 msgstr "medir distancia"
 
-#: templates/includes/map.html:114
+#: templates/includes/map.html:116
 msgid "measure area"
 msgstr "medir área"
 
-#: templates/includes/map.html:123
+#: templates/includes/map.html:125
 msgid "elevation profile"
 msgstr "perfil de altura"
 
-#: templates/includes/map.html:131
+#: templates/includes/map.html:133
 msgid "drop placeholder"
 msgstr "Soltar un marcador de posición"
 
-#: templates/includes/map.html:207
+#: templates/includes/map.html:209
 msgid "Details"
 msgstr "Detalles"
 
-#: templates/includes/map.html:212
+#: templates/includes/map.html:214
 msgid "Metric type"
 msgstr "Tipo de métrica"
 
-#: templates/includes/map.html:213
+#: templates/includes/map.html:215
 msgid "Metric value"
 msgstr "Valor de métrica"
 
-#: templates/includes/map.html:214 templates/includes/node-details.html:71
-#: templates/includes/node-list.html:38 templates/includes/node-list.html:100
+#: templates/includes/map.html:216 templates/includes/node-details.html:71
+#: templates/includes/node-list.html:38 templates/includes/node-list.html:101
 msgid "Layer"
 msgstr "Capa"
 
@@ -413,8 +359,8 @@ msgstr "editar"
 msgid "General info"
 msgstr "Información general"
 
-#: templates/includes/node-details.html:61
-#: templates/includes/node-list.html:48 templates/includes/node-list.html:99
+#: templates/includes/node-details.html:61 templates/includes/node-list.html:48
+#: templates/includes/node-list.html:100
 msgid "Status"
 msgstr "Estado"
 
@@ -435,7 +381,7 @@ msgid "Added"
 msgstr "Añadido"
 
 #: templates/includes/node-details.html:124
-#: templates/includes/node-list.html:103
+#: templates/includes/node-list.html:104
 msgid "Updated"
 msgstr "Actualizado"
 
@@ -479,7 +425,7 @@ msgstr "Filtro"
 msgid "All"
 msgstr "Todos"
 
-#: templates/includes/node-list.html:58 templates/includes/node-list.html:101
+#: templates/includes/node-list.html:58 templates/includes/node-list.html:102
 msgid "User"
 msgstr "Usuario"
 
@@ -523,27 +469,27 @@ msgstr "restablecer filtros"
 msgid "Add node"
 msgstr "Añadir nodo"
 
-#: templates/includes/node-list.html:102
+#: templates/includes/node-list.html:103
 msgid "Created"
 msgstr "Creado"
 
-#: templates/includes/node-list.html:115
+#: templates/includes/node-list.html:116
 msgid "previous"
 msgstr "anterior"
 
-#: templates/includes/node-list.html:118
+#: templates/includes/node-list.html:119
 msgid "next"
 msgstr "siguiente"
 
-#: templates/includes/node-list.html:120
+#: templates/includes/node-list.html:121
 msgid "of"
 msgstr "de"
 
-#: templates/includes/node-list.html:134
+#: templates/includes/node-list.html:135
 msgid "Choose action"
 msgstr "Elegir acción"
 
-#: templates/includes/node-list.html:145
+#: templates/includes/node-list.html:146
 msgid "Select all"
 msgstr "Seleccionar todos"
 
@@ -563,6 +509,66 @@ msgstr "Se unió el"
 msgid "Last seen on"
 msgstr "Visto por última vez"
 
+#: templates/index.html:31
+msgid "Search for data"
+msgstr "Buscar datos"
+
+#: templates/index.html:42 templates/index.html.py:196 templates/index.html:225
+msgid "nothing found"
+msgstr "No se han encontrado resultados"
+
+#: templates/index.html:66
+msgid "My profile"
+msgstr "Mi perfil"
+
+#: templates/index.html:77
+msgid "Admin site"
+msgstr "Administrador del sitio"
+
+#: templates/index.html:83
+msgid "Logout"
+msgstr "Salir"
+
+#: templates/index.html:127
+msgid "No menu item yet"
+msgstr "Todavía no hay ítem para este menú"
+
+#: templates/index.html:140
+msgid "Notifications"
+msgstr "Notificaciones"
+
+#: templates/index.html:143
+msgid "See all"
+msgstr "Ver todo"
+
+#: templates/index.html:144
+msgid "Settings"
+msgstr "Parámetros"
+
+#: templates/index.html:159
+msgid "Nothing interesting yet!"
+msgstr "¡Todavía no hay nada interesante!"
+
+#: templates/index.html:241 templates/index.html.py:256
+msgid "Save"
+msgstr "Guardar"
+
+#: templates/index.html:245 templates/index.html.py:260
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: templates/index.html:275
+msgid "cancel&nbsp;operation"
+msgstr "Cancelar&nbsp;operación"
+
+#: templates/index.html:294
+msgid "Email sent successfully!"
+msgstr "¡Email enviado correctamente!"
+
+#: templates/index.html:295
+msgid "Take me back to"
+msgstr "Llévame atrás a"
+
 #: templates/profiles/password_reset_from_key.html:7
 msgid "Bad Token"
 msgstr "Token incorrecto."
@@ -576,7 +582,9 @@ msgstr "Cambiar contraseña"
 msgid ""
 "The password reset link is invalid, probably because it has already been "
 "used."
-msgstr "El enlace para restablecer la contraseña es inválido. Probablemente ya ha sido usado."
+msgstr ""
+"El enlace para restablecer la contraseña es inválido. Probablemente ya ha "
+"sido usado."
 
 #: templates/profiles/password_reset_from_key.html:30
 msgid "You successfully changed your password!"

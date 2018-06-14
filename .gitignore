@@ -44,3 +44,6 @@ docs/_*
 tags
 # doc by me
 /doc
+
+# ignore meessage file
+.mo
