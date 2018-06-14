@@ -19,8 +19,11 @@ DEBUG = True
 DOMAIN = 'localhost'
 SUBDIR = '/'  # edit this line if you are installing in a sub directory, like /nodeshot
 #SITE_NAME = 'dev'  # site name, you can change this
-#SITE_NAME = 'china mobile'  # site name, you can change this
-SITE_NAME = '中国移动设备管理平台'  # site name, you can change this
+SITE_NAME = 'china mobile'  # site name, you can change this
+
+# 使用中文名字，会在`发送邮件`时，报编码错误。
+#为了简化处理，我们使用英文名称,暂不采用中文名称。
+#SITE_NAME = '中国移动设备管理平台'  # site name, you can change this
 
 DATABASES = {
     'default': {
