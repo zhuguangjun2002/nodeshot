@@ -1,0 +1,63 @@
+搜索项目的`json`文件：
+---------------------------
+find . -name "*.json"
+---------------------------
+
+显示结果如下：
+---------------------------
+(env) user@osgeolive:~/project/nodeshot/nodeshot/nodeshot$ find . -name "*.json"
+./community/participation/fixtures/test_comments.json
+./community/profiles/fixtures/test_profiles.json
+./core/nodes/fixtures/test_status.json
+./core/nodes/fixtures/initial_data.json
+./core/nodes/fixtures/test_nodes.json
+./core/nodes/fixtures/test_users.json
+./core/nodes/fixtures/test_images.json
+./core/nodes/fixtures/default_status.json
+./core/layers/fixtures/test_layers.json
+./core/metrics/fixtures/initial_data.json
+./core/cms/fixtures/test_pages.json
+./core/cms/fixtures/initial_data.json
+./interop/oldimporter/fixtures/test_olddevices.json
+./interop/oldimporter/fixtures/test_oldlinks.json
+./interop/oldimporter/fixtures/test_oldnodes.json
+./interop/oldimporter/fixtures/test_oldusers.json
+./interop/oldimporter/fixtures/test_oldcontacts.json
+./interop/sync/tests/static/geojson1.json
+./interop/sync/tests/static/nodes-pagination.json
+./interop/sync/tests/static/geojson4.json
+./interop/sync/tests/static/geojson2.json
+./interop/sync/tests/static/geojson3.json
+./interop/sync/tests/static/nodes.json
+./networking/hardware/fixtures/antenna_models.json
+./networking/hardware/fixtures/manufacturers.json
+./networking/hardware/fixtures/device_models.json
+./networking/net/fixtures/test_ip_addresses.json
+./networking/net/fixtures/test_interfaces.json
+./networking/net/fixtures/test_devices.json
+./networking/net/fixtures/test_routing_protocols.json
+./networking/links/fixtures/test_links.json
+./networking/links/fixtures/test_topology_data.json
+./networking/links/tests/static/olsr-test-topology_2.json
+./networking/links/tests/static/olsr-test-topology.json
+(env) user@osgeolive:~/project/nodeshot/nodeshot/nodeshot$ 
+---------------------------
+内容太多，需要过滤到`test`部分：
+-------------------------
+find . -name "*.json" | grep -v test
+-------------------------
+显示结果如下：
+-------------------------
+user@osgeolive:~/project/nodeshot/nodeshot/nodeshot$ find . -name "*.json" | grep -v test
+./core/nodes/fixtures/initial_data.json
+./core/nodes/fixtures/default_status.json
+./core/metrics/fixtures/initial_data.json
+./core/cms/fixtures/initial_data.json
+./networking/hardware/fixtures/antenna_models.json
+./networking/hardware/fixtures/manufacturers.json
+./networking/hardware/fixtures/device_models.json
+-------------------------
+使用如下命令，批量编辑查看：
+-------------------------
+find . -name "*.json" -print0 | grep -zv test | xargs -0 vim
+-------------------------
