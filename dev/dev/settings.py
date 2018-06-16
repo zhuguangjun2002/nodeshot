@@ -93,10 +93,10 @@ LANGUAGE_CODE = 'zh-cn'
 # 添加`语言选项`
 # 只支持: 中文简体,英文，
 # 不支持: 意大利文，西班牙文，加泰罗尼亚文
-# LANGUAGES = (
-    # ('zh-cn', 'Chinese Simplified'),
-    # ('en', 'English'),
-# )
+LANGUAGES = (
+    ('zh-cn', 'Chinese Simplified'),
+    ('en', 'English'),
+)
 
 # 添加`语言选项`
 # 支持: 中文简体,英文，意大利文，西班牙文，加泰罗尼亚文

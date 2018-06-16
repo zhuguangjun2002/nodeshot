@@ -19,7 +19,7 @@ jsonfield
 netdiff==0.4.4
 
 # better admin
-django-grappelli==2.7.1
+django-grappelli==2.7.3
 django-filebrowser==3.6.1
 django-leaflet==0.16.0
 django-hstore==1.4
