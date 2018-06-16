@@ -43,7 +43,7 @@ docs/_*
 # ignore ctags
 tags
 # doc by me
-/doc
+#/doc
 
 # ignore meessage file
 *.mo
