@@ -47,4 +47,4 @@ tags
 
 # ignore meessage file
 *.mo
-*.po
+#*.po

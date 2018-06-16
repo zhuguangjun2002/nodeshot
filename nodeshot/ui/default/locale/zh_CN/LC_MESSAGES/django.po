@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-06-14 15:08+0800\n"
-"PO-Revision-Date: 2018-06-14 08:57+0806\n"
-"Last-Translator:   <admin@maiaktor.com>\n"
+"PO-Revision-Date: 2018-06-16 20:05+0806\n"
+"Last-Translator:   <user@163.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr "加载"
 
 #: templates/base.html:70
 msgid "Warning: javascript disabled!"
-msgstr ""
+msgstr "警告：JavaScript禁用！"
 
 #: templates/base.html:70
 msgid "This website needs javascript in order to work."
@@ -33,11 +33,16 @@ msgstr "这个网站需要JavaScript才能工作。"
 #: templates/base.html:130
 #, python-format
 msgid ""
-"By signing up you declare to have accepted our <a href="
-"\"%(PRIVACY_POLICY_LINK)s\" class=\"js-dismiss\">privacy&nbsp;policy</a><br /"
-">and <a href=\"%(TERMS_OF_SERVICE_LINK)s\" class=\"js-dismiss\">terms&nbsp;"
-"of&nbsp;service</a>."
+"By signing up you declare to have accepted our <a "
+"href=\"%(PRIVACY_POLICY_LINK)s\" class=\"js-"
+"dismiss\">privacy&nbsp;policy</a><br />and <a "
+"href=\"%(TERMS_OF_SERVICE_LINK)s\" class=\"js-"
+"dismiss\">terms&nbsp;of&nbsp;service</a>."
 msgstr ""
+"通过注册你接受我们条款<a href=\"%(PRIVACY_POLICY_LINK)s\" class=\"js-"
+"dismiss\">privacy&nbsp;policy</a><br />and <a "
+"href=\"%(TERMS_OF_SERVICE_LINK)s\" class=\"js-"
+"dismiss\">terms&nbsp;of&nbsp;service</a>."
 
 #: templates/base.html:138
 msgid "Sign up with Facebook"
@@ -136,12 +141,15 @@ msgid ""
 "Avatars are managed through the popular <a href=\"https://gravatar.com\" "
 "target=\"_blank\">gravatar</a> service."
 msgstr ""
+"头像是通过热门<a href=\"https://gravatar.com\" target=\"_blank\">gravatar</a> "
+"服务进行管理。"
 
 #: templates/includes/account.html:41
 msgid ""
-"If you don't have one yet, create an account on <strong>gravatar.com</"
-"strong> and associate your current email address to it."
-msgstr ""
+"If you don't have one yet, create an account on "
+"<strong>gravatar.com</strong> and associate your current email address to "
+"it."
+msgstr "如果您还没有，请在<strong> gravatar.com </ strong>上创建一个帐户，并将您的当前电子邮件地址与其关联。"
 
 #: templates/includes/account.html:42
 msgid "Edit on gravatar.com"
@@ -233,7 +241,7 @@ msgstr "网站"
 #: templates/includes/layer-details.html:45
 #: templates/includes/layer-list.html:13
 msgid "New nodes allowed?"
-msgstr "允许新增节点"
+msgstr "允许新增节点?"
 
 #: templates/includes/layer-details.html:53
 msgid "Is external?"
@@ -265,7 +273,7 @@ msgstr "取消"
 
 #: templates/includes/map.html:15
 msgid "Drag to adjust"
-msgstr "用拖动进行调整"
+msgstr "拖动以进行调整"
 
 #: templates/includes/map.html:16
 msgid "confirm"
@@ -273,11 +281,11 @@ msgstr "确认"
 
 #: templates/includes/map.html:25 templates/includes/map.html.py:89
 msgid "Legend"
-msgstr "刻印文字"
+msgstr "图例"
 
 #: templates/includes/map.html:36
 msgid "Hide legend"
-msgstr "隐藏刻印文字"
+msgstr "隐藏图例"
 
 #: templates/includes/map.html:40
 msgid "Control map data"
@@ -317,7 +325,7 @@ msgstr "测量区域"
 
 #: templates/includes/map.html:125
 msgid "elevation profile"
-msgstr "仰角剖面"
+msgstr "海拔剖面"
 
 #: templates/includes/map.html:133
 msgid "drop placeholder"
@@ -349,8 +357,8 @@ msgstr "编辑"
 msgid "General info"
 msgstr "通用信息"
 
-#: templates/includes/node-details.html:61 templates/includes/node-list.html:48
-#: templates/includes/node-list.html:100
+#: templates/includes/node-details.html:61
+#: templates/includes/node-list.html:48 templates/includes/node-list.html:100
 msgid "Status"
 msgstr "状态"
 
@@ -360,7 +368,7 @@ msgstr "地址"
 
 #: templates/includes/node-details.html:90
 msgid "Elevation"
-msgstr "高程"
+msgstr "海拔"
 
 #: templates/includes/node-details.html:93
 msgid "meters"
@@ -401,7 +409,7 @@ msgstr "登录进行评论"
 
 #: templates/includes/node-list.html:4
 msgid "Nodes"
-msgstr "地点"
+msgstr "节点"
 
 #: templates/includes/node-list.html:27
 msgid "Quick search"
@@ -503,7 +511,8 @@ msgstr "最近一次看见"
 msgid "Search for data"
 msgstr "搜索数据"
 
-#: templates/index.html:42 templates/index.html.py:198 templates/index.html:227
+#: templates/index.html:42 templates/index.html.py:198
+#: templates/index.html:227
 msgid "nothing found"
 msgstr "没有找到"
 
@@ -549,7 +558,7 @@ msgstr "取消"
 
 #: templates/index.html:277
 msgid "cancel&nbsp;operation"
-msgstr ""
+msgstr "取消&nbsp;操作"
 
 #: templates/index.html:296
 msgid "Email sent successfully!"
@@ -557,7 +566,7 @@ msgstr "邮件发送成功！"
 
 #: templates/index.html:297
 msgid "Take me back to"
-msgstr "带我回去"
+msgstr "返回"
 
 #: templates/profiles/password_reset_from_key.html:7
 msgid "Bad Token"
