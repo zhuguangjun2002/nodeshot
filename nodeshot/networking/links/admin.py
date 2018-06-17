@@ -1,4 +1,5 @@
-import reversion
+#import reversion
+from reversion.admin import VersionAdmin
 from django.contrib import admin
 
 from nodeshot.core.base.admin import BaseAdmin, BaseGeoAdmin
@@ -32,7 +33,7 @@ class LinkAdmin(BaseGeoAdmin):
     exclude = ('shortcuts',)
 
 
-class TopologyAdmin(BaseAdmin, reversion.VersionAdmin):
+class TopologyAdmin(BaseAdmin, VersionAdmin):
     list_display = ('name', 'format', 'url')
 
 

@@ -1,0 +1,167 @@
+===========================
+1.修改`requiremnt.txt`
+升级为最新的版本：``
+===========================
+
+===========================
+2.升级，导致我们需要修改一些文件。
+使用如下命令查看：
+-----------------
+grep -rainI "import reversion" .
+-----------------
+修改之前：
+-----------------
+./core/nodes/admin.py:13:    import reversion
+./core/layers/admin.py:12:    import reversion
+./core/cms/admin.py:5:import reversion
+./core/base/mixins.py:5:import reversion
+./networking/links/admin.py:1:import reversion
+-----------------
+
+修改之后：
+-----------------
+user@osgeolive:~/project/nodeshot/nodeshot/nodeshot$ grep -ranI "import reversion" .
+./core/nodes/admin.py:13:    #import reversion
+./core/layers/admin.py:12:    #import reversion
+./core/cms/admin.py:5:#import reversion
+./core/base/mixins.py:5:import reversion
+./networking/links/admin.py:1:#import reversion
+-----------------
+
+我们需要需改的内容：
+----------------
+https://django-reversion.readthedocs.io/en/stable/admin.html
+----------------
+修改`注册模型`的`声明`，`老式声明`方式不用了，改为`新式声明`：
+-----------------
+from django.contrib import admin
+import reversion
+
+@admin.register(YourModel)
+class YourModelAdmin(reversion.VersionAdmin):
+
+    pass
+-----------------
+统一修改成：
+-----------------
+from django.contrib import admin
+from reversion.admin import VersionAdmin
+
+@admin.register(YourModel)
+class YourModelAdmin(VersionAdmin):
+
+    pass
+-----------------
+注意：
+Whenever you register a model with django-reversion, run createinitialrevisions.
+每当你用`django-reversion`注册一个`模型`，运行`createinitialrevisions`。
+the admin class will auto-register your model, following all inline model relations and parent superclasses. Customize the admin registration by overriding VersionAdmin.register().
+`管理类admin`将`自动`注册您的`模型`，遵循所有`内联模型关系`和`父级超类`。通过覆盖`VersionAdmin.register（）`来`自定义`管理注册。
+也就是说，我们的项目，不要手动去注册，已经自动注册好了。
+至于虚部不需要创建初始版本，尚未说清楚。
+===========================
+
+===========================
+3. 执行迁移操作
+-----------------
+python manage.py migrate
+-----------------
+===========================
+
+===========================
+4. 执行`创建版本`命令
+-----------------
+(env) user@osgeolive:~/project/nodeshot/nodeshot/dev$ ./manage.py createinitialrevisions 
+Creating revisions for page
+- Created 5 / 5
+Creating revisions for menu item
+- Created 10 / 10
+Creating revisions for topology
+- Created 0 / 0
+-----------------
+===========================
+
+===========================
+5. 执行`删除版本`的命令：
+
+-----------------
+(env) user@osgeolive:~/project/nodeshot/nodeshot/dev$ ./manage.py deleterevisions
+Finding stale revisions for page
+Finding stale revisions for menu item
+Finding stale revisions for topology
+Deleting 0 revisions...
+-----------------
+我们之前调整代码：
+-----------------
+rg "REVERSION_ENABLED"
+-----------------
+显示效果如下：
+-----------------
+user@osgeolive:~/project/nodeshot/nodeshot/nodeshot$ rg "REVERSION_ENABLED"
+core/nodes/admin.py
+7:from .settings import settings, REVERSION_ENABLED, DESCRIPTION_HTML
+12:if REVERSION_ENABLED:
+
+core/layers/admin.py
+7:from .settings import REVERSION_ENABLED, TEXT_HTML
+11:if REVERSION_ENABLED:
+
+core/nodes/base.py
+13:from .settings import REVERSION_ENABLED
+30:if REVERSION_ENABLED:
+
+core/layers/base.py
+2:from .settings import REVERSION_ENABLED
+5:if REVERSION_ENABLED:
+
+core/nodes/settings.py
+5:REVERSION_ENABLED = getattr(settings, 'NODESHOT_NODES_REVERSION_ENABLED', True)
+6:#REVERSION_ENABLED = getattr(settings, 'NODESHOT_NODES_REVERSION_ENABLED', False)
+
+core/layers/settings.py
+6:REVERSION_ENABLED = getattr(settings, 'NODESHOT_LAYERS_REVERSION_ENABLED', True)
+7:#REVERSION_ENABLED = getattr(settings, 'NODESHOT_LAYERS_REVERSION_ENABLED', False)
+-----------------
+项目中，`layers`和`nodes`使用了`REVERSION_ENABLED`变量进行开关控制，是否`启用`和`禁用``版本控制`。
+而分别在配置文件：`core/nodes/settings.py`和`core/layers/settings.py`里面，分别使用：
+-----------------
+NODESHOT_LAYERS_REVERSION_ENABLED
+NODESHOT_NODES_REVERSION_ENABLED
+-----------------
+来进行控制。之前项目作者，使用的是默认值`True`,我将其改为`False`。
+现在再改回`True`.
+
+改回之后，你再执行`deleterevisions`，竟然多了`layer`和`node`。
+-----------------
+(env) user@osgeolive:~/project/nodeshot/nodeshot/dev$ ./manage.py deleterevisions
+Finding stale revisions for layer
+Finding stale revisions for node
+Finding stale revisions for image
+Finding stale revisions for page
+Finding stale revisions for menu item
+Finding stale revisions for topology
+Deleting 9 revisions...
+-----------------
+===========================
+
+===========================
+自由操作
+
+重新执行``创建``
+-----------------
+(env) user@osgeolive:~/project/nodeshot/nodeshot/dev$ ./manage.py createinitialrevisions 
+Creating revisions for layer
+- Created 1 / 1
+Creating revisions for node
+- Created 3 / 3
+Creating revisions for image
+- Created 0 / 0
+Creating revisions for page
+- Created 5 / 5
+Creating revisions for menu item
+- Created 10 / 10
+Creating revisions for topology
+- Created 0 / 0
+-----------------
+===========================
+

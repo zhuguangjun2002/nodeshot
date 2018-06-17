@@ -37,7 +37,9 @@ geojson-elevation==0.1
 python-social-auth==0.2.12
 
 # versionable content
-django-reversion==1.9.3
+#django-reversion==1.9.3
+#django-reversion
+django-reversion==2.0.13
 
 # asynchronous tasks
 celery==3.1.19

@@ -10,9 +10,10 @@ from .models import Node, Status, Image
 
 # enable django-reversion according to settings
 if REVERSION_ENABLED:
-    import reversion
+    #import reversion
+    from reversion.admin import VersionAdmin
 
-    class GeoAdmin(BaseGeoAdmin, reversion.VersionAdmin):
+    class GeoAdmin(BaseGeoAdmin, VersionAdmin):
         change_list_template = 'reversion_and_smuggler/change_list.html'
 else:
     class GeoAdmin(BaseGeoAdmin):

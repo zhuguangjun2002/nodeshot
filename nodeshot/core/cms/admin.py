@@ -2,13 +2,14 @@
 from django.contrib import admin
 from django.conf import settings
 
-import reversion
+#import reversion
+from reversion.admin import VersionAdmin
 
 from nodeshot.core.base.admin import BaseStackedInline, PublishActionsAdminMixin
 from .models import Page, MenuItem
 
 
-class PageAdmin(PublishActionsAdminMixin, reversion.VersionAdmin):
+class PageAdmin(PublishActionsAdminMixin, VersionAdmin):
     list_display = ('title', 'slug', 'is_published', 'access_level', 'added', 'updated')
     list_display_links = ('title', 'slug')
     list_filter = ('is_published',)
@@ -57,7 +58,7 @@ class MenuItemInline(BaseStackedInline):
         classes = ('grp-collapse grp-open', )
 
 
-class MenuItemAdmin(PublishActionsAdminMixin, reversion.VersionAdmin):
+class MenuItemAdmin(PublishActionsAdminMixin, VersionAdmin):
     list_display = (
         'name', 'url', 'classes',
         'order', 'is_published', 'access_level',
