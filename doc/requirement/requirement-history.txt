@@ -1,0 +1,121 @@
+=======================================
+1. 查看`reversion`在文件`requirements.txt`
+------------------------
+git log --oneline  -- requirements.txt | grep reversion
+------------------------
+执行结果如下：
+------------------------
+(env) user@osgeolive:~/project/nodeshot/nodeshot$ git log --oneline  -- requirements.txt | grep reversion
+b7e7e2f Updated django-reversion to 1.9.3 #258
+6b49b00 updated django-reversion to 1.8.2
+71f50ed updated django-reversion requirement
+------------------------
+
+总结：
+django-reversion版本为`1.9.3`.
+与`实际`相同。
+=======================================
+
+=======================================
+2. 查看Django的版本历史
+------------------------
+git log --oneline  -- requirements.txt | grep -v  django- | grep django
+------------------------
+显示结果如下：`
+---------------------------
+(env) user@osgeolive:~/project/nodeshot/nodeshot$ git log --oneline  -- requirements.txt | grep -v  django- | grep django
+472e597 [requirements] Updated django to 1.8.18
+6790e2c Updated django to 1.8.10 in requirements.txt
+6fd486d Updated django to 1.8.7 in requirements.txt
+3c16cbd Updated djangorestframework-gis to 0.9.6
+ca0338d Updated django to 1.8.6 in requirements.txt
+280cd8d Updated django to 1.8.4 in requirements.txt
+bcde58f [django 1.8] Removed south
+2fbc537 [django 1.8] Added support for django 1.8 #248
+8e25f32 [django 1.7] Updated dependencies #216
+15df57b [django 1.7] django 1.7.8 in requirements.txt #216
+9a6bf77 Updated djangorestframework requirement to 2.4.5
+dd1913b djangorestframework-hstore==1.1 in requirements.txt
+05f2095 Updated django version to 1.6.11 in requirements.txt
+315c5f0 djangorestframework-gis==0.7 in requirements.txt
+956cc34 Updated django version to 1.6.10
+5e0cc11 Updated requirements (django 1.6.6 & DRF 2.4.2)
+227dc08 bound requirement of django_hstore to 1.3.0
+7bad7ff updated celery and djangorestframework requirements
+d94fbe2 django 1.6.5 in requirements.txt
+6e43930 upgrade to django 1.6.2, fixes #114
+0b1b689 requirements: use stable versions of django_hstore & DRF-gis
+5d0191d Update django rest framework to 2.3.13 - #121  * updated requirements.txt  * fixed failing tests in profiles and nodes
+47a640d updated django version
+c23fd90 updated django rest framework minor version in requirements file
+28474a8 better widgets for geodjango maps
+108558c removed lxml in favour of django.utils.html.strip_tags + code clean up for mailing app
+20167d1 major renaming + django 1.5.1 support
+---------------------------
+结论：
+django版本为`1.8.10`
+=======================================
+
+=======================================
+3. django-hstore
+运行命令：
+---------------------------
+git log --oneline  -- requirements.txt | grep django_hstore
+---------------------------
+显示结果如下：
+---------------------------
+(env) user@osgeolive:~/project/nodeshot/nodeshot$ git log --oneline  -- requirements.txt | grep django_hstore
+227dc08 bound requirement of django_hstore to 1.3.0
+0b1b689 requirements: use stable versions of django_hstore & DRF-gis
+---------------------------
+结论： 
+`django_hstore`版本号为`1.3.0`.
+`实际`的版本号为：`django-hstore==1.4`
+大一些。
+=======================================
+
+=======================================
+4. 查看`djangorestframework`和`djangorestframework-gis`
+--------------------------------
+(env) user@osgeolive:~/project/nodeshot/nodeshot$ git log --oneline  -- requirements.txt | grep djangorestframework
+3c16cbd Updated djangorestframework-gis to 0.9.6
+9a6bf77 Updated djangorestframework requirement to 2.4.5
+dd1913b djangorestframework-hstore==1.1 in requirements.txt
+315c5f0 djangorestframework-gis==0.7 in requirements.txt
+7bad7ff updated celery and djangorestframework requirements
+--------------------------------
+结论：
+`djangorestframework`版本号：`2.4.5`
+`djangorestframework-gis` 版本号：`0.9.6`.
+
+目前的实际情况是;
+--------------------
+(env) user@osgeolive:~/project/nodeshot/nodeshot$ pip freeze | grep django
+django-appconf==1.0.2
+django-celery-email==1.1.2
+django-cors-headers==1.1.0
+django-extensions==2.0.7
+django-filebrowser==3.6.1
+django-grappelli==2.7.3
+django-hstore==1.4
+django-leaflet==0.16.0
+django-netfields==0.3.1
+django-redis==4.5.0
+django-rest-swagger==0.3.8
+django-reversion==1.9.3
+django-rosetta==0.7.13
+django-smuggler==0.6.0
+django-uuslug==1.1.8
+djangorestframework==3.2.3
+djangorestframework-gis==0.9.6
+djangorestframework-hstore==1.3
+--------------------
+实际情况：
+--------------------
+djangorestframework==3.2.3
+djangorestframework-gis==0.9.6
+--------------------
+实际的`djangorestframework`版本号3.2.3比原作者的版本号`2.4.5`要大一些。
+=======================================
+
+=======================================
