@@ -1,0 +1,205 @@
+-----------------------------------------------------------
+(env) user@osgeolive:~/project/nodeshot/nodeshot/dev$ ./manage.py migrate --no-initial-data && ./manage.py loaddata initial_data
+Operations to perform:
+  Synchronize unmigrated apps: corsheaders, leaflet, django_hstore, grappelli, gis, filebrowser, djcelery_email, staticfiles, grappelli.dashboard, messages, netfields, nodeshot default ui, rest_framework_swagger, api, smuggler, rosetta, open311, rest_framework_gis, django_extensions, rest_framework
+  Apply all migrations: layers, sessions, reversion, links, notifications, admin, mailing, profiles, contenttypes, auth, sync, hardware, default, connectors, kombu_transport_django, net, cms, nodes, participation
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table inet
+    Creating table nullinet
+    Creating table uniqueinet
+    Creating table cidr
+    Creating table nullcidr
+    Creating table uniquecidr
+    Creating table mac
+    Creating table corsheaders_corsmodel
+    Running deferred SQL...
+  Installing custom SQL...
+Running migrations:
+  Rendering model states... DONE
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying profiles.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying cms.0001_initial... OK
+  Applying layers.0001_initial... OK
+  Applying nodes.0001_initial... OK
+  Applying nodes.0002_auto_20150712_2118... OK
+  Applying net.0001_initial... OK
+  Applying connectors.0001_initial... OK
+  Applying default.0001_initial... OK
+  Applying default.0002_add_related_name... OK
+  Applying default.0003_alter_email_max_length... OK
+  Applying hardware.0001_initial... OK
+  Applying kombu_transport_django.0001_initial... OK
+  Applying links.0001_initial... OK
+  Applying mailing.0001_initial... OK
+  Applying notifications.0001_initial... OK
+  Applying notifications.0002_auto_20150712_2118... OK
+  Applying participation.0001_initial... OK
+  Applying profiles.0002_auto_20151016_1844... OK
+  Applying reversion.0001_squashed_0004_auto_20160611_1202... OK
+  Applying sessions.0001_initial... OK
+  Applying sync.0001_initial... OK
+Installed 21 object(s) from 2 fixture(s)
+(env) user@osgeolive:~/project/nodeshot/nodeshot/dev$
+-----------------------------------------------------------
+(env) user@osgeolive:~/project/nodeshot/nodeshot/dev$ ./manage.py migrate --no-initial-data && ./manage.py loaddata initial_data
+Operations to perform:
+  Synchronize unmigrated apps: corsheaders, leaflet, django_hstore, grappelli, gis, filebrowser, djcelery_email, staticfiles, grappelli.dashboard, messages, netfields, nodeshot default ui, rest_framework_swagger, api, smuggler, rosetta, open311, rest_framework_gis, django_extensions, rest_framework
+  Apply all migrations: layers, sessions, reversion, links, notifications, admin, mailing, profiles, contenttypes, auth, sync, hardware, default, connectors, kombu_transport_django, net, cms, nodes, participation
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table inet
+    Creating table nullinet
+    Creating table uniqueinet
+    Creating table cidr
+    Creating table nullcidr
+    Creating table uniquecidr
+    Creating table mac
+    Creating table corsheaders_corsmodel
+    Running deferred SQL...
+  Installing custom SQL...
+Running migrations:
+  Rendering model states... DONE
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying profiles.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying cms.0001_initial... OK
+  Applying layers.0001_initial... OK
+  Applying nodes.0001_initial... OK
+  Applying nodes.0002_auto_20150712_2118... OK
+  Applying net.0001_initial... OK
+  Applying connectors.0001_initial... OK
+  Applying default.0001_initial... OK
+  Applying default.0002_add_related_name... OK
+  Applying default.0003_alter_email_max_length... OK
+  Applying hardware.0001_initial... OK
+  Applying kombu_transport_django.0001_initial... OK
+  Applying links.0001_initial... OK
+  Applying mailing.0001_initial... OK
+  Applying notifications.0001_initial... OK
+  Applying notifications.0002_auto_20150712_2118... OK
+  Applying participation.0001_initial... OK
+  Applying profiles.0002_auto_20151016_1844... OK
+  Applying reversion.0001_squashed_0004_auto_20160611_1202... OK
+  Applying sessions.0001_initial... OK
+  Applying sync.0001_initial... OK
+Installed 21 object(s) from 2 fixture(s)
+(env) user@osgeolive:~/project/nodeshot/nodeshot/dev$
+-----------------------------------------------------------
+(env) user@osgeolive:~/project/nodeshot/nodeshot/dev$ ./manage.py migrate --no-initial-data && ./manage.py loaddata initial_data
+Operations to perform:
+  Synchronize unmigrated apps: corsheaders, leaflet, django_hstore, grappelli, gis, filebrowser, djcelery_email, staticfiles, grappelli.dashboard, messages, netfields, nodeshot default ui, rest_framework_swagger, api, smuggler, rosetta, open311, rest_framework_gis, django_extensions, rest_framework
+  Apply all migrations: layers, sessions, reversion, links, notifications, admin, mailing, profiles, contenttypes, auth, sync, hardware, default, connectors, kombu_transport_django, net, cms, nodes, participation
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table inet
+    Creating table nullinet
+    Creating table uniqueinet
+    Creating table cidr
+    Creating table nullcidr
+    Creating table uniquecidr
+    Creating table mac
+    Creating table corsheaders_corsmodel
+    Running deferred SQL...
+  Installing custom SQL...
+Running migrations:
+  Rendering model states... DONE
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying profiles.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying cms.0001_initial... OK
+  Applying layers.0001_initial... OK
+  Applying nodes.0001_initial... OK
+  Applying nodes.0002_auto_20150712_2118... OK
+  Applying net.0001_initial... OK
+  Applying connectors.0001_initial... OK
+  Applying default.0001_initial... OK
+  Applying default.0002_add_related_name... OK
+  Applying default.0003_alter_email_max_length... OK
+  Applying hardware.0001_initial... OK
+  Applying kombu_transport_django.0001_initial... OK
+  Applying links.0001_initial... OK
+  Applying mailing.0001_initial... OK
+  Applying notifications.0001_initial... OK
+  Applying notifications.0002_auto_20150712_2118... OK
+  Applying participation.0001_initial... OK
+  Applying profiles.0002_auto_20151016_1844... OK
+  Applying reversion.0001_squashed_0004_auto_20160611_1202... OK
+  Applying sessions.0001_initial... OK
+  Applying sync.0001_initial... OK
+Installed 21 object(s) from 2 fixture(s)
+(env) user@osgeolive:~/project/nodeshot/nodeshot/dev$
+-----------------------------------------------------------
+(env) user@osgeolive:~/project/nodeshot/nodeshot/dev$ ./manage.py migrate --no-initial-data && ./manage.py loaddata initial_data
+Operations to perform:
+  Synchronize unmigrated apps: corsheaders, leaflet, django_hstore, grappelli, gis, filebrowser, djcelery_email, staticfiles, grappelli.dashboard, messages, netfields, nodeshot default ui, rest_framework_swagger, api, smuggler, rosetta, open311, rest_framework_gis, django_extensions, rest_framework
+  Apply all migrations: layers, sessions, reversion, links, notifications, admin, mailing, profiles, contenttypes, auth, sync, hardware, default, connectors, kombu_transport_django, net, cms, nodes, participation
+Synchronizing apps without migrations:
+  Creating tables...
+    Creating table inet
+    Creating table nullinet
+    Creating table uniqueinet
+    Creating table cidr
+    Creating table nullcidr
+    Creating table uniquecidr
+    Creating table mac
+    Creating table corsheaders_corsmodel
+    Running deferred SQL...
+  Installing custom SQL...
+Running migrations:
+  Rendering model states... DONE
+  Applying contenttypes.0001_initial... OK
+  Applying contenttypes.0002_remove_content_type_name... OK
+  Applying auth.0001_initial... OK
+  Applying auth.0002_alter_permission_name_max_length... OK
+  Applying auth.0003_alter_user_email_max_length... OK
+  Applying auth.0004_alter_user_username_opts... OK
+  Applying auth.0005_alter_user_last_login_null... OK
+  Applying auth.0006_require_contenttypes_0002... OK
+  Applying profiles.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying cms.0001_initial... OK
+  Applying layers.0001_initial... OK
+  Applying nodes.0001_initial... OK
+  Applying nodes.0002_auto_20150712_2118... OK
+  Applying net.0001_initial... OK
+  Applying connectors.0001_initial... OK
+  Applying default.0001_initial... OK
+  Applying default.0002_add_related_name... OK
+  Applying default.0003_alter_email_max_length... OK
+  Applying hardware.0001_initial... OK
+  Applying kombu_transport_django.0001_initial... OK
+  Applying links.0001_initial... OK
+  Applying mailing.0001_initial... OK
+  Applying notifications.0001_initial... OK
+  Applying notifications.0002_auto_20150712_2118... OK
+  Applying participation.0001_initial... OK
+  Applying profiles.0002_auto_20151016_1844... OK
+  Applying reversion.0001_squashed_0004_auto_20160611_1202... OK
+  Applying sessions.0001_initial... OK
+  Applying sync.0001_initial... OK
+Installed 21 object(s) from 2 fixture(s)
+(env) user@osgeolive:~/project/nodeshot/nodeshot/dev$
+-----------------------------------------------------------

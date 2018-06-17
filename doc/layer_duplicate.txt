@@ -1,0 +1,2 @@
+SELECT MAX(id)  FROM public.layers_layer;
+SELECT MAX(the_primary_key) FROM the_table;

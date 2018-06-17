@@ -1,0 +1,194 @@
+Development Installation
+-----------------
+http://nodeshot.readthedocs.io/en/latest/topics/install_development.html
+-----------------
+
+安装主要介绍基于Debian的系统给，例如，ubuntu和debain系统
+其他操作系统，也可以，但是安装包的名字可能有变化，需要你自行调整。
+
+=============================================
+Install dependencies
+安装依赖
+
+First of all, update your apt cache:
+首先，更新你的apt缓存：
+-----------------
+sudo apt-get update --fix-missing
+-----------------
+
+Install dependencies and development packages:
+安装依赖和开发包
+
+-----------------
+# dependencies
+sudo apt-get install python-software-properties software-properties-common build-essential libxml2-dev python-setuptools python-virtualenv python-dev binutils libjson0-dev libjpeg-dev libffi-dev libpq-dev
+# dev packages
+sudo apt-get install wget git
+-----------------
+
+Install postgresql, postgis and geospatial libraries:
+安装postgresql数据库，postgis和地理空间库
+
+-----------------
+sudo apt-get install postgis* libproj-dev gdal-bin libgdal1-dev python-gdal
+-----------------
+=============================================
+
+=============================================
+Create database
+创建数据库
+
+Become postgres user:
+成为postgres用户：
+------------------
+sudo su postgres
+------------------
+
+Create database, create required postgresql extensions, create a superuser:
+创建数据库，创建所需的postgresql扩展，创建一个超级用户：
+--------------------
+createdb nodeshot
+psql nodeshot
+CREATE EXTENSION postgis;
+CREATE EXTENSION hstore;
+CREATE USER nodeshot WITH PASSWORD 'your_password';
+ALTER USER nodeshot SUPERUSER;
+--------------------
+
+exit (press CTRL+D) and go back to being your user:
+退出（按`CTRL + D`）并返回成为您的用户：
+--------------------
+exit
+--------------------
+=============================================
+
+=============================================
+Install python packages
+安装python包 我不喜欢这个方式，见下一章节。
+
+First of all, install virtualenvwrapper (systemwide):
+
+--------------------
+sudo pip install virtualenvwrapper
+--------------------
+virtualenvwrapper needs some initialization before you can use its shortcuts:
+
+--------------------
+echo 'source /usr/local/bin/virtualenvwrapper.sh' >> ~/.bashrc
+source ~/.bashrc
+--------------------
+
+Create a python virtual environment, which is a self-contained python installation which will contain all the python packages required by nodeshot:
+
+--------------------
+mkvirtualenv nodeshot
+--------------------
+Update the basic python utilities:
+
+--------------------
+pip install -U setuptools pip wheel
+--------------------
+=============================================
+
+=============================================
+
+安装python包 
+--------------------
+sudo apt-get install python-pip python-dev build-essential 
+sudo pip install --upgrade pip 
+sudo pip install --upgrade virtualenv 
+--------------------
+
+创建一个虚拟环境`env`
+virtualenv env
+=============================================
+=============================================
+Nodeshot 代码下载及开发环境安装
+
+Clone your fork in your favourite location (/home/<user> or /var/www), have you forked nodeshot, right?
+下载你的代码
+--------------------
+git clone git@github.com:<YOUR-FORK>/nodeshot.git
+cd nodeshot
+--------------------
+
+Replace <YOUR-FORK> with your github username (be sure to have forked nodeshot first).
+
+替换<YOUR-FORK>为你的github用户名，我的用户名为：zhuguangjun2002
+
+Install the required python packages:
+安装所需的python软件包：
+--------------------
+pip install -r requirements.txt
+--------------------
+
+Finally install nodeshot with:
+最后安装nodeshot：
+--------------------
+python setup.py develop
+--------------------
+这是一个开发环境包一样的东西，当你修改了`requirements.txt`,
+而之前如果运行过`python setup.py develop`,他会提醒你的的版本和要部署的版本不一致。
+原因就是这个命令，把环境安装了，一旦不一致，他就会提醒你。
+此时，你需要重新运行该命令，并且尝试重新安装一下`所需要的python软件包`。
+
+
+Create the development project, be sure it’s called dev:
+创建`开发项目`，确保`它`被称为`dev`：
+--------------------
+nodeshot startproject dev && cd dev
+--------------------
+
+为了开发方便，我将其加入到版本控制中了，因为Nodeshot项目原作者，没有对中文做说明，所以一些汉化的东西需要调整。
+每次测试时都去设置非常麻烦。等正式发布时候，我再移除它们。
+=============================================
+=============================================
+Project configuration
+
+项目配置
+
+Open settings.py:
+打开settings.py：
+
+--------------------
+vim dev/settings.py
+--------------------
+And edit the following settings:
+并编辑以下设置：
+
+--------------------
+DOMAIN: set localhost
+DATABASE['default']['USER']: set nodeshot
+DATABASE['default']['PASSWORD']: set the password chosen during the Create database step
+--------------------
+
+--------------------
+DOMAIN：设置localhost
+DATABASE ['default'] ['USER']：设置nodeshot
+DATABASE ['default'] ['PASSWORD']：设置在创建数据库步骤中选择的密码
+--------------------
+
+Create the database tables and initial data:
+创建`数据库表`和`初始数据`：
+
+--------------------
+# will prompt you to create a superuser, proceed!
+＃会提示你创建一个超级用户，继续！
+./manage.py migrate --no-initial-data && ./manage.py loaddata initial_data
+--------------------
+Run the development server:
+运行开发服务器：
+
+--------------------
+./manage.py runserver
+--------------------
+
+Alternatively, if you need to reach the dev server for other hosts on the same LAN, you can setup the development server to listen on all the network interfaces:
+或者，如果您需要访问同一LAN上其他主机的`开发服务器`，则可以将`开发服务器`设置为在所有网络`接口`上进行`侦听`：
+
+--------------------
+./manage.py runserver 0.0.0.0:8000
+--------------------
+Now you can open your browser at http://localhost:8000/ or at http://localhost:8000/admin/.
+现在，您可以在http://localhost:8000/或http://localhost:8000/admin/中打开浏览器。
+=============================================
