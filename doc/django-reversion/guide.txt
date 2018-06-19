@@ -1,0 +1,63 @@
+========================================
+当我们按照说明文档，搭建好`开发环境`之后，创建新的管理员并注册之后；
+一旦尝试创建新的`图层`，就会报错。
+---------------------------------------------
+IntegrityError at /admin/layers/layer/add/
+duplicate key value violates unique constraint "participation_layer_settings_layer_id_key"
+DETAIL:  Key (layer_id)=(1) already exists.
+---------------------------------------------
+详见《addnewlayer-error》目录。
+我一直没有找到好的解决办法。
+只好禁用`django-reversion`，这样才可以添加`图层`。
+========================================
+
+
+========================================
+### 禁用`django-revresion`
+
+不禁用的话，当我使用`loaddata`，加载完成一些`初始数据`之后，不知道什么原因，总是提示`错误`。
+-------------------
+http://127.0.0.1:8000/admin/nodes/node/add/
+
+IntegrityError at /admin/nodes/node/add/
+duplicate key value violates unique constraint "participation_node_settings_node_id_key"
+DETAIL:  Key (node_id)=(4) already exists.
+
+/home/user/project/nodeshot/env/local/lib/python2.7/site-packages/reversion/admin.py in add_view
+                        return super(VersionAdmin, self).add_view(request, form_url, extra_context) 
+---------------------
+我们看到，似乎是跟`reversion`模块有关。我们暂时先`禁用`它。
+
+在`项目`的`目录`搜索如下内容：
+---------------------
+rg REVERSION_ENABLED
+---------------------
+
+结果如下：
+---------------------
+nodeshot/core/layers/settings.py
+6:REVERSION_ENABLED = getattr(settings, 'NODESHOT_LAYERS_REVERSION_ENABLED', True)
+
+nodeshot/core/nodes/settings.py
+5:REVERSION_ENABLED = getattr(settings, 'NODESHOT_NODES_REVERSION_ENABLED', True)
+---------------------
+
+我们需要将这两个文件中的变量:
+---------------------
+'NODESHOT_LAYERS_REVERSION_ENABLED'
+'NODESHOT_LAYERS_REVERSION_ENABLED'
+---------------------
+的`值`修改为`False`.
+
+参见文档：
+
+---------------------
+http://docs.nodeshot.org/en/latest/topics/nodes.html
+`NODESHOT_NODES_REVERSION_ENABLED`部分
+
+http://docs.nodeshot.org/en/latest/topics/layers.html
+NODESHOT_LAYERS_REVERSION_ENABLED
+---------------------
+
+========================================
+
