@@ -21,3 +21,23 @@ django-admin makemessages --locale=zh_CN
 http://127.0.0.1:8000/admin/translations/pick/
 -----------
 ================================
+
+检查`中文`-`zh_CN`的`消息文件`,其编译后的文件`*.mo`;
+----------------------------
+find . -name "*.mo" | grep zh_CN
+----------------------------
+显示结果如下：
+----------------------------
+user@osgeolive:~/project/nodeshot-official/nodeshot$ find . -name "*.mo" | grep zh_CN 
+./nodeshot/community/mailing/locale/zh_CN/LC_MESSAGES/django.mo
+./nodeshot/community/notifications/locale/zh_CN/LC_MESSAGES/django.mo
+./nodeshot/community/participation/locale/zh_CN/LC_MESSAGES/django.mo
+./nodeshot/community/profiles/locale/zh_CN/LC_MESSAGES/django.mo
+./nodeshot/ui/default/locale/zh_CN/LC_MESSAGES/django.mo
+./nodeshot/ui/default/locale/zh_CN/LC_MESSAGES/djangojs.mo
+./nodeshot/core/nodes/locale/zh_CN/LC_MESSAGES/django.mo
+./nodeshot/core/layers/locale/zh_CN/LC_MESSAGES/django.mo
+./nodeshot/core/cms/locale/zh_CN/LC_MESSAGES/django.mo
+user@osgeolive:~/project/nodeshot-official/nodeshot$ find . -name "*.mo" | grep zh_CN | wc -l
+9
+----------------------------
