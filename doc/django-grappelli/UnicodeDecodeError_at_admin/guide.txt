@@ -1,0 +1,291 @@
+=========================================================================
+## bug 描述：
+
+当`汉化`该项目后，`登录``管理页面-admin`，
+------------------
+http://127.0.0.1:8000/admin/
+------------------
+报错如下：
+--------------------------------
+UnicodeDecodeError at /admin/
+'ascii' codec can't decode byte 0xe9 in position 0: ordinal not in range(128)
+Request Method:	GET
+Request URL:	http://127.0.0.1:8000/admin/
+Django Version:	1.8.18
+Exception Type:	UnicodeDecodeError
+Exception Value:	
+'ascii' codec can't decode byte 0xe9 in position 0: ordinal not in range(128)
+Exception Location:	/home/user/project/nodeshot-official/env/local/lib/python2.7/site-packages/django/utils/functional.py in __wrapper__, line 136
+Python Executable:	/home/user/project/nodeshot-official/env/bin/python
+Python Version:	2.7.12
+--------------------------------
+=========================================================================
+
+
+=========================================================================
+### 详细错误如下：
+--------------------------------
+UnicodeDecodeError at /admin/
+'ascii' codec can't decode byte 0xe9 in position 0: ordinal not in range(128)
+Request Method:	GET
+Request URL:	http://127.0.0.1:8000/admin/
+Django Version:	1.8.18
+Exception Type:	UnicodeDecodeError
+Exception Value:	
+'ascii' codec can't decode byte 0xe9 in position 0: ordinal not in range(128)
+Exception Location:	/home/user/project/nodeshot-official/env/local/lib/python2.7/site-packages/django/utils/functional.py in __wrapper__, line 136
+Python Executable:	/home/user/project/nodeshot-official/env/bin/python
+Python Version:	2.7.12
+--------------------------------
+/home/user/project/nodeshot-official/env/local/lib/python2.7/site-packages/grappelli/dashboard/utils.py in filter_models
+                        pattern_items.sort(key=lambda x: str(x[0]._meta.verbose_name_plural.encode('utf-8'))) ...
+▶ Local vars
+--------------------------------
+113                      pattern_items.sort(key=lambda x: str(x[0]._meta.verbose_name_plural.encode('utf-8'))) ...
+▼ Local vars
+Variable	Value
+x	
+(<class 'nodeshot.community.profiles.models.emailconfirmation.EmailConfirmation'>,
+ {'add': True, 'change': True, 'delete': True})
+--------------------------------
+/home/user/project/nodeshot-official/env/local/lib/python2.7/site-packages/django/utils/functional.py in __wrapper__
+                            return getattr(res, method_name)(*args, **kw) ...
+▶ Local vars
+--------------------------------
+
+### 详细查看看最后一个`错误`的`trace`:
+------------------------------------
+/home/user/project/nodeshot-official/env/local/lib/python2.7/site-packages/django/utils/functional.py in __wrapper__
+        @classmethod
+        def __promise__(cls, method_name):
+            # Builds a wrapper around some magic method
+            def __wrapper__(self, *args, **kw):
+                # Automatically triggers the evaluation of a lazy value and
+                # applies the given magic method of the result type.
+                res = func(*self.__args, **self.__kw)
+                            return getattr(res, method_name)(*args, **kw) ...
+            return __wrapper__
+        def __text_cast(self):
+            return func(*self.__args, **self.__kw)
+        def __bytes_cast(self):
+▼ Local vars
+Variable	Value
+res	'\xe9\x82\xae\xe4\xbb\xb6\xe7\xa1\xae\xe8\xae\xa4'
+self	<django.utils.functional.__proxy__ object at 0x7fac89521cd0>
+args	(u'utf-8',)
+method_name	'encode'
+kw	{}
+func	<function gettext at 0x7faca1c957d0>
+------------------------------------
+你发现有一个`res`,是中文：
+------------------------------------
+ '\xe9\x82\xae\xe4\xbb\xb6\xe7\xa1\xae\xe8\xae\xa4'
+------------------------------------
+你需要借助工具去处理它：
+---------------------------
+https://mothereff.in/utf-8
+---------------------------
+在`UTF-8-encoded`部分，输入上述编码：
+------------------------------------
+ '\xe9\x82\xae\xe4\xbb\xb6\xe7\xa1\xae\xe8\xae\xa4'
+------------------------------------
+在`UTF-8-decoded:`部分，可以看到如下内容：
+------------------------------------
+邮件确认
+------------------------------------
+=========================================================================
+
+=========================================================================
+### 解决思路
+
+## 寻找一下该翻译`邮件确认`出自哪里？
+
+-----------------------------------
+##执行搜索命令：
+rg 邮件确认
+-----------------------------------
+
+显示结果如下：
+------------------------------------
+user@osgeolive:~/project/nodeshot-official/nodeshot/nodeshot$ rg 邮件确认
+community/profiles/locale/zh_CN/LC_MESSAGES/django.po
+36:msgstr "电子邮件确认已发送"
+84:msgstr "邮件确认"
+88:msgstr "邮件确认"
+373:msgstr "电子邮件确认已发送至 %s"
+------------------------------------
+发现源自我们的翻译；
+
+进一步查看其归属代码，执行命令，加参数`-C5`
+------------------------------------
+user@osgeolive:~/project/nodeshot-official/nodeshot/nodeshot$ rg 邮件确认 -C5
+community/profiles/locale/zh_CN/LC_MESSAGES/django.po
+.......
+82-#: models/emailconfirmation.py:209
+83-msgid "email confirmation"
+84:msgstr "邮件确认"
+85-
+86-#: models/emailconfirmation.py:210
+87-msgid "email confirmations"
+88:msgstr "邮件确认"
+.......
+------------------------------------
+
+摘录文件`models/emailconfirmation.py`，如下所示：
+------------------------------------
+## 导入部分
+.....
+from django.utils.translation import gettext_lazy as _
+....
+
+## 类定义
+class EmailConfirmation(models.Model):
+    email_address = models.ForeignKey(EmailAddress)
+    created_at = models.DateTimeField()
+    key = models.CharField(max_length=40)
+
+    ......
+
+    def __unicode__(self):
+        return u"confirmation for %s" % self.email_address
+
+    ### Meta 部分
+    class Meta:
+        app_label = 'profiles'
+        verbose_name = _("email confirmation")
+        ## 报错翻译的地方。
+        verbose_name_plural = _("email confirmations")
+------------------------------------
+=====================================================================================
+如果你在`Google`上搜索,如下关键字：
+------------------------------------
+pattern_items.sort(key=lambda x: str(x[0]._meta.verbose_name_plural.encode('utf-8'))) 
+------------------------------------
+会有一个`fix bug`,也是关于 `Grappelli 2.6.4, Django 1.8`中出现类似问题的情况。
+正好解释了我们的问题。
+------------------------------------
+# UnicodeEncodeError on custom dashboard #590
+ Closed	tatterdemalion opened this issue on Apr 5, 2015 · 12 comments
+--------------------
+链接如下：
+https://github.com/sehmaschine/django-grappelli/issues/590
+--------------------
+
+内容摘录如下：
+-----------------------------------------------
+VERSIONS: Grappelli 2.6.4, Django 1.8
+
+I encountered an UnicodeEncodeError with my custom dashboard. It raises an error when i actually use the admin in Turkish.
+I suppose it has something to do with this line in dashboard/utils.py L113:
+用的是土耳其语言
+--------------------
+pattern_items.sort(key=lambda x: str(x[0]._meta.verbose_name_plural))
+--------------------
+The problematic verbose_name for me here is: 'Dergi İçerikleri'
+When i change the line to
+--------------------
+pattern_items.sort(key=lambda x: unicode(x[0]._meta.verbose_name_plural))
+--------------------
+It works ok. But I am not familiar with Grappelli's codebase so I am not really sure if this tweak will or will not work for general purposes.
+-----------------------------------------------
+
+`grappelli`的`作者`回复如下：
+-----------------------------------------------
+sehmaschine commented on Apr 23, 2015
+I'm not able to reproduce this ... I'm using Grappelli 2.6.4 and Django 1.7.
+## 注意，回复的作者，使用的是unicode的类型，当然python2.7环境下；
+## 加一个u'',表示unicode,然后交由后台处理。
+## 看样子，作者默认是认为传递进来的是一个`unicode`类型的字符串。
+------------------------
+verbose_name = u"Dergi İçerikleri"
+verbose_name_plural = u"Dergi İçerikleri"
+------------------------
+
+works fine.
+-----------------------------------------------
+
+`grappelli`的`作者`回复如下：
+-----------------------------------------------
+sehmaschine commented on Apr 23, 2015
+alright ... I finally could reproduce this. using "unicode" doesn't make sense since python3 uses "str".
+我已经可以重现这个bug了。使用`unicode`没有意义了，因为python3使用`str`.
+my suggestion is to change line 113 of utils.py to:
+我的建议是，把代码`utils.py`修改为：
+------------------------
+pattern_items.sort(key=lambda x: str(x[0]._meta.verbose_name_plural.encode('utf-8')))
+------------------------
+
+maybe someone can test this as well and give some feedback. from my point of view, it's a clean solution and it should work with python2 and python3.
+从我的观点来看，这是一个干净的解决方案，应该python2和python3上都可以运行。
+-----------------------------------------------
+所以，作者最终把代码修改为：
+------------------
+https://github.com/sehmaschine/django-grappelli/commit/82fcaddca2730bc36206ad30806d06edcb2fb290
+------------------
+-----------------------------------------------
+ grappelli/dashboard/utils.py
+@@ -110,7 +110,7 @@ def filter_models(request, models, exclude):
+                 model, perms = item
+                 if fnmatch(full_name(model), pattern) and item not in included:
+                     pattern_items.append(item)
+-            pattern_items.sort(key=lambda x: str(x[0]._meta.verbose_name_plural))
++            pattern_items.sort(key=lambda x: str(x[0]._meta.verbose_name_plural.encode('utf-8')))
+             included.extend(pattern_items)
+ 
+     result = included[:]
+-----------------------------------------------
+=====================================================================================
+
+查看我们的代码发现，我们已经使用了作者为`grappelli`打的这个补丁。
+(我们实际使用的版本是:django-grappelli==2.7.3),作者实在`2.6.5`版本上，打上了该补丁包。
+所以，我们的代码仍然出错，是因为，grappelli的`作者`已经要求传递给它的是`unicode`类型的`字符串`（Python2下，Grappelli 2.6.5+）
+那么，在定义`Meta`里面的变量`verbose_name_plural`时，必须让它为`unicode`类型;
+我们使用了`str`类型（Python2环境下），所以无法进行`encode`.
+
+-----------------------------------------------
+# 必须使用u""格式：
+verbose_name = _(u"email confirmation")
+
+# 想要不直接添加u"",使我们项目保持一次后，可以使用unicode版本的`ugettext_lazy`,替换str版本的`ugettext_lazy`.
+# from django.utils.translation import gettext_lazy as _
+from django.utils.translation import ugettext_lazy as _
+# 代码保持不变
+verbose_name = _("email confirmation")
+-----------------------------------------------
+
+所以，最终的`解决方案`就是：
+-----------------------------------------------
+from django.utils.translation import gettext_lazy as _
+-----------------------------------------------
+替换为：
+-----------------------------------------------
+from django.utils.translation import ugettext_lazy as _
+-----------------------------------------------
+=========================================================================
+
+=========================================================================
+### 在项目层面，搜索出现类似情况的代码
+-----------------------------------------------
+grep -rainI "import gettext_lazy as _" .
+-----------------------------------------------
+搜索结果如下:
+-----------------------------------------------
+user@osgeolive:~/project/nodeshot-official/nodeshot$ grep -rainI "import gettext_lazy as _" .
+./nodeshot/community/profiles/models/emailconfirmation.py:10:from django.utils.translation import gettext_lazy as _
+./nodeshot/community/profiles/models/password_reset.py:2:from django.utils.translation import gettext_lazy as _
+-----------------------------------------------
+我们只要将其修改为`ugettext_lazy`即可。
+
+-----------------------------------------------
+user@osgeolive:~/project/nodeshot-official/nodeshot$ grep -rl "import gettext_lazy as _" . 
+./nodeshot/community/profiles/models/emailconfirmation.py
+./nodeshot/community/profiles/models/password_reset.py
+-----------------------------------------------
+
+使用这个命令，可以使用vim直接编辑，非常方便
+-----------------------------------------------
+grep -Zrl "import gettext_lazy as _" . | xargs -0 vim
+-----------------------------------------------
+=========================================================================
+
+
