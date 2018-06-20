@@ -1,0 +1,39 @@
+`SITE_NAME`
+
+# 使用中文名字，会在发送`邮件`通知时，报错。
+#SITE_NAME = '中国移动设备管理平台'  # site name, you can change this
+
+
+
+----------------------------------------
+/home/user/project/nodeshot/nodeshot/nodeshot/community/notifications/models/notification.py in email_message
+
+            """ compose complete email message text """
+
+            url = settings.SITE_URL
+
+            hello_text = __("Hi %s," % self.to_user.get_full_name())
+
+            action_text = __("\n\nMore details here: %s") % url
+
+            explain_text = __(
+
+                "This is an automatic notification sent from from %s.\n"
+
+                "If you want to stop receiving this notification edit your"
+
+                            "email notification settings here: %s") % (settings.SITE_NAME, 'TODO')
+
+     ...
+
+            return "%s\n\n%s%s\n\n%s" % (hello_text, self.text, action_text, explain_text)
+
+----------------------------------------
+看到了没有？就是在`explain_text`，中，用到了`settings.SITE_NAME`，结果导致失败。
+
+查看该局部变量，如下：
+----------------------------
+SITE_NAME 	
+
+'\xe4\xb8\xad\xe5\x9b\xbd\xe7\xa7\xbb\xe5\x8a\xa8\xe8\xae\xbe\xe5\xa4\x87\xe7\xae\xa1\xe7\x90\x86\xe5\xb9\xb3\xe5\x8f\xb0'
+----------------------------

@@ -1,0 +1,7 @@
+Translating your site with Django 1.8
+
+Nolan Phillips
+介绍了翻译
+----------------------
+https://medium.com/@nolanphillips/a-short-intro-to-translating-your-site-with-django-1-8-343ea839c89b
+----------------------

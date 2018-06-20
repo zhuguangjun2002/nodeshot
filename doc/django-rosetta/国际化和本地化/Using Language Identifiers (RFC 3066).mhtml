@@ -1,0 +1,2029 @@
+From: <Saved by Blink>
+Snapshot-Content-Location: http://www.i18nguy.com/unicode/language-identifiers.html
+Subject: Using Language Identifiers (RFC 3066)
+Date: Thu, 13 Jun 2018 15:34:42 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--ziWe6H8JuuiQPhKKqJjVU2cgRWBMHoSi7RRSO14ARp----"
+
+
+------MultipartBoundary--ziWe6H8JuuiQPhKKqJjVU2cgRWBMHoSi7RRSO14ARp----
+Content-Type: text/html
+Content-ID: <frame-3096848EE7D906A4A4286CE7C6CF746C@mhtml.blink>
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.i18nguy.com/unicode/language-identifiers.html
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.=
+w3.org/TR/html4/loose.dtd"><html lang=3D"en-US"><head><meta http-equiv=3D"C=
+ontent-Type" content=3D"text/html; charset=3DUTF-8">
+
+<meta name=3D"Author" content=3D"Tex Texin">
+<meta name=3D"copyright" content=3D"=C2=A9 2004 Tex Texin">
+<meta http-equiv=3D"Content-Language" content=3D"en-US">
+<meta name=3D"keywords" lang=3D"en-US" content=3D" language identifier, lan=
+guage tag, match, locale, RFC 5646, BCP 47, RFC 3066, RFC 4646, RFC 4647, i=
+nternationalization, localization,  globalization, i18n, l10n, g11n, Texin,=
+ I18nGuy, XenCraft, Tex Texin">
+<meta name=3D"robots" content=3D"all">
+<meta name=3D"description" content=3D"Draft document on using language tags=
+">
+
+<title>Using Language Identifiers (RFC 3066)</title>
+<meta http-equiv=3D"Content-Style-Type" content=3D"text/css">
+<link href=3D"http://www.i18nguy.com/unicode/langid.css" rel=3D"stylesheet"=
+ type=3D"text/css">
+
+<style type=3D"text/css">
+body {
+padding :1em;
+margin : 1em auto;
+width : 800px;
+font-family : arial, verdana, helvetica, sans-serif;
+}
+p.intro {
+width : 85%;
+}
+td.lid {
+font-weight : bold;
+font-size : small;
+}
+table.langs {
+border: 1px solid gray;
+border-collapse : collapse;
+}
+td.lid, td.langs, th {
+border: 1px solid gray;
+padding: 2px 5px;
+}
+th {
+text-align:left;
+color : white;
+background-color :#006;
+}
+.low {
+color:#009;
+background-color :#CCC;
+margin-left: 1em;
+font-style:italic;
+font-weight: 700;
+}
+</style>
+</head>
+
+<body>
+<table style=3D"width:107%;margin:0 0 10px -7%;vertical-align:middle;paddin=
+g:0;" cellpadding=3D"0" cellspacing=3D"0">
+<tbody><tr id=3D"top"><td>
+<a href=3D"http://www.i18nguy.com/"><img src=3D"http://www.i18nguy.com/imag=
+es/i18nguy-logo.png" border=3D"0" width=3D"125" height=3D"104" alt=3D"I18n =
+Guy, your I18n advisor"></a>
+</td><td>
+<h1 style=3D"vertical-align:middle;">Using Language Identifiers (RFC 3066)<=
+/h1>
+</td></tr>
+</tbody></table>
+
+<p>Language identifiers as specified by
+<a href=3D"http://www.ietf.org/rfc/rfc3066.txt" target=3D"_blank">RFC 3066<=
+/a>, can have the form
+language, language-country, language-country-variant and some other special=
+ized forms.
+The guidelines for choosing between language and language-country are ambig=
+uous.
+<br><br>
+To clarify which form should be used, John Cowan and I have posted this lis=
+t for review.
+<b>This is currently a draft document.</b> It will be continually revised a=
+s we get feedback from
+linguists and internationalization experts. (Although, I have a day job, so=
+ allow some time for me turn
+it around.) The topic is being discussed on the
+W3C <a href=3D"http://lists.w3.org/Archives/Public/www-international/" targ=
+et=3D"_blank">www-international
+mail list</a> and the IETF
+<a href=3D"http://eikenes.alvestrand.no/pipermail/ietf-languages" target=3D=
+"_blank">ietf-lang mail list</a>.
+(The feedback thread starts <a href=3D"http://lists.w3.org/Archives/Public/=
+www-international/2004OctDec/0131.html" target=3D"_blank">www-international=
+ 2004OctDec-0131</a>
+and
+<a href=3D"http://eikenes.alvestrand.no/pipermail/ietf-languages/2004-Decem=
+ber/002431.html" target=3D"_blank">ietf-lang 2004-12-002431</a>.)
+</p>
+<p>This page is intended to list combinations of language code and country
+code that have been found useful in distinguishing language variants from
+each other. Please write the authors if you think either that there is no
+variation between two code pairs listed, or that there are
+additional code pairs that are useful in distinguishing written variants.
+</p>
+<p id=3D"comments">Send comments to Tex Texin and John Cowan. To improve tu=
+rn-around of edits,
+please make sure the mail uses the subject:
+"<b>Language Identifier List Comments</b>". This will help us easily identi=
+fy the mails and process them.
+Please use a different subject heading for other discussions.
+</p>
+
+<p>There are a number of suggestions for deciding whether to use a one-leve=
+l (language only) or two-level
+(language-region)
+tag. They require some discussion and will be added here shortly.
+</p>
+<p><b>Language codes</b> used as primary subtags are from <a href=3D"http:/=
+/www.loc.gov/standards/iso639-2/langcodes.html" target=3D"_blank">ISO 639</=
+a>.
+<b>Country codes</b> used as secondary subtags (or tertiary if script tags =
+are secondary)
+are from
+<a href=3D"http://www.iso.org/iso/en/prods-services/iso3166ma/02iso-3166-co=
+de-lists/list-en1.html" target=3D"_blank">ISO 3166</a>.
+Note also that several <b>unique language tags</b> are also defined in the
+<a href=3D"http://www.iana.org/assignments/language-tags" target=3D"_blank"=
+>IANA Language Tag Registry</a>.
+Script codes, generally 4 letters in length, such as "Hans" for Simplified =
+Chinese, "Hant" for Traditonal Chinese, "Cyrl" for Cyrillic, etc.
+are defined by <a href=3D"http://www.unicode.org/iso15924/codelists.html" t=
+arget=3D"_blank">ISO 15924 Codes For The Representation Of Names Of Scripts=
+</a>.
+
+</p>
+
+<div style=3D"color:gray;font-size:48pt;text-align:center;">DRAFT</div>
+
+<h3 style=3D"text-align:center">Proposed List of 1-level Language Identifie=
+rs</h3>
+<p>Some languages have no significant variations, and
+therefore can be adequately represented by
+a language subtag alone, as opposed to a language subtag and country subtag=
+.
+We would like to clarify which languages are in this category.
+</p>
+
+
+<h3 style=3D"text-align:center">Proposed List of 2-level Language Identifie=
+rs</h3>
+<p>Some languages differ by region and therefore a language subtag and coun=
+try subtag
+may be used to identify the language more precisely.
+Note that depending on the purpose or intended audience of the content, a v=
+ery precise label
+may not be needed and a one-level language tag may be adequate.
+For example, using "en" for this page may be sufficient instead of en-US. I=
+f the tag is being used with an
+application (as opposed to labeling content) the requirement for precision =
+may also vary.</p>
+<p>John Cowan provided the original data for this list.
+The list has since been amended based on suggestions from a number of folks=
+ and considerable research.
+</p>
+
+<h3>Table Legend</h3>
+<p style=3D"color:#222;font-size:small;font-weight:bold;">In the following =
+table, the language codes are
+followed by a parenthesized expression which contains the language name
+and if the region code is different from the region represented by the row,=
+ a region name.
+For example, en-US (English, U.S.).
+</p>
+<p style=3D"color:#222;font-size:small;font-weight:bold;">Tags will look di=
+fferent
+depending on their source and whether they have been deprecated. Their appe=
+arance is as follows:</p>
+<p style=3D"text-align:center"><span class=3D"item">ISO 639 tags</span>
+<span class=3D"item iana">IANA registry tags</span>
+<span class=3D"item dep">deprecated tags</span>
+<span class=3D"item bis">proposed RFC 3066bis tags</span>
+</p>
+
+
+<table class=3D"langs" border=3D"1">
+
+<tbody><tr><th>Region<br>Code</th><th>Region&nbsp;Name</th><th>Languages<br=
+>[Format:Tag (Language Name, Region Name)]</th></tr>
+
+<tr><td class=3D"rcode">(none)</td>
+<td class=3D"rname">No region assigned</td>
+<td class=3D"lngs"><span class=3D"item">eo (Esperanto)</span>
+<span class=3D"item">ia (Interlingua)</span>
+<span class=3D"item">ie (Interlingue)</span>
+<span class=3D"item">io (Ido)</span>
+<span class=3D"item">vo (Volap=C3=BCk)</span></td></tr>
+
+<tr><td class=3D"rcode">AD</td>
+<td class=3D"rname">Andorra</td>
+<td class=3D"lngs"><span class=3D"item">ca (Catalan)</span>
+<span class=3D"item">fr-AD (French)</span></td></tr>
+
+<tr><td class=3D"rcode">AE</td>
+<td class=3D"rname">United Arab Emirates</td>
+<td class=3D"lngs"><span class=3D"item">ar-AE (Arabic)</span></td></tr>
+
+<tr><td class=3D"rcode">AF</td>
+<td class=3D"rname">Afghanistan</td>
+<td class=3D"lngs"><span class=3D"item">fa-AF (Persian)</span>
+<span class=3D"item">ps (Pushto)</span>
+<span class=3D"item">ug (Uighur)</span>
+<span class=3D"item">uz-AF (Uzbek)</span></td></tr>
+
+<tr><td class=3D"rcode">AG</td>
+<td class=3D"rname">Antigua And Barbuda</td>
+<td class=3D"lngs"><span class=3D"item">en-AG (English)</span></td></tr>
+
+<tr><td class=3D"rcode">AI</td>
+<td class=3D"rname">Anguilla</td>
+<td class=3D"lngs"><span class=3D"item">en-AI (English)</span></td></tr>
+
+<tr><td class=3D"rcode">AL</td>
+<td class=3D"rname">Albania</td>
+<td class=3D"lngs"><span class=3D"item">sq (Albanian)</span></td></tr>
+
+<tr><td class=3D"rcode">AM</td>
+<td class=3D"rname">Armenia</td>
+<td class=3D"lngs"><span class=3D"item">hy (Armenian)</span></td></tr>
+
+<tr><td class=3D"rcode">AN</td>
+<td class=3D"rname">Netherlands Antilles</td>
+<td class=3D"lngs"><span class=3D"item">nl-AN (Dutch)</span></td></tr>
+
+<tr><td class=3D"rcode">AO</td>
+<td class=3D"rname">Angola</td>
+<td class=3D"lngs"><span class=3D"item">kg (Kongo)</span>
+<span class=3D"item">kj (Kuanyama)</span>
+<span class=3D"item">pt-AO (Portuguese)</span></td></tr>
+
+<tr><td class=3D"rcode">AR</td>
+<td class=3D"rname">Argentina</td>
+<td class=3D"lngs"><span class=3D"item">cy-AR (Welsh)</span>
+<span class=3D"item">es-AR (Spanish)</span>
+<span class=3D"item">gn (Guarani)</span></td></tr>
+
+<tr><td class=3D"rcode">AS</td>
+<td class=3D"rname">American Samoa</td>
+<td class=3D"lngs"><span class=3D"item">en-AS (English)</span>
+<span class=3D"item">sm (Samoan)</span></td></tr>
+
+<tr><td class=3D"rcode">AT</td>
+<td class=3D"rname">Austria</td>
+<td class=3D"lngs"><span class=3D"item">de-AT (German)</span>
+<span class=3D"item">hu (Hungarian)</span></td></tr>
+
+<tr><td class=3D"rcode">AU</td>
+<td class=3D"rname">Australia</td>
+<td class=3D"lngs"><span class=3D"item">en-AU (English)</span>
+<span class=3D"item">YI (Yiddish)</span></td></tr>
+
+<tr><td class=3D"rcode">AW</td>
+<td class=3D"rname">Aruba</td>
+<td class=3D"lngs"><span class=3D"item">nl-AW (Dutch)</span></td></tr>
+
+<tr><td class=3D"rcode">AX</td>
+<td class=3D"rname">=C3=85land Islands</td>
+<td class=3D"lngs"><span class=3D"item">sv-AX (Swedish)</span></td></tr>
+
+<tr><td class=3D"rcode">AZ</td>
+<td class=3D"rname">Azerbaijan</td>
+<td class=3D"lngs"><span class=3D"item">av (Avaric)</span>
+<span class=3D"item">az (Azerbaijani)</span>
+<span class=3D"item iana">az-Arab (Azerbaijani)</span>
+<span class=3D"item iana">az-Cyrl (Azerbaijani)</span>
+<span class=3D"item iana">az-Latn (Azerbaijani)</span>
+<span class=3D"item">os (Ossetian)</span></td></tr>
+
+<tr><td class=3D"rcode">BA</td>
+<td class=3D"rname">Bosnia And Herzegovina</td>
+<td class=3D"lngs"><span class=3D"item">bs (Bosnian)</span>
+<span class=3D"item">hr-BA (Croatian)</span>
+<span class=3D"item">sr-BA (Serbian)</span></td></tr>
+
+<tr><td class=3D"rcode">BB</td>
+<td class=3D"rname">Barbados</td>
+<td class=3D"lngs"><span class=3D"item">en-BB (English)</span></td></tr>
+
+<tr><td class=3D"rcode">BD</td>
+<td class=3D"rname">Bangladesh</td>
+<td class=3D"lngs"><span class=3D"item">bn-BD (Bengali)</span></td></tr>
+
+<tr><td class=3D"rcode">BE</td>
+<td class=3D"rname">Belgium</td>
+<td class=3D"lngs"><span class=3D"item">de-BE (German)</span>
+<span class=3D"item">en-BE (English)</span>
+<span class=3D"item">fr-BE (French)</span>
+<span class=3D"item">nl-BE (Dutch)</span>
+<span class=3D"item">wa (Walloon)</span>
+<span class=3D"item">yi (Yiddish)</span></td></tr>
+
+<tr><td class=3D"rcode">BF</td>
+<td class=3D"rname">Burkina Faso</td>
+<td class=3D"lngs"><span class=3D"item">bm (Bambara)</span>
+<span class=3D"item">fr-BF (French)</span>
+<span class=3D"item">ha (Hausa)</span></td></tr>
+
+<tr><td class=3D"rcode">BG</td>
+<td class=3D"rname">Bulgaria</td>
+<td class=3D"lngs"><span class=3D"item">bg (Bulgarian)</span>
+<span class=3D"item">cu (Church Slavic)</span>
+<span class=3D"item">tr-BG (Turkish)</span></td></tr>
+
+<tr><td class=3D"rcode">BH</td>
+<td class=3D"rname">Bahrain</td>
+<td class=3D"lngs"><span class=3D"item">ar-BH (Arabic)</span></td></tr>
+
+<tr><td class=3D"rcode">BI</td>
+<td class=3D"rname">Burundi</td>
+<td class=3D"lngs"><span class=3D"item">fr-BI (French)</span>
+<span class=3D"item">rn (Rundi)</span></td></tr>
+
+<tr><td class=3D"rcode">BJ</td>
+<td class=3D"rname">Benin</td>
+<td class=3D"lngs"><span class=3D"item">fr-BJ (French)</span></td></tr>
+
+<tr><td class=3D"rcode">BM</td>
+<td class=3D"rname">Bermuda</td>
+<td class=3D"lngs"><span class=3D"item">en-BM (English)</span></td></tr>
+
+<tr><td class=3D"rcode">BN</td>
+<td class=3D"rname">Brunei Darussalam</td>
+<td class=3D"lngs"><span class=3D"item">en-BN (English)</span>
+<span class=3D"item">ms-BN (Malay)</span></td></tr>
+
+<tr><td class=3D"rcode">BO</td>
+<td class=3D"rname">Bolivia</td>
+<td class=3D"lngs"><span class=3D"item">ay (Aymara)</span>
+<span class=3D"item">es-BO (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">BR</td>
+<td class=3D"rname">Brazil</td>
+<td class=3D"lngs"><span class=3D"item">pt-BR (Portuguese)</span></td></tr>
+
+<tr><td class=3D"rcode">BS</td>
+<td class=3D"rname">Bahamas</td>
+<td class=3D"lngs"><span class=3D"item">en-BS (English)</span></td></tr>
+
+<tr><td class=3D"rcode">BT</td>
+<td class=3D"rname">Bhutan</td>
+<td class=3D"lngs"><span class=3D"item">dz (Dzongkha)</span>
+<span class=3D"item">ne (Nepali)</span></td></tr>
+
+<tr><td class=3D"rcode">BW</td>
+<td class=3D"rname">Botswana</td>
+<td class=3D"lngs"><span class=3D"item">en-BW (English)</span>
+<span class=3D"item">sn (Shona)</span>
+<span class=3D"item">tn-BW (Tswana)</span></td></tr>
+
+<tr><td class=3D"rcode">BY</td>
+<td class=3D"rname">Belarus</td>
+<td class=3D"lngs"><span class=3D"item">be (Belarusian)</span>
+<span class=3D"item">cu (Church Slavic)</span>
+<span class=3D"item">yi (Yiddish)</span></td></tr>
+
+<tr><td class=3D"rcode">BZ</td>
+<td class=3D"rname">Belize</td>
+<td class=3D"lngs"><span class=3D"item">en-BZ (English)</span></td></tr>
+
+<tr><td class=3D"rcode">CA</td>
+<td class=3D"rname">Canada</td>
+<td class=3D"lngs"><span class=3D"item">cr (Cree)</span>
+<span class=3D"item">en-CA (English)</span>
+<span class=3D"item">fr-CA (French)</span>
+<span class=3D"item">iu (Inuktitut)</span>
+<span class=3D"item">oj (Ojibwa)</span>
+<span class=3D"item">yi (Yiddish)</span></td></tr>
+
+<tr><td class=3D"rcode">CC</td>
+<td class=3D"rname">Cocos (Keeling) Islands</td>
+<td class=3D"lngs"><span class=3D"item">ms-CC (Malay)</span></td></tr>
+
+<tr><td class=3D"rcode">CD</td>
+<td class=3D"rname">Congo, The Democratic Republic Of The</td>
+<td class=3D"lngs"><span class=3D"item">fr-CD (French)</span>
+<span class=3D"item">kg (Kongo)</span>
+<span class=3D"item">ln-CD (Lingala)</span>
+<span class=3D"item">lu (Luba-Katanga)</span></td></tr>
+
+<tr><td class=3D"rcode">CF</td>
+<td class=3D"rname">Central African Republic</td>
+<td class=3D"lngs"><span class=3D"item">fr-CF (French)</span>
+<span class=3D"item">sg (Sango)</span></td></tr>
+
+<tr><td class=3D"rcode">CG</td>
+<td class=3D"rname">Congo</td>
+<td class=3D"lngs"><span class=3D"item">fr-CG (French)</span>
+<span class=3D"item">kg (Kongo)</span>
+<span class=3D"item">ln-CG (Lingala)</span></td></tr>
+
+<tr><td class=3D"rcode">CH</td>
+<td class=3D"rname">Switzerland</td>
+<td class=3D"lngs"><span class=3D"item">de-CH (German)</span>
+<span class=3D"item">fr-CH (French)</span>
+<span class=3D"item">it-CH (Italian)</span>
+<span class=3D"item">rm (Raeto-Romance)</span></td></tr>
+
+<tr><td class=3D"rcode">CI</td>
+<td class=3D"rname">C=C3=B4te D'ivoire</td>
+<td class=3D"lngs"><span class=3D"item">ak (Akan)</span>
+<span class=3D"item">bm (Bambara)</span>
+<span class=3D"item">fr-CI (French)</span></td></tr>
+
+<tr><td class=3D"rcode">CK</td>
+<td class=3D"rname">Cook Islands</td>
+<td class=3D"lngs"><span class=3D"item">en-CK (English)</span></td></tr>
+
+<tr><td class=3D"rcode">CL</td>
+<td class=3D"rname">Chile</td>
+<td class=3D"lngs"><span class=3D"item">ay (Aymara)</span>
+<span class=3D"item">es-CL (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">CM</td>
+<td class=3D"rname">Cameroon</td>
+<td class=3D"lngs"><span class=3D"item">en-CM (English)</span>
+<span class=3D"item">fr-CM (French)</span></td></tr>
+
+<tr><td class=3D"rcode">CN</td>
+<td class=3D"rname">China</td>
+<td class=3D"lngs"><span class=3D"item">bo (Tibetan)</span>
+<span class=3D"item iana">i-hak (Hakka)</span>
+<span class=3D"item">ii (Sichuan Yi)</span>
+<span class=3D"item">za (Zhuang)</span>
+<span class=3D"item">zh-CN (Chinese)</span>
+<span class=3D"item iana">zh-gan (Chinese)</span>
+<span class=3D"item iana">zh-guoyu (Chinese)</span>
+<span class=3D"item iana">zh-hakka (Chinese)</span>
+<span class=3D"item iana">zh-Hans (Chinese)</span>
+<span class=3D"item bis">zh-Hans-CN (Chinese)</span>
+<span class=3D"item iana">zh-Hant (Chinese)</span>
+<span class=3D"item bis">zh-Hant-CN (Chinese)</span>
+<span class=3D"item iana">zh-wuu (Chinese)</span>
+<span class=3D"item iana">zh-xiang (Chinese)</span>
+<span class=3D"item iana">zh-yue (Chinese)</span></td></tr>
+
+<tr><td class=3D"rcode">CO</td>
+<td class=3D"rname">Colombia</td>
+<td class=3D"lngs"><span class=3D"item">es-CO (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">CR</td>
+<td class=3D"rname">Costa Rica</td>
+<td class=3D"lngs"><span class=3D"item">es-CR (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">CS</td>
+<td class=3D"rname">Serbia And Montenegro</td>
+<td class=3D"lngs"><span class=3D"item">cu (Church Slavic)</span>
+<span class=3D"item">hu (Hungarian)</span>
+<span class=3D"item">sq (Albanian)</span>
+<span class=3D"item">sr (Serbian)</span>
+<span class=3D"item iana">sr-Cyrl (Serbian)</span>
+<span class=3D"item iana">sr-Latn (Serbian)</span></td></tr>
+
+<tr><td class=3D"rcode">CU</td>
+<td class=3D"rname">Cuba</td>
+<td class=3D"lngs"><span class=3D"item">es-CU (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">CV</td>
+<td class=3D"rname">Cape Verde</td>
+<td class=3D"lngs"><span class=3D"item">pt-CV (Portuguese)</span></td></tr>
+
+<tr><td class=3D"rcode">CX</td>
+<td class=3D"rname">Christmas Island</td>
+<td class=3D"lngs"><span class=3D"item">ms-CC (Malay,Cocos (Keeling) Island=
+s)</span></td></tr>
+
+<tr><td class=3D"rcode">CY</td>
+<td class=3D"rname">Cyprus</td>
+<td class=3D"lngs"><span class=3D"item">el-CY (Greek)</span>
+<span class=3D"item">tr-CY (Turkish)</span></td></tr>
+
+<tr><td class=3D"rcode">CZ</td>
+<td class=3D"rname">Czech Republic</td>
+<td class=3D"lngs"><span class=3D"item">cs (Czech)</span></td></tr>
+
+<tr><td class=3D"rcode">DE</td>
+<td class=3D"rname">Germany</td>
+<td class=3D"lngs"><span class=3D"item">da-DE (Danish)</span>
+<span class=3D"item">da-DE (Danish)</span>
+<span class=3D"item iana">de-1901 (German)</span>
+<span class=3D"item iana">de-1996 (German)</span>
+<span class=3D"item iana">de-AT-1901 (German)</span>
+<span class=3D"item iana">de-AT-1996 (German)</span>
+<span class=3D"item iana">de-CH-1901 (German)</span>
+<span class=3D"item iana">de-CH-1996 (German)</span>
+<span class=3D"item">de-DE (German)</span>
+<span class=3D"item iana">de-DE-1901 (German)</span>
+<span class=3D"item iana">de-DE-1996 (German)</span>
+<span class=3D"item">dsb (Lower Sorbian)</span>
+<span class=3D"item">fy-DE (Frisian)</span>
+<span class=3D"item">hsb (Upper Sorbian)</span>
+<span class=3D"item">lb (Luxembourgish)</span>
+<span class=3D"item">nds (Low German)</span>
+<span class=3D"item">wen (Sorbian)</span>
+<span class=3D"item">yi (Yiddish)</span></td></tr>
+
+<tr><td class=3D"rcode">DJ</td>
+<td class=3D"rname">Djibouti</td>
+<td class=3D"lngs"><span class=3D"item">aa-DJ (Afar)</span>
+<span class=3D"item">fr-DJ (French)</span>
+<span class=3D"item">so-DJ (Somali)</span></td></tr>
+
+<tr><td class=3D"rcode">DK</td>
+<td class=3D"rname">Denmark</td>
+<td class=3D"lngs"><span class=3D"item">da-DK (Danish)</span>
+<span class=3D"item">de-DK (German)</span></td></tr>
+
+<tr><td class=3D"rcode">DM</td>
+<td class=3D"rname">Dominica</td>
+<td class=3D"lngs"><span class=3D"item">en-DM (English)</span></td></tr>
+
+<tr><td class=3D"rcode">DO</td>
+<td class=3D"rname">Dominican Republic</td>
+<td class=3D"lngs"><span class=3D"item">es-DO (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">DZ</td>
+<td class=3D"rname">Algeria</td>
+<td class=3D"lngs"><span class=3D"item">ar-DZ (Arabic)</span></td></tr>
+
+<tr><td class=3D"rcode">EC</td>
+<td class=3D"rname">Ecuador</td>
+<td class=3D"lngs"><span class=3D"item">es-EC (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">EE</td>
+<td class=3D"rname">Estonia</td>
+<td class=3D"lngs"><span class=3D"item">et (Estonian)</span>
+<span class=3D"item">yi (Yiddish)</span></td></tr>
+
+<tr><td class=3D"rcode">EG</td>
+<td class=3D"rname">Egypt</td>
+<td class=3D"lngs"><span class=3D"item">ar-EG (Arabic)</span></td></tr>
+
+<tr><td class=3D"rcode">ER</td>
+<td class=3D"rname">Eritrea</td>
+<td class=3D"lngs"><span class=3D"item">aa-ER (Afar)</span>
+<span class=3D"item">byn (Blin)</span>
+<span class=3D"item">en-ER (English)</span>
+<span class=3D"item">gez-ER (Geez)</span>
+<span class=3D"item">ti-ER (Tigrinya)</span>
+<span class=3D"item">tig (Tigre)</span></td></tr>
+
+<tr><td class=3D"rcode">ES</td>
+<td class=3D"rname">Spain</td>
+<td class=3D"lngs"><span class=3D"item">an (Aragonese)</span>
+<span class=3D"item">ca (Catalan)</span>
+<span class=3D"item">es-ES (Spanish)</span>
+<span class=3D"item">eu (Basque)</span>
+<span class=3D"item">gl (Galician)</span></td></tr>
+
+<tr><td class=3D"rcode">ET</td>
+<td class=3D"rname">Ethiopia</td>
+<td class=3D"lngs"><span class=3D"item">aa-ET (Afar)</span>
+<span class=3D"item">am (Amharic)</span>
+<span class=3D"item">en-ET (English)</span>
+<span class=3D"item">gez-ET (Geez)</span>
+<span class=3D"item">om-ET (Oromo)</span>
+<span class=3D"item">sid (Sidamo)</span>
+<span class=3D"item">so-ET (Somali)</span>
+<span class=3D"item">ti-ET (Tigrinya)</span>
+<span class=3D"item">wal (Walamo)</span></td></tr>
+
+<tr><td class=3D"rcode">FI</td>
+<td class=3D"rname">Finland</td>
+<td class=3D"lngs"><span class=3D"item">fi-FI (Finnish)</span>
+<span class=3D"item">smn (Inari Sami)</span>
+<span class=3D"item">sv-FI (Swedish)</span></td></tr>
+
+<tr><td class=3D"rcode">FJ</td>
+<td class=3D"rname">Fiji</td>
+<td class=3D"lngs"><span class=3D"item">en-FJ (English)</span>
+<span class=3D"item">fj (Fijian)</span></td></tr>
+
+<tr><td class=3D"rcode">FK</td>
+<td class=3D"rname">Falkland Islands (Malvinas)</td>
+<td class=3D"lngs"><span class=3D"item">en-FK (English)</span></td></tr>
+
+<tr><td class=3D"rcode">FM</td>
+<td class=3D"rname">Micronesia, Federated States Of</td>
+<td class=3D"lngs"><span class=3D"item">en-FM (English)</span></td></tr>
+
+<tr><td class=3D"rcode">FO</td>
+<td class=3D"rname">Faroe Islands</td>
+<td class=3D"lngs"><span class=3D"item">da-FO (Danish)</span>
+<span class=3D"item">fo (Faroese)</span></td></tr>
+
+<tr><td class=3D"rcode">FR</td>
+<td class=3D"rname">France</td>
+<td class=3D"lngs"><span class=3D"item">br (Breton)</span>
+<span class=3D"item">co (Corsican)</span>
+<span class=3D"item">de-FR (German)</span>
+<span class=3D"item">fr-FR (French)</span>
+<span class=3D"item">oc (Occitan)</span></td></tr>
+
+<tr><td class=3D"rcode">GA</td>
+<td class=3D"rname">Gabon </td>
+<td class=3D"lngs"><span class=3D"item">fr-GA (French)</span></td></tr>
+
+<tr><td class=3D"rcode">GB</td>
+<td class=3D"rname">United Kingdom</td>
+<td class=3D"lngs"><span class=3D"item">cy-GB (Welsh)</span>
+<span class=3D"item iana">en-boont (English)</span>
+<span class=3D"item">en-GB (English)</span>
+<span class=3D"item iana">en-GB-oed (English)</span>
+<span class=3D"item iana">en-scouse (English)</span>
+<span class=3D"item">fr-GB (French)</span>
+<span class=3D"item">ga-GB (Irish)</span>
+<span class=3D"item">gd (Gaelic)</span>
+<span class=3D"item">gv (Manx)</span>
+<span class=3D"item">kw (Cornish)</span></td></tr>
+
+<tr><td class=3D"rcode">GD</td>
+<td class=3D"rname">Grenada</td>
+<td class=3D"lngs"><span class=3D"item">en-GD (English)</span></td></tr>
+
+<tr><td class=3D"rcode">GE</td>
+<td class=3D"rname">Georgia</td>
+<td class=3D"lngs"><span class=3D"item">ab (Abkhazian)</span>
+<span class=3D"item">ka (Georgian)</span>
+<span class=3D"item">os (Ossetian)</span></td></tr>
+
+<tr><td class=3D"rcode">GF</td>
+<td class=3D"rname">French Guiana</td>
+<td class=3D"lngs"><span class=3D"item">fr-GF (French)</span></td></tr>
+
+<tr><td class=3D"rcode">GH</td>
+<td class=3D"rname">Ghana</td>
+<td class=3D"lngs"><span class=3D"item">ak (Akan)</span>
+<span class=3D"item">ee (Ewe)</span>
+<span class=3D"item">en-GH (English)</span>
+<span class=3D"item">tw (Twi)</span></td></tr>
+
+<tr><td class=3D"rcode">GI</td>
+<td class=3D"rname">Gibraltar</td>
+<td class=3D"lngs"><span class=3D"item">en-GI (English)</span></td></tr>
+
+<tr><td class=3D"rcode">GL</td>
+<td class=3D"rname">Greenland</td>
+<td class=3D"lngs"><span class=3D"item">da-GL (Danish)</span>
+<span class=3D"item">kl (Kalaallisut)</span></td></tr>
+
+<tr><td class=3D"rcode">GM</td>
+<td class=3D"rname">Gambia</td>
+<td class=3D"lngs"><span class=3D"item">bm (Bambara)</span>
+<span class=3D"item">en-GM (English)</span>
+<span class=3D"item">wo (Wolof)</span></td></tr>
+
+<tr><td class=3D"rcode">GN</td>
+<td class=3D"rname">Guinea</td>
+<td class=3D"lngs"><span class=3D"item">fr-GN (French)</span></td></tr>
+
+<tr><td class=3D"rcode">GP</td>
+<td class=3D"rname">Guadeloupe</td>
+<td class=3D"lngs"><span class=3D"item">fr-GP (French)</span></td></tr>
+
+<tr><td class=3D"rcode">GQ</td>
+<td class=3D"rname">Equatorial Guinea</td>
+<td class=3D"lngs"><span class=3D"item">es-GQ (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">GR</td>
+<td class=3D"rname">Greece</td>
+<td class=3D"lngs"><span class=3D"item">el-GR (Greek)</span></td></tr>
+
+<tr><td class=3D"rcode">GT</td>
+<td class=3D"rname">Guatemala</td>
+<td class=3D"lngs"><span class=3D"item">es-GT (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">GU</td>
+<td class=3D"rname">Guam</td>
+<td class=3D"lngs"><span class=3D"item">ch-GU (Chamorro)</span>
+<span class=3D"item">en-GU (English)</span></td></tr>
+
+<tr><td class=3D"rcode">GW</td>
+<td class=3D"rname">Guinea-Bissau</td>
+<td class=3D"lngs"><span class=3D"item">pt-GW (Portuguese)</span></td></tr>
+
+<tr><td class=3D"rcode">GY</td>
+<td class=3D"rname">Guyana</td>
+<td class=3D"lngs"><span class=3D"item">en-GY (English)</span></td></tr>
+
+<tr><td class=3D"rcode">HK</td>
+<td class=3D"rname">Hong Kong</td>
+<td class=3D"lngs"><span class=3D"item">en-HK (English)</span>
+<span class=3D"item iana">zh-Hant (Chinese)</span>
+<span class=3D"item">zh-Hant-HK (Chinese)</span>
+<span class=3D"item">zh-HK (Chinese)</span></td></tr>
+
+<tr><td class=3D"rcode">HN</td>
+<td class=3D"rname">Honduras</td>
+<td class=3D"lngs"><span class=3D"item">es-HN (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">HR</td>
+<td class=3D"rname">Croatia</td>
+<td class=3D"lngs"><span class=3D"item">hr-HR (Croatian)</span>
+<span class=3D"item">it-HR (Italian)</span></td></tr>
+
+<tr><td class=3D"rcode">HT</td>
+<td class=3D"rname">Haiti</td>
+<td class=3D"lngs"><span class=3D"item">fr-HT (French)</span>
+<span class=3D"item">ht (Haitian)</span></td></tr>
+
+<tr><td class=3D"rcode">HU</td>
+<td class=3D"rname">Hungary</td>
+<td class=3D"lngs"><span class=3D"item">de-HU (German)</span>
+<span class=3D"item">hu-HU (Hungarian)</span>
+<span class=3D"item">sk-HU (Slovak)</span>
+<span class=3D"item">sr-HU (Serbian)</span></td></tr>
+
+<tr><td class=3D"rcode">ID</td>
+<td class=3D"rname">Indonesia</td>
+<td class=3D"lngs"><span class=3D"item">id (Indonesian)</span>
+<span class=3D"item">jv (Javanese)</span>
+<span class=3D"item">su (Sundanese)</span></td></tr>
+
+<tr><td class=3D"rcode">IE</td>
+<td class=3D"rname">Ireland</td>
+<td class=3D"lngs"><span class=3D"item">en-IE (English)</span>
+<span class=3D"item">ga-IE (Irish)</span></td></tr>
+
+<tr><td class=3D"rcode">IL</td>
+<td class=3D"rname">Israel</td>
+<td class=3D"lngs"><span class=3D"item">ar-IL (Arabic)</span>
+<span class=3D"item">en-IL (English)</span>
+<span class=3D"item">he (Hebrew)</span>
+<span class=3D"item">yi (Yiddish)</span></td></tr>
+
+<tr><td class=3D"rcode">IN</td>
+<td class=3D"rname">India</td>
+<td class=3D"lngs"><span class=3D"item">ar-IN (Arabic)</span>
+<span class=3D"item">as (Assamese)</span>
+<span class=3D"item">bh (Bihari)</span>
+<span class=3D"item">bn-IN (Bengali)</span>
+<span class=3D"item">en-IN (English)</span>
+<span class=3D"item">gu (Gujarati)</span>
+<span class=3D"item">hi (Hindi)</span>
+<span class=3D"item">kn (Kannada)</span>
+<span class=3D"item">kok (Konkani)</span>
+<span class=3D"item">ks (Kashmiri)</span>
+<span class=3D"item">ml (Malayalam)</span>
+<span class=3D"item">mr (Marathi)</span>
+<span class=3D"item">ne (Nepali)</span>
+<span class=3D"item">or (Oriya)</span>
+<span class=3D"item">pa (Panjabi)</span>
+<span class=3D"item">pi (Pali)</span>
+<span class=3D"item">sa (Sanskrit)</span>
+<span class=3D"item">sd-IN (Sindhi)</span>
+<span class=3D"item">ta-IN (Tamil)</span>
+<span class=3D"item">te (Telugu)</span>
+<span class=3D"item">ur-IN (Urdu)</span></td></tr>
+
+<tr><td class=3D"rcode">IO</td>
+<td class=3D"rname">British Indian Ocean Territory</td>
+<td class=3D"lngs"><span class=3D"item">en-IO (English)</span></td></tr>
+
+<tr><td class=3D"rcode">IQ</td>
+<td class=3D"rname">Iraq</td>
+<td class=3D"lngs"><span class=3D"item">ar-IQ (Arabic)</span>
+<span class=3D"item">ku (Kurdish)</span></td></tr>
+
+<tr><td class=3D"rcode">IR</td>
+<td class=3D"rname">Iran, Islamic Republic Of</td>
+<td class=3D"lngs"><span class=3D"item">ae (Avestan)</span>
+<span class=3D"item">fa-IR (Persian)</span>
+<span class=3D"item">ku (Kurdish)</span></td></tr>
+
+<tr><td class=3D"rcode">IS</td>
+<td class=3D"rname">Iceland</td>
+<td class=3D"lngs"><span class=3D"item">is (Icelandic)</span></td></tr>
+
+<tr><td class=3D"rcode">IT</td>
+<td class=3D"rname">Italy</td>
+<td class=3D"lngs"><span class=3D"item">co (Corsican)</span>
+<span class=3D"item">de-IT (German)</span>
+<span class=3D"item">fr-IT (French)</span>
+<span class=3D"item">it-IT (Italian)</span>
+<span class=3D"item">sc (Sardinian)</span></td></tr>
+
+<tr><td class=3D"rcode">JM</td>
+<td class=3D"rname">Jamaica</td>
+<td class=3D"lngs"><span class=3D"item">en-JM (English)</span></td></tr>
+
+<tr><td class=3D"rcode">JO</td>
+<td class=3D"rname">Jordan</td>
+<td class=3D"lngs"><span class=3D"item">ar-JO (Arabic)</span></td></tr>
+
+<tr><td class=3D"rcode">JP</td>
+<td class=3D"rname">Japan</td>
+<td class=3D"lngs"><span class=3D"item">ja (Japanese)</span></td></tr>
+
+<tr><td class=3D"rcode">KE</td>
+<td class=3D"rname">Kenya</td>
+<td class=3D"lngs"><span class=3D"item">en-KE (English)</span>
+<span class=3D"item">ki (Kikuyu)</span>
+<span class=3D"item">om-KE (Oromo)</span>
+<span class=3D"item">so-KE (Somali)</span>
+<span class=3D"item">sw-KE (Swahili)</span></td></tr>
+
+<tr><td class=3D"rcode">KG</td>
+<td class=3D"rname">Kyrgyzstan</td>
+<td class=3D"lngs"><span class=3D"item">ky (Kirghiz)</span>
+<span class=3D"item">ug (Uighur)</span></td></tr>
+
+<tr><td class=3D"rcode">KH</td>
+<td class=3D"rname">Cambodia</td>
+<td class=3D"lngs"><span class=3D"item">km (Khmer)</span></td></tr>
+
+<tr><td class=3D"rcode">KI</td>
+<td class=3D"rname">Kiribati</td>
+<td class=3D"lngs"><span class=3D"item">en-KI (English)</span></td></tr>
+
+<tr><td class=3D"rcode">KM</td>
+<td class=3D"rname">Comoros</td>
+<td class=3D"lngs"><span class=3D"item">fr-KM (French)</span></td></tr>
+
+<tr><td class=3D"rcode">KN</td>
+<td class=3D"rname">Saint Kitts And Nevis</td>
+<td class=3D"lngs"><span class=3D"item">en-KN (English)</span></td></tr>
+
+<tr><td class=3D"rcode">KP</td>
+<td class=3D"rname">Korea, Democratic People's Republic Of</td>
+<td class=3D"lngs"><span class=3D"item">ko-KP (Korean)</span></td></tr>
+
+<tr><td class=3D"rcode">KR</td>
+<td class=3D"rname">Korea, Republic Of</td>
+<td class=3D"lngs"><span class=3D"item">ko-KR (Korean)</span></td></tr>
+
+<tr><td class=3D"rcode">KW</td>
+<td class=3D"rname">Kuwait</td>
+<td class=3D"lngs"><span class=3D"item">ar-KW (Arabic)</span></td></tr>
+
+<tr><td class=3D"rcode">KY</td>
+<td class=3D"rname">Cayman Islands</td>
+<td class=3D"lngs"><span class=3D"item">en-KY (English)</span></td></tr>
+
+<tr><td class=3D"rcode">KZ</td>
+<td class=3D"rname">Kazakhstan</td>
+<td class=3D"lngs"><span class=3D"item">av (Avaric)</span>
+<span class=3D"item">kk (Kazakh)</span>
+<span class=3D"item">os (Ossetian)</span>
+<span class=3D"item">ug (Uighur)</span></td></tr>
+
+<tr><td class=3D"rcode">LA</td>
+<td class=3D"rname">Lao People's Democratic Republic</td>
+<td class=3D"lngs"><span class=3D"item">lo (Lao)</span></td></tr>
+
+<tr><td class=3D"rcode">LB</td>
+<td class=3D"rname">Lebanon</td>
+<td class=3D"lngs"><span class=3D"item">ar-LB (Arabic)</span>
+<span class=3D"item">fr-LB (French)</span></td></tr>
+
+<tr><td class=3D"rcode">LC</td>
+<td class=3D"rname">Saint Lucia</td>
+<td class=3D"lngs"><span class=3D"item">en-LC (English)</span></td></tr>
+
+<tr><td class=3D"rcode">LI</td>
+<td class=3D"rname">Liechtenstein</td>
+<td class=3D"lngs"><span class=3D"item">de-LI (German)</span></td></tr>
+
+<tr><td class=3D"rcode">LK</td>
+<td class=3D"rname">Sri Lanka</td>
+<td class=3D"lngs"><span class=3D"item">si (Sinhala)</span></td></tr>
+
+<tr><td class=3D"rcode">LR</td>
+<td class=3D"rname">Liberia</td>
+<td class=3D"lngs"><span class=3D"item">en-LR (English)</span></td></tr>
+
+<tr><td class=3D"rcode">LS</td>
+<td class=3D"rname">Lesotho</td>
+<td class=3D"lngs"><span class=3D"item">en-LS (English)</span>
+<span class=3D"item">st (Southern Sotho)</span>
+<span class=3D"item">xh (Xhosa)</span></td></tr>
+
+<tr><td class=3D"rcode">LT</td>
+<td class=3D"rname">Lithuania</td>
+<td class=3D"lngs"><span class=3D"item">lt (Lithuanian)</span>
+<span class=3D"item">yi (Yiddish)</span></td></tr>
+
+<tr><td class=3D"rcode">LU</td>
+<td class=3D"rname">Luxembourg</td>
+<td class=3D"lngs"><span class=3D"item">de-LU (German)</span>
+<span class=3D"item">fr-LU (French)</span>
+<span class=3D"item">lb (Luxembourgish)</span></td></tr>
+
+<tr><td class=3D"rcode">LV</td>
+<td class=3D"rname">Latvia</td>
+<td class=3D"lngs"><span class=3D"item">lv (Latvian)</span>
+<span class=3D"item">yi (Yiddish)</span></td></tr>
+
+<tr><td class=3D"rcode">LY</td>
+<td class=3D"rname">Libyan Arab Jamahiriya</td>
+<td class=3D"lngs"><span class=3D"item">ar-LY (Arabic)</span></td></tr>
+
+<tr><td class=3D"rcode">MA</td>
+<td class=3D"rname">Morocco</td>
+<td class=3D"lngs"><span class=3D"item">ar-MA (Arabic)</span></td></tr>
+
+<tr><td class=3D"rcode">MC</td>
+<td class=3D"rname">Monaco</td>
+<td class=3D"lngs"><span class=3D"item">fr-MC (French)</span></td></tr>
+
+<tr><td class=3D"rcode">MD</td>
+<td class=3D"rname">Moldova, Republic Of</td>
+<td class=3D"lngs"><span class=3D"item">mo (Moldavian)</span>
+<span class=3D"item">ro (Romanian)</span>
+<span class=3D"item">tr (Turkish)</span>
+<span class=3D"item">uk (Ukrainian)</span>
+<span class=3D"item">yi (Yiddish)</span></td></tr>
+
+<tr><td class=3D"rcode">MG</td>
+<td class=3D"rname">Madagascar</td>
+<td class=3D"lngs"><span class=3D"item">fr-MG (French)</span>
+<span class=3D"item">mg (Malagasy)</span></td></tr>
+
+<tr><td class=3D"rcode">MH</td>
+<td class=3D"rname">Marshall Islands</td>
+<td class=3D"lngs"><span class=3D"item">en-MH (English)</span>
+<span class=3D"item">mh (Marshallese)</span></td></tr>
+
+<tr><td class=3D"rcode">MK</td>
+<td class=3D"rname">Macedonia, The Former Yugoslav Republic Of</td>
+<td class=3D"lngs"><span class=3D"item">cu (Church Slavic)</span>
+<span class=3D"item">mk (Macedonian)</span></td></tr>
+
+<tr><td class=3D"rcode">ML</td>
+<td class=3D"rname">Mali</td>
+<td class=3D"lngs"><span class=3D"item">bm (Bambara)</span>
+<span class=3D"item">fr-ML (French)</span></td></tr>
+
+<tr><td class=3D"rcode">MM</td>
+<td class=3D"rname">Myanmar</td>
+<td class=3D"lngs"><span class=3D"item">my (Burmese)</span></td></tr>
+
+<tr><td class=3D"rcode">MN</td>
+<td class=3D"rname">Mongolia</td>
+<td class=3D"lngs"><span class=3D"item">mn (Mongolian)</span></td></tr>
+
+<tr><td class=3D"rcode">MO</td>
+<td class=3D"rname">Macao</td>
+<td class=3D"lngs"><span class=3D"item iana">zh-Hant (Chinese)</span>
+<span class=3D"item bis">zh-Hant-MO (Chinese)</span>
+<span class=3D"item">zh-MO (Chinese)</span></td></tr>
+
+<tr><td class=3D"rcode">MP</td>
+<td class=3D"rname">Northern Mariana Islands</td>
+<td class=3D"lngs"><span class=3D"item">ch-MP (Chamorro)</span>
+<span class=3D"item">en-MP (English)</span></td></tr>
+
+<tr><td class=3D"rcode">MQ</td>
+<td class=3D"rname">Martinique</td>
+<td class=3D"lngs"><span class=3D"item">fr-MQ (French)</span></td></tr>
+
+<tr><td class=3D"rcode">MR</td>
+<td class=3D"rname">Mauritania</td>
+<td class=3D"lngs"><span class=3D"item">ar-MR (Arabic)</span>
+<span class=3D"item">wo (Wolof)</span></td></tr>
+
+<tr><td class=3D"rcode">MS</td>
+<td class=3D"rname">Montserrat</td>
+<td class=3D"lngs"><span class=3D"item">en-MS (English)</span></td></tr>
+
+<tr><td class=3D"rcode">MT</td>
+<td class=3D"rname">Malta</td>
+<td class=3D"lngs"><span class=3D"item">en-MT (English)</span>
+<span class=3D"item">mt (Maltese)</span></td></tr>
+
+<tr><td class=3D"rcode">MU</td>
+<td class=3D"rname">Mauritius</td>
+<td class=3D"lngs"><span class=3D"item">en-MU (English)</span></td></tr>
+
+<tr><td class=3D"rcode">MV</td>
+<td class=3D"rname">Maldives</td>
+<td class=3D"lngs"><span class=3D"item">dv (Divehi)</span></td></tr>
+
+<tr><td class=3D"rcode">MW</td>
+<td class=3D"rname">Malawi</td>
+<td class=3D"lngs"><span class=3D"item">en-MW (English)</span>
+<span class=3D"item">ny (Chichewa)</span></td></tr>
+
+<tr><td class=3D"rcode">MX</td>
+<td class=3D"rname">Mexico</td>
+<td class=3D"lngs"><span class=3D"item">es-MX (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">MY</td>
+<td class=3D"rname">Malaysia</td>
+<td class=3D"lngs"><span class=3D"item">jv (Javanese)</span>
+<span class=3D"item">ms-MY (Malay)</span></td></tr>
+
+<tr><td class=3D"rcode">MZ</td>
+<td class=3D"rname">Mozambique</td>
+<td class=3D"lngs"><span class=3D"item">pt-MZ (Portuguese)</span>
+<span class=3D"item">sn (Shona)</span></td></tr>
+
+<tr><td class=3D"rcode">NA</td>
+<td class=3D"rname">Namibia</td>
+<td class=3D"lngs"><span class=3D"item">en-NA (English)</span>
+<span class=3D"item">hz (Herero)</span>
+<span class=3D"item">ng (Ndonga)</span></td></tr>
+
+<tr><td class=3D"rcode">NC</td>
+<td class=3D"rname">New Caledonia</td>
+<td class=3D"lngs"><span class=3D"item">fr-NC (French)</span></td></tr>
+
+<tr><td class=3D"rcode">NE</td>
+<td class=3D"rname">Niger</td>
+<td class=3D"lngs"><span class=3D"item">ff-NE (Fulah)</span>
+<span class=3D"item">fr-NE (French)</span>
+<span class=3D"item">ha (Hausa)</span>
+<span class=3D"item">kr (Kanuri)</span></td></tr>
+
+<tr><td class=3D"rcode">NF</td>
+<td class=3D"rname">Norfolk Island</td>
+<td class=3D"lngs"><span class=3D"item">en-NF (English)</span></td></tr>
+
+<tr><td class=3D"rcode">NG</td>
+<td class=3D"rname">Nigeria</td>
+<td class=3D"lngs"><span class=3D"item">en-NG (English)</span>
+<span class=3D"item">ff-NG (Fulah)</span>
+<span class=3D"item">ha (Hausa)</span>
+<span class=3D"item">ig (Igbo)</span>
+<span class=3D"item">kr (Kanuri)</span>
+<span class=3D"item">yo (Yoruba)</span></td></tr>
+
+<tr><td class=3D"rcode">NI</td>
+<td class=3D"rname">Nicaragua</td>
+<td class=3D"lngs"><span class=3D"item">es-NI (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">NL</td>
+<td class=3D"rname">Netherlands</td>
+<td class=3D"lngs"><span class=3D"item">fy-NL (Frisian)</span>
+<span class=3D"item">li (Limburgan)</span>
+<span class=3D"item">nl-NL (Dutch)</span></td></tr>
+
+<tr><td class=3D"rcode">NO</td>
+<td class=3D"rname">Norway</td>
+<td class=3D"lngs"><span class=3D"item">nb (Bokm=C3=A5l)</span>
+<span class=3D"item">nn (Nynorsk)</span>
+<span class=3D"item">no (Norwegian)</span>
+<span class=3D"item dep">no-bok (Norwegian)</span>
+<span class=3D"item dep">no-nyn (Norwegian)</span></td></tr>
+
+<tr><td class=3D"rcode">NP</td>
+<td class=3D"rname">Nepal</td>
+<td class=3D"lngs"><span class=3D"item">ne (Nepali)</span></td></tr>
+
+<tr><td class=3D"rcode">NR</td>
+<td class=3D"rname">Nauru</td>
+<td class=3D"lngs"><span class=3D"item">en-NR (English)</span>
+<span class=3D"item">na (Nauru)</span></td></tr>
+
+<tr><td class=3D"rcode">NU</td>
+<td class=3D"rname">Niue</td>
+<td class=3D"lngs"><span class=3D"item">en-NU (English)</span></td></tr>
+
+<tr><td class=3D"rcode">NZ</td>
+<td class=3D"rname">New Zealand</td>
+<td class=3D"lngs"><span class=3D"item">en-NZ (English)</span>
+<span class=3D"item">mi (Maori)</span></td></tr>
+
+<tr><td class=3D"rcode">OM</td>
+<td class=3D"rname">Oman</td>
+<td class=3D"lngs"><span class=3D"item">ar-OM (Arabic)</span></td></tr>
+
+<tr><td class=3D"rcode">PA</td>
+<td class=3D"rname">Panama</td>
+<td class=3D"lngs"><span class=3D"item">es-PA (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">PE</td>
+<td class=3D"rname">Peru</td>
+<td class=3D"lngs"><span class=3D"item">ay (Aymara)</span>
+<span class=3D"item">es-PE (Spanish)</span>
+<span class=3D"item">qu (Quechua)</span></td></tr>
+
+<tr><td class=3D"rcode">PF</td>
+<td class=3D"rname">French Polynesia</td>
+<td class=3D"lngs"><span class=3D"item">fr-PF (French)</span>
+<span class=3D"item">ty (Tahitian)</span></td></tr>
+
+<tr><td class=3D"rcode">PG</td>
+<td class=3D"rname">Papua New Guinea</td>
+<td class=3D"lngs"><span class=3D"item">en-PG (English)</span>
+<span class=3D"item">ho (Hiri Motu)</span></td></tr>
+
+<tr><td class=3D"rcode">PH</td>
+<td class=3D"rname">Philippines</td>
+<td class=3D"lngs"><span class=3D"item">en-PH (English)</span>
+<span class=3D"item">tl (Tagalog)</span></td></tr>
+
+<tr><td class=3D"rcode">PK</td>
+<td class=3D"rname">Pakistan</td>
+<td class=3D"lngs"><span class=3D"item">en-PK (English)</span>
+<span class=3D"item">sd-PK (Sindhi)</span>
+<span class=3D"item">ur-PK (Urdu)</span></td></tr>
+
+<tr><td class=3D"rcode">PL</td>
+<td class=3D"rname">Poland</td>
+<td class=3D"lngs"><span class=3D"item">de-PL (German)</span>
+<span class=3D"item">pl (Polish)</span>
+<span class=3D"item">yi (Yiddish)</span></td></tr>
+
+<tr><td class=3D"rcode">PM</td>
+<td class=3D"rname">Saint Pierre And Miquelon</td>
+<td class=3D"lngs"><span class=3D"item">fr-PM (French)</span></td></tr>
+
+<tr><td class=3D"rcode">PN</td>
+<td class=3D"rname">Pitcairn</td>
+<td class=3D"lngs"><span class=3D"item">en-PN (English)</span></td></tr>
+
+<tr><td class=3D"rcode">PR</td>
+<td class=3D"rname">Puerto Rico</td>
+<td class=3D"lngs"><span class=3D"item">en-PR (English)</span>
+<span class=3D"item">es-PR (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">PS</td>
+<td class=3D"rname">Palestinian Territory, Occupied</td>
+<td class=3D"lngs"><span class=3D"item">ar-PS (Arabic)</span></td></tr>
+
+<tr><td class=3D"rcode">PT</td>
+<td class=3D"rname">Portugal</td>
+<td class=3D"lngs"><span class=3D"item">pt-PT (Portuguese)</span></td></tr>
+
+<tr><td class=3D"rcode">PW</td>
+<td class=3D"rname">Palau</td>
+<td class=3D"lngs"><span class=3D"item">en-PW (English)</span></td></tr>
+
+<tr><td class=3D"rcode">PY</td>
+<td class=3D"rname">Paraguay</td>
+<td class=3D"lngs"><span class=3D"item">es-PY (Spanish)</span>
+<span class=3D"item">gn (Guarani)</span></td></tr>
+
+<tr><td class=3D"rcode">QA</td>
+<td class=3D"rname">Qatar</td>
+<td class=3D"lngs"><span class=3D"item">ar-QA (Arabic)</span></td></tr>
+
+<tr><td class=3D"rcode">RE</td>
+<td class=3D"rname">R=C3=A9union</td>
+<td class=3D"lngs"><span class=3D"item">fr-RE (French)</span></td></tr>
+
+<tr><td class=3D"rcode">RO</td>
+<td class=3D"rname">Romania</td>
+<td class=3D"lngs"><span class=3D"item">cu (Church Slavic)</span>
+<span class=3D"item">hu (Hungarian)</span>
+<span class=3D"item">ro (Romanian)</span>
+<span class=3D"item">YI (Yiddish)</span></td></tr>
+
+<tr><td class=3D"rcode">RU</td>
+<td class=3D"rname">Russian Federation</td>
+<td class=3D"lngs"><span class=3D"item">av (Avaric)</span>
+<span class=3D"item">ba (Bashkir)</span>
+<span class=3D"item">ce (Chechen)</span>
+<span class=3D"item">cu (Church Slavic)</span>
+<span class=3D"item">cv (Chuvash)</span>
+<span class=3D"item">kv (Komi)</span>
+<span class=3D"item">os (Ossetian)</span>
+<span class=3D"item">ru-RU (Russian)</span>
+<span class=3D"item">tt (Tatar)</span>
+<span class=3D"item">yi (Yiddish)</span></td></tr>
+
+<tr><td class=3D"rcode">RW</td>
+<td class=3D"rname">Rwanda</td>
+<td class=3D"lngs"><span class=3D"item">en-RW (English)</span>
+<span class=3D"item">fr-RW (French)</span>
+<span class=3D"item">rw (Kinyarwanda)</span></td></tr>
+
+<tr><td class=3D"rcode">SA</td>
+<td class=3D"rname">Saudi Arabia</td>
+<td class=3D"lngs"><span class=3D"item">ar-SA (Arabic)</span></td></tr>
+
+<tr><td class=3D"rcode">SB</td>
+<td class=3D"rname">Solomon Islands</td>
+<td class=3D"lngs"><span class=3D"item">en-SB (English)</span></td></tr>
+
+<tr><td class=3D"rcode">SC</td>
+<td class=3D"rname">Seychelles</td>
+<td class=3D"lngs"><span class=3D"item">en-SC (English)</span>
+<span class=3D"item">fr-SC (French)</span></td></tr>
+
+<tr><td class=3D"rcode">SD</td>
+<td class=3D"rname">Sudan</td>
+<td class=3D"lngs"><span class=3D"item">ar-SD (Arabic)</span>
+<span class=3D"item">din (Dinka)</span>
+<span class=3D"item">ha (Hausa)</span></td></tr>
+
+<tr><td class=3D"rcode">SE</td>
+<td class=3D"rname">Sweden</td>
+<td class=3D"lngs"><span class=3D"item">fi-SE (Finnish)</span>
+<span class=3D"item">se (Northern Sami)</span>
+<span class=3D"item">sma (S. Sami)</span>
+<span class=3D"item">sme (N. Sami)</span>
+<span class=3D"item">sv-SE (Swedish)</span></td></tr>
+
+<tr><td class=3D"rcode">SG</td>
+<td class=3D"rname">Singapore</td>
+<td class=3D"lngs"><span class=3D"item">bn-SG (Bengali)</span>
+<span class=3D"item">en-SG (English)</span>
+<span class=3D"item">ms-SG (Malay)</span>
+<span class=3D"item">ta-SG (Tamil)</span>
+<span class=3D"item">zh-Hans-SG (Chinese)</span>
+<span class=3D"item">zh-SG (Chinese)</span></td></tr>
+
+<tr><td class=3D"rcode">SH</td>
+<td class=3D"rname">Saint Helena </td>
+<td class=3D"lngs"><span class=3D"item">en-SH (English)</span></td></tr>
+
+<tr><td class=3D"rcode">SI</td>
+<td class=3D"rname">Slovenia</td>
+<td class=3D"lngs"><span class=3D"item">hu-SI (Hungarian)</span>
+<span class=3D"item">it-SI (Italian)</span></td></tr>
+
+<tr><td class=3D"rcode">SK</td>
+<td class=3D"rname">Slovakia</td>
+<td class=3D"lngs"><span class=3D"item">hu (Hungarian)</span>
+<span class=3D"item">sk (Slovak)</span></td></tr>
+
+<tr><td class=3D"rcode">SL</td>
+<td class=3D"rname">Sierra Leone</td>
+<td class=3D"lngs"><span class=3D"item">en-SL (English)</span></td></tr>
+
+<tr><td class=3D"rcode">SM</td>
+<td class=3D"rname">San Marino</td>
+<td class=3D"lngs"><span class=3D"item">it-SM (Italian)</span></td></tr>
+
+<tr><td class=3D"rcode">SN</td>
+<td class=3D"rname">Senegal</td>
+<td class=3D"lngs"><span class=3D"item">ff-SN (Fulah)</span>
+<span class=3D"item">wo (Wolof)</span></td></tr>
+
+<tr><td class=3D"rcode">SO</td>
+<td class=3D"rname">Somalia</td>
+<td class=3D"lngs"><span class=3D"item">ar-SO (Arabic)</span>
+<span class=3D"item">en-SO (English)</span>
+<span class=3D"item">so-SO (Somali)</span></td></tr>
+
+<tr><td class=3D"rcode">SR</td>
+<td class=3D"rname">Suriname</td>
+<td class=3D"lngs"><span class=3D"item">jv (Javanese)</span>
+<span class=3D"item">nl-SR (Dutch)</span></td></tr>
+
+<tr><td class=3D"rcode">ST</td>
+<td class=3D"rname">Sao Tome And Principe</td>
+<td class=3D"lngs"><span class=3D"item">pt-ST (Portuguese)</span></td></tr>
+
+<tr><td class=3D"rcode">SV</td>
+<td class=3D"rname">El Salvador</td>
+<td class=3D"lngs"><span class=3D"item">es-SV (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">SY</td>
+<td class=3D"rname">Syrian Arab Republic</td>
+<td class=3D"lngs"><span class=3D"item">ar-SY (Arabic)</span>
+<span class=3D"item">syr (Syriac)</span></td></tr>
+
+<tr><td class=3D"rcode">SZ</td>
+<td class=3D"rname">Swaziland</td>
+<td class=3D"lngs"><span class=3D"item">en-SZ (English)</span>
+<span class=3D"item">ss-SZ (Swati)</span></td></tr>
+
+<tr><td class=3D"rcode">TC</td>
+<td class=3D"rname">Turks And Caicos Islands</td>
+<td class=3D"lngs"><span class=3D"item">en-TC (English)</span></td></tr>
+
+<tr><td class=3D"rcode">TD</td>
+<td class=3D"rname">Chad</td>
+<td class=3D"lngs"><span class=3D"item">ar-TD (Arabic)</span>
+<span class=3D"item">fr-TD (French)</span></td></tr>
+
+<tr><td class=3D"rcode">TG</td>
+<td class=3D"rname">Togo</td>
+<td class=3D"lngs"><span class=3D"item">ee (Ewe)</span>
+<span class=3D"item">fr-TG (French)</span>
+<span class=3D"item">ha (Hausa)</span></td></tr>
+
+<tr><td class=3D"rcode">TH</td>
+<td class=3D"rname">Thailand</td>
+<td class=3D"lngs"><span class=3D"item">si (Sinhala)</span>
+<span class=3D"item">th (Thai)</span></td></tr>
+
+<tr><td class=3D"rcode">TJ</td>
+<td class=3D"rname">Tajikistan</td>
+<td class=3D"lngs"><span class=3D"item">os (Ossetian)</span>
+<span class=3D"item">tg (Tajik)</span>
+<span class=3D"item">ug (Uighur)</span></td></tr>
+
+<tr><td class=3D"rcode">TK</td>
+<td class=3D"rname">Tokelau</td>
+<td class=3D"lngs"><span class=3D"item">en-TK (English)</span></td></tr>
+
+<tr><td class=3D"rcode">TL</td>
+<td class=3D"rname">Timor-Leste</td>
+<td class=3D"lngs"><span class=3D"item">pt-TL (Portuguese)</span></td></tr>
+
+<tr><td class=3D"rcode">TM</td>
+<td class=3D"rname">Turkmenistan</td>
+<td class=3D"lngs"><span class=3D"item">os (Ossetian)</span>
+<span class=3D"item">tk (Turkmen)</span></td></tr>
+
+<tr><td class=3D"rcode">TN</td>
+<td class=3D"rname">Tunisia</td>
+<td class=3D"lngs"><span class=3D"item">ar-TN (Arabic)</span></td></tr>
+
+<tr><td class=3D"rcode">TO</td>
+<td class=3D"rname">Tonga</td>
+<td class=3D"lngs"><span class=3D"item">en-TO (English)</span>
+<span class=3D"item">to (Tongan)</span></td></tr>
+
+<tr><td class=3D"rcode">TR</td>
+<td class=3D"rname">Turkey</td>
+<td class=3D"lngs"><span class=3D"item">ab (Abkhazian)</span>
+<span class=3D"item">av (Avaric)</span>
+<span class=3D"item">ku (Kurdish)</span>
+<span class=3D"item">tr-TR (Turkish)</span>
+<span class=3D"item">ug (Uighur)</span></td></tr>
+
+<tr><td class=3D"rcode">TT</td>
+<td class=3D"rname">Trinidad And Tobago</td>
+<td class=3D"lngs"><span class=3D"item">en-TT (English)</span></td></tr>
+
+<tr><td class=3D"rcode">TV</td>
+<td class=3D"rname">Tuvalu</td>
+<td class=3D"lngs"><span class=3D"item">gil (Gilbertese)</span>
+<span class=3D"item">tvl (Tuvalu)</span></td></tr>
+
+<tr><td class=3D"rcode">TW</td>
+<td class=3D"rname">Taiwan, Province Of China</td>
+<td class=3D"lngs"><span class=3D"item iana">zh-Hant (Chinese)</span>
+<span class=3D"item bis">zh-Hant-TW (Chinese)</span>
+<span class=3D"item iana">zh-min (Chinese)</span>
+<span class=3D"item iana">zh-min-nan (Chinese)</span>
+<span class=3D"item">zh-TW (Chinese)</span></td></tr>
+
+<tr><td class=3D"rcode">TZ</td>
+<td class=3D"rname">Tanzania, United Republic Of</td>
+<td class=3D"lngs"><span class=3D"item">sw-TZ (Swahili)</span></td></tr>
+
+<tr><td class=3D"rcode">UA</td>
+<td class=3D"rname">Ukraine</td>
+<td class=3D"lngs"><span class=3D"item">ab (Abkhazian)</span>
+<span class=3D"item">cu (Church Slavic)</span>
+<span class=3D"item">hu (Hungarian)</span>
+<span class=3D"item">os (Ossetian)</span>
+<span class=3D"item">pl (Polish)</span>
+<span class=3D"item">ro (Romanian)</span>
+<span class=3D"item">ru-UA (Russian)</span>
+<span class=3D"item">uk (Ukrainian)</span>
+<span class=3D"item">yi (Yiddish)</span></td></tr>
+
+<tr><td class=3D"rcode">UG</td>
+<td class=3D"rname">Uganda</td>
+<td class=3D"lngs"><span class=3D"item">en-UG (English)</span>
+<span class=3D"item">lg (Ganda)</span></td></tr>
+
+<tr><td class=3D"rcode">UM</td>
+<td class=3D"rname">United States Minor Outlying Islands</td>
+<td class=3D"lngs"><span class=3D"item">en-UM (English)</span></td></tr>
+
+<tr><td class=3D"rcode">US</td>
+<td class=3D"rname">United States</td>
+<td class=3D"lngs"><span class=3D"item">en-US (English)</span>
+<span class=3D"item">es-US (Spanish)</span>
+<span class=3D"item">haw (Hawaiian)</span>
+<span class=3D"item">ik (Inupiaq)</span>
+<span class=3D"item">nv (Navajo)</span>
+<span class=3D"item">oj (Ojibwa)</span>
+<span class=3D"item">yi (Yiddish)</span></td></tr>
+
+<tr><td class=3D"rcode">UY</td>
+<td class=3D"rname">Uruguay</td>
+<td class=3D"lngs"><span class=3D"item">es-UY (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">UZ</td>
+<td class=3D"rname">Uzbekistan</td>
+<td class=3D"lngs"><span class=3D"item">os (Ossetian)</span>
+<span class=3D"item">ug (Uighur)</span>
+<span class=3D"item iana">uz-Cyrl (Uzbek)</span>
+<span class=3D"item iana">uz-Latn (Uzbek)</span>
+<span class=3D"item">uz-UZ (Uzbek)</span></td></tr>
+
+<tr><td class=3D"rcode">VA</td>
+<td class=3D"rname">Holy See (Vatican City State)</td>
+<td class=3D"lngs"><span class=3D"item">fr (French)</span>
+<span class=3D"item">it (Italian)</span>
+<span class=3D"item">la (Latin)</span></td></tr>
+
+<tr><td class=3D"rcode">VC</td>
+<td class=3D"rname">Saint Vincent And The Grenadines</td>
+<td class=3D"lngs"><span class=3D"item">en-VC (English)</span></td></tr>
+
+<tr><td class=3D"rcode">VE</td>
+<td class=3D"rname">Venezuela</td>
+<td class=3D"lngs"><span class=3D"item">es-VE (Spanish)</span></td></tr>
+
+<tr><td class=3D"rcode">VG</td>
+<td class=3D"rname">Virgin Islands, British</td>
+<td class=3D"lngs"><span class=3D"item">en-VG (English)</span></td></tr>
+
+<tr><td class=3D"rcode">VI</td>
+<td class=3D"rname">Virgin Islands, U.S.</td>
+<td class=3D"lngs"><span class=3D"item">en-VI (English)</span></td></tr>
+
+<tr><td class=3D"rcode">VN</td>
+<td class=3D"rname">Viet Nam</td>
+<td class=3D"lngs"><span class=3D"item">vi (Vietnamese)</span></td></tr>
+
+<tr><td class=3D"rcode">VU</td>
+<td class=3D"rname">Vanuatu</td>
+<td class=3D"lngs"><span class=3D"item">bi (Bislama)</span>
+<span class=3D"item">en-VU (English)</span>
+<span class=3D"item">fr-VU (French)</span></td></tr>
+
+<tr><td class=3D"rcode">WF</td>
+<td class=3D"rname">Wallis And Futuna</td>
+<td class=3D"lngs"><span class=3D"item">fr-WF (French)</span></td></tr>
+
+<tr><td class=3D"rcode">WS</td>
+<td class=3D"rname">Samoa</td>
+<td class=3D"lngs"><span class=3D"item">en-WS (English)</span>
+<span class=3D"item">sm (Samoan)</span></td></tr>
+
+<tr><td class=3D"rcode">YE</td>
+<td class=3D"rname">Yemen</td>
+<td class=3D"lngs"><span class=3D"item">ar-YE (Arabic)</span></td></tr>
+
+<tr><td class=3D"rcode">YT</td>
+<td class=3D"rname">Mayotte</td>
+<td class=3D"lngs"><span class=3D"item">fr-YT (French)</span></td></tr>
+
+<tr><td class=3D"rcode">YU</td>
+<td class=3D"rname">Yugoslavia</td>
+<td class=3D"lngs"><span class=3D"item bis">sr-Cyrl-YU (Serbian)</span>
+<span class=3D"item bis">sr-Latn-YU (Serbian)</span>
+<span class=3D"item dep">sr-YU (Serbian)</span></td></tr>
+
+<tr><td class=3D"rcode">ZA</td>
+<td class=3D"rname">South Africa</td>
+<td class=3D"lngs"><span class=3D"item">af (Afrikaans)</span>
+<span class=3D"item">en-ZA (English)</span>
+<span class=3D"item">nr (S. Ndebele)</span>
+<span class=3D"item">ss-ZA (Swati)</span>
+<span class=3D"item">tn-ZA (Tswana)</span>
+<span class=3D"item">ts (Tsonga)</span>
+<span class=3D"item">ve (Venda)</span>
+<span class=3D"item">xh (Xhosa)</span>
+<span class=3D"item">yi (Yiddish)</span>
+<span class=3D"item">zu (Zulu)</span></td></tr>
+
+<tr><td class=3D"rcode">ZM</td>
+<td class=3D"rname">Zambia</td>
+<td class=3D"lngs"><span class=3D"item">en-ZM (English)</span></td></tr>
+
+<tr><td class=3D"rcode">ZW</td>
+<td class=3D"rname">Zimbabwe</td>
+<td class=3D"lngs"><span class=3D"item">en-ZW (English)</span>
+<span class=3D"item">nd (N. Ndebele)</span>
+<span class=3D"item">sn (Shona)</span>
+<span class=3D"item">ve (Venda)</span>
+<span class=3D"item">zu (Zulu)</span></td></tr>
+</tbody></table>
+
+<h3>References</h3>
+<ul>
+<li><a href=3D"http://www.iana.org/assignments/language-tags" target=3D"_bl=
+ank">IANA Language Tag Registry</a>
+</li><li><a href=3D"http://www.loc.gov/standards/iso639-2/langcodes.html" t=
+arget=3D"_blank">ISO 639, Codes for the
+Representation of Names of Languages</a>
+</li><li><a href=3D"http://www.iso.org/iso/en/prods-services/iso3166ma/02is=
+o-3166-code-lists/list-en1.html" target=3D"_blank">ISO 3166-1, Codes For Th=
+e Representation Of Names Of Countries And Their Subdivisions - Part 1: Cou=
+ntry Codes</a>
+</li><li><a href=3D"http://www.unicode.org/iso15924/codelists.html" target=
+=3D"_blank">ISO 15924, Codes For The Representation Of Names Of Scripts</a>
+</li><li><a target=3D"_blank" href=3D"http://unstats.un.org/unsd/methods/m4=
+9/m49.htm">U. N. Standard Country or Area Codes for Statistical Use</a>
+</li>
+</ul>
+
+<ul>
+<li><a target=3D"_blank" href=3D"http://www.odci.gov/cia/publications/factb=
+ook/fields/2098.html">CIA factbook languages</a>
+</li><li><a href=3D"http://www.ethnologue.com/" target=3D"_blank">SIL Inter=
+national's Ethnologue</a>
+
+</li><li><a href=3D"http://www.unhchr.ch/udhr/navigate/alpha.htm" target=3D=
+"_blank">Translations of the Universal Declaration of Human Rights</a>
+
+
+</li><li><a href=3D"http://en.wikipedia.org/wiki/Language" target=3D"_blank=
+">Wikipedia on Language</a>
+</li></ul>
+
+<p class=3D"copyright" style=3D"clear:both;">
+<a href=3D"http://www.unicode.org/" target=3D"_blank" style=3D"float:right;=
+"><img border=3D"0" src=3D"http://www.i18nguy.com/images/UniEncGreyBord.gif=
+" width=3D"88" height=3D"31" alt=3D"Encoded in UTF-8!"></a>
+
+Copyright =C2=A9 2004, 2005 Tex Texin, John Cowan. All rights reserved.
+<br><a href=3D"http://www.i18nguy.com/unicode/language-identifiers.html">Th=
+is page</a> last updated 2005-01-01.
+<br><a href=3D"http://www.i18nguy.com/unicode/language-identifiers.html#top=
+">Top of page</a>
+</p>
+<!-- WiredMinds eMetrics tracking with Enterprise Edition V5.4 START -->
+
+
+<!-- WiredMinds eMetrics tracking with Enterprise Edition V5.4 END -->
+
+
+</body></html>
+------MultipartBoundary--ziWe6H8JuuiQPhKKqJjVU2cgRWBMHoSi7RRSO14ARp----
+Content-Type: text/css
+Content-Transfer-Encoding: quoted-printable
+Content-Location: http://www.i18nguy.com/unicode/langid.css
+
+@charset "utf-8";
+
+p.intro, div.intro { font-family: "Arial Unicode MS", arial, verdana, helve=
+tica, sans-serif; vertical-align: top; background-color: rgb(250, 250, 210)=
+; color: black; text-align: left; border: 1px solid rgb(102, 51, 51); margi=
+n-left: auto; margin-right: auto; padding: 1em; }
+
+.copyright { font-size: 0.9em; text-align: center; margin-left: auto; margi=
+n-right: auto; padding-top: 1.5em; line-height: 1.3; }
+
+div.ctr, div.prologue, .footer { text-align: center; margin-left: auto; mar=
+gin-right: auto; }
+
+div.prologue { padding-top: 1em; padding-bottom: 1em; }
+
+.footer { font-size: 80%; }
+
+table { margin-left: auto; margin-right: auto; }
+
+.keyterm { font-family: arial, verdana, helvetica, sans-serif; font-size: 9=
+0%; font-weight: bold; color: rgb(255, 0, 0); white-space: nowrap; }
+
+@media all {
+  .leftbar { color: rgb(0, 0, 102); background-color: rgb(246, 246, 187); b=
+order: 1px solid rgb(0, 0, 0); font-size: 90%; float: left; width: 15%; pad=
+ding: 0.5em; margin: 0px 1em 1em 0px; }
+  .rightbar { color: rgb(0, 0, 102); background-color: rgb(246, 246, 187); =
+border: 1px solid rgb(0, 0, 0); font-size: 90%; float: right; width: 15%; p=
+adding: 0.5em; margin: 0px 0px 1em 1em; }
+}
+
+a:hover { background-color: yellow; color: black; }
+
+h1, h2 { text-align: center; }
+
+.small { font-size: 80%; }
+
+.emph { color: blue; font-style: italic; }
+
+.large { font-size: 110%; }
+
+.nobrk { white-space: nowrap; }
+
+.under { text-decoration: underline; }
+
+.ital { font-style: italic; }
+
+.sub { vertical-align: sub; font-size: 65%; }
+
+.sup { vertical-align: super; font-size: 65%; }
+
+.code { font-family: "Courier New", verdana, "Lucida Sans Unicode", monospa=
+ce; font-weight: bold; color: rgb(255, 0, 0); }
+
+.codelines { font-family: "Courier New", verdana, "Lucida Sans Unicode", mo=
+nospace; font-weight: bold; color: rgb(51, 51, 102); padding-left: 3em; whi=
+te-space: pre; border: 1px dashed rgb(51, 51, 102); }
+
+.xc { font-family: verdana, arial, helvetica, sans-serif; font-weight: bold=
+; color: rgb(0, 0, 102); font-style: italic; }
+
+.serif { font-family: "Times New Roman", times, serif; }
+
+.sans { font-family: "Arial Unicode MS", arial, verdana, helvetica, sans-se=
+rif; }
+
+.cursive { font-family: cursive; }
+
+.monospace { font-family: monospace; }
+
+.fantasy { font-family: fantasy; }
+
+body { padding: 1em; margin: 1em auto; width: 800px; font-family: arial, ve=
+rdana, helvetica, sans-serif; }
+
+p.intro { width: 85%; }
+
+table.langs { border: 1px solid gray; border-collapse: collapse; }
+
+th { border: 1px solid gray; padding: 2px 5px; text-align: left; color: whi=
+te; background-color: rgb(0, 0, 102); }
+
+td { padding: 2px 6px; }
+
+.rname { font-size: small; }
+
+.rcode { text-align: center; }
+
+.item { white-space: nowrap; margin: 0px 25px 0px auto; line-height: 150%; =
+font-size: 90%; padding: 0px 4px; }
+
+span.iana { background-color: rgb(255, 204, 153); }
+
+span.dep { background-color: rgb(153, 153, 153); color: white; }
+
+span.bis { display: none; background-color: rgb(204, 204, 255); font-style:=
+ italic; }
+
+li { line-height: 150%; }
+------MultipartBoundary--ziWe6H8JuuiQPhKKqJjVU2cgRWBMHoSi7RRSO14ARp----
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Location: http://www.i18nguy.com/images/i18nguy-logo.png
+
+iVBORw0KGgoAAAANSUhEUgAAAH0AAABoCAIAAABT+WhaAAAAAXNSR0IArs4c6QAAAARnQU1BAACx
+jwv8YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlz
+AAAOxAAADsQBlSsOGwAARkxJREFUeF7tfXV8Flfadru71a3S4k4geEIgwYJr0RZa3N3dJQIR4u7u
+7u7u7u4Qd/fku86c8PBEiNDd97d/fNNhOpnnjF3nPrefez7v7e39jFl6Puv9/LO2z7HT3dHd2dHb
+0/WP3q725pbGhrrm5tb2Thzo6u1p/7y39+tvvv7q22+//OrrL7759z+/+Oqz3s96u3t+GDf+H2T/
+897P/9GLf5//k172/y9DIwDcu7vbe3s7W2tyitOCMyJc8mLd3yZ4VaT6YK1O9a5N865O8S5J8CyO
+dS2OdiqLdXgXZZsbYp4ZYpUeap0QYJ4SZJ3ob50X41mQ4Jsa7l6Tn9BSntvd1Ykrf/LSM9TyyVf7
+HzzxMzxTe1NVTLCnq6FkpJNmqp9Jur9pmq9hXpBZfrBZaZRNY7JLV25gT0FYR05gU7JrdaxtbZxN
+RYxNWYxtRaJzYaRdQYRDdrB1UaRjXrh9Tqhdko9ZvKdJsrdZSXpcZX5ab08rRklvb8+YXr67p6e7
+p6u7p5tt7RrTFf7HG38WF+pjbaDkZaEV4agZ5aQVYa8Waa8e56QR66Se4Kye7K6Z5qWT429aGuNU
+l+TZme3Xmx/QkeVdEW1bEGJRGGmbHmie5meRH+GcF+GQ5GOUEWiR6GkU72GY6GGW4G4R72HpYaEV
+6GKWGRtUXZLd29v6Pw7H/9njfWalq+htpRlgo+lvqRJkqxZqrxFipx5krRxqoxpmpxZurx7lqBnt
+rBPvZpjkYZzjb14caV8W69hREJYf6VCe4pMUYONvp5cb45XgZ5XkbxHna5LoaxrhrB/hbBJkaxhs
+axRspx/iaORmpm5vpBbs5ZSZEtvd3fF/9nr/mzcCE/3Mw1IryFo90kEzyFo1xF4rzFEnxEEn2E4z
+yFYjyFY9xE4zxF4z2F470For2Foj3E4jxkknxcvYx1Qu3FknLczxe0ZqzPjhy5xYn1BXfR9bZU9L
+eRdjWQ9jFWc9ZRc9VXc9aXd9GRd9OW9LDQcjVXNNBUtDjbf5Wf+biPz3nqoHeklPZxdhnl1d3Z2f
+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
+DxM31YfVOJy/AAAAAElFTkSuQmCC
+
+------MultipartBoundary--ziWe6H8JuuiQPhKKqJjVU2cgRWBMHoSi7RRSO14ARp----
+Content-Type: image/gif
+Content-Transfer-Encoding: base64
+Content-Location: http://www.i18nguy.com/images/UniEncGreyBord.gif
+
+R0lGODlhmAA5APcAAE5nocw2NjY2NsxtbW1tbcyWlhktVJYAAM0NDaYAABIeOMUAABISEh0tVbwA
+AMyjo8wbG5aWlsy+vnp6e8kAAM0FBcxSUswBAbIAABYiQdIcHA4YLMx6ehksUk1lntYyMjFJfVxy
+qVJSUhkoTdMkJMyxscxERCE2YVRhf1ZtpqOjo76+vsxfX4iIiENbk1Nqo0FVgykpKR4wV88PD8wp
+KWt/sThPhtAUFEtafDtKbCIzW0RERM7OzlFnoYlUZIkDBRgnSlxngyg+bkBWjNQsLEZfmJ2luqam
+pnuMvNY4ODtOfNg9PUZajUxjm8yIiGhzjm96lRkrUDRDZrKysjZGayw7X4uTphsrUHGEs2wWJElf
+lXgIDpilxMLK2xglRSY7aLW91jhJc6ewyGV6r73D00phmYycwa+4z3WItnZYc83Q2Jmmy0JOcMnJ
+yV91rUhNXcbGxlBpo5qamnyNtrOzs15fYcPH0YOGla8tNmNznJ6pxM3NzZOhwKy1ypuis3Z6ihYn
+SMnO3bq7vICRwVM2U6VpgTA+ZMTI1MvLy5+go3R0dU4PHpZTXjdAVq6zvUJRfEhinISVvkpejRwo
+RZyqzD1AZmV4psPFyoKLo6FdXTEXLKeuvq2trqStwFZqpHKFuVRbckVQcbW7zXeCmtHLy4psklRs
+o6hDQ5U5SaJMXU1ehIeYw8DH32VujMjL14+exUNMZM9BQ4SRssbGx3OIvCUwTLq9yKWxz4GTw6u0
+0cU7Q6uzw4yZuc7T5zZHcMVOVqGt0pEtNzZIcdHU3yArRdSVldCdnSE5ZyAiPJGZq7SjsLkdHixC
+dLpCR15ulNVQUpWjzGZob0lWeF0kOYybyGZhe8etrdWzs9ve6rOPj9NoaFFWYltJZnqHqFZQgZKA
+ojA2WtGsrMfP4MFaWuTl7MVjbIgSGk9jjqugoGgpRLVtbbC3yLtRW09klZ5+foSJsU4TIMaRkVJm
+li9Cb8zCwsnJzI19oRwsVAAAADMzM8wAAMzMzAAAAAAAAAAAAAAAACH5BAAAAAAALAAAAACYADkA
+AAj/APMJHEiwoMGDCBMqXMiwocOHECPum0ixosWLGDNq3Mixo8ePIEN+FCiypMmTKFOq3EhypcuX
+MGOabCmzps2bL2ni3Lhnz86fOHWC5IHokKgzSMF0GRaSxx5jNB4gAko1Z76Sl3ZtcrTJj1crVkZB
+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
+k0zJlBERlVI5lVRZlVbZEAEBADs=
+
+------MultipartBoundary--ziWe6H8JuuiQPhKKqJjVU2cgRWBMHoSi7RRSO14ARp------

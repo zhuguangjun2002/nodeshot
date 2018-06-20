@@ -1,0 +1,48 @@
+================================
+django 如何查找翻译
+------------
+https://docs.djangoproject.com/en/1.8/topics/i18n/translation/#how-django-discovers-translations
+------------
+----------------------
+INSTALLED_APPS = [
+    'nodeshot.ui.default',
+----------------------
+django会到该`app`-`nodeshot.ui.default`的目录下，去找`locale`目录；显然可以找到。
+最后，django提供了基本的翻译在`django/conf/locale`,作为一个`fallback`.
+================================
+
+================================
+Compiling message files¶
+编译消息文件¶
+
+After you create your message file – and each time you make changes to it – you’ll need to compile it into a more efficient form, for use by gettext. Do this with the django-admin compilemessages utility.
+创建你的`消息文件`之后 - 每次`更改`它时 - 都需要将其`编译`为更有效的格式，供`gettext`使用。
+使用`django-admin compilemessages``实用程序`执行此操作。
+
+This tool runs over all available .po files and creates .mo files, which are binary files optimized for use by gettext. In the same directory from which you ran django-admin makemessages, run django-admin compilemessages like this:
+
+该工具运行所有可用的`.po文件`，并`创建``.mo文件`，这是`二进制文件`，可供`gettext`使用进行了优化。
+在你运行`django-admin makemessages`的同一个目录下，像这样运行`django-admin compilemessages`：
+---------------
+django-admin compilemessages
+---------------
+That’s it. Your translations are ready for use.
+您的翻译已准备就绪，可供使用。
+================================
+
+
+================================
+Creating message files from JavaScript source code¶
+从`JavaScript源代码`创建`消息文件`¶
+
+You create and update the message files the same way as the other Django message files – with the django-admin makemessages tool. The only difference is you need to explicitly specify what in gettext parlance is known as a domain in this case the djangojs domain, by providing a -d djangojs parameter, like this:
+
+您可以使用`django-admin makemessages`工具,以与其他`Django消息文件`相同的方式`创建`和`更新``消息文件`。
+唯一的区别是,你需要通过提供一个`-d djangojs参数`来明确地指定`gettext`的用法，在这种情况下是`djangojs域`，如下所示：
+---------------
+django-admin makemessages -d djangojs -l de
+---------------
+This would create or update the message file for JavaScript for German. After updating message files, just run django-admin compilemessages the same way as you do with normal Django message files.
+这将为`德语`创建或更新`JavaScript`的`消息文件`。
+更新`消息文件`后，只需像使用普通`Django消息文件`一样运行`django-admin compilemessages`。
+================================

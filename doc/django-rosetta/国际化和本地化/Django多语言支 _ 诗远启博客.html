@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<!-- saved from url=(0040)https://blog.dreamgotech.com/article/45/ -->
+<html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <!--手机html -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+    
+    <title> Django多语言支 | 诗远启博客</title>
+
+    <meta name="keywords" content="python,django,django rest framework,android,dreamgo,blog,诗远启博客">
+    <meta name="description" content="诗远启博客，主要涵盖内容为Python、Django、django rest framework和android。">
+    <link rel="shortcut icon" href="https://blog.dreamgotech.com/static/blog/images/favicon.ico">
+    <link rel="bookmark" href="https://blog.dreamgotech.com/static/blog/images/favicon.ico">
+    <link rel="stylesheet" href="./Django多语言支 _ 诗远启博客_files/iconfont.css">
+    <link rel="stylesheet" href="./Django多语言支 _ 诗远启博客_files/layui.css">
+    <link rel="stylesheet" href="./Django多语言支 _ 诗远启博客_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./Django多语言支 _ 诗远启博客_files/base.css">
+    <link rel="stylesheet" href="./Django多语言支 _ 诗远启博客_files/comments.css">
+    <link rel="stylesheet" href="./Django多语言支 _ 诗远启博客_files/jquery.Jcrop.min.css">
+    
+    <link rel="stylesheet" href="./Django多语言支 _ 诗远启博客_files/bootstrap-material-design.css">
+    <link rel="stylesheet" href="./Django多语言支 _ 诗远启博客_files/ripples.min.css">
+
+    <script src="./Django多语言支 _ 诗远启博客_files/jquery-2.1.3.min.js"></script>
+    <script src="./Django多语言支 _ 诗远启博客_files/jquery.cookie.js"></script>
+    <script src="./Django多语言支 _ 诗远启博客_files/jquery.form.js"></script>
+    <script src="./Django多语言支 _ 诗远启博客_files/jquery.Jcrop.min.js"></script>
+    <script src="./Django多语言支 _ 诗远启博客_files/jquery.flexslider-min.js"></script>
+    <script src="./Django多语言支 _ 诗远启博客_files/bootstrap.min.js"></script>
+    <script src="./Django多语言支 _ 诗远启博客_files/clipboard.min.js"></script>
+    <script src="./Django多语言支 _ 诗远启博客_files/layui.js"></script>
+    
+    <script src="./Django多语言支 _ 诗远启博客_files/material.js"></script>
+    <script src="./Django多语言支 _ 诗远启博客_files/ripples.js"></script>
+    <!--[if lt IE 9]>
+    <script src="/static/bootstrap/js/html5shiv.min.js"></script>
+    <script src="/static/bootstrap/js/respond.min.js"></script>
+    <![endif]-->
+     
+<link id="layuicss-layer" rel="stylesheet" href="./Django多语言支 _ 诗远启博客_files/layer.css" media="all"></head>
+
+<body style="font-family: &#39;Microsoft YaHei&#39;;">
+<!-- 导航栏 -->
+
+
+
+<div class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="https://blog.dreamgotech.com/">诗远启博客</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="https://blog.dreamgotech.com/">
+                        <span class="glyphicon glyphicon-home"></span>
+                        首页
+                    </a>
+                </li>
+
+                <li>
+                    <a href="https://blog.dreamgotech.com/article/all/">
+                        <span class="glyphicon glyphicon-globe"></span>
+                        全部文章
+                    </a>
+                </li>
+
+                
+                    
+                        <li>
+                            <a href="https://blog.dreamgotech.com/column/1/"> Django </a>
+                        </li>
+                    
+                        <li>
+                            <a href="https://blog.dreamgotech.com/column/2/"> Django Rest Framework </a>
+                        </li>
+                    
+                        <li>
+                            <a href="https://blog.dreamgotech.com/column/3/"> 服务器部署 </a>
+                        </li>
+                    
+                
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="https://blog.dreamgotech.com/user/login/" style="cursor:pointer;">登陆</a>
+                    </li>
+                    <li>
+                        <a href="https://blog.dreamgotech.com/user/register/" style="cursor:pointer">注册</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- 文章列表 与 侧边的东西 -->
+<div id="main">
+    <div id="content" class="container">
+        
+    <div class="row">
+        <div class="col-md-8 col-lg-9">
+            <div id="article-page" class="well">
+                <ol class="breadcrumb">
+                    <li><a href="https://blog.dreamgotech.com/"><span class="glyphicon glyphicon-home"></span></a></li>
+                    <li>
+                        <a href="https://blog.dreamgotech.com/article/?category=2">
+                            django
+                        </a>
+                    </li>
+                    <li class="hidden-xs">
+                        <a>
+                            <span class="glyphicon glyphicon-calendar"></span>
+                            2017年6月19日
+                        </a>
+                    </li>
+                    <li>
+                        <a>
+                            <span class="glyphicon glyphicon-eye-open"></span>
+                            432
+                        </a>
+                    </li>
+                    
+                    <li class="pull-right">
+                        <a>
+                            <span class="glyphicon glyphicon-user"></span>
+                            ykh
+                        </a>
+                    </li>
+                </ol>
+
+                <div id="article">
+                    <div class="article-title">
+                        <h1>Django多语言支持 </h1>
+                    </div>
+
+                    <div class="article-tags" style="margin-top: 10px">
+                        
+                            <a href="https://blog.dreamgotech.com/article/?tags__icontains=translation" class=" ">
+                                <span class="label label-1">translation</span>
+                            </a>
+                        
+                    </div>
+                    <hr>
+                    <div class="article-content">
+                        <span class="Apple-style-span" style="border-collapse: separate; font-family: &quot;Times New Roman&quot;; line-height: normal; border-spacing: 0px; text-size-adjust: auto; font-size: medium;"><div style="margin-right: auto; margin-left: auto; padding: 20px; border-width: 0px; border-style: initial; border-color: initial; font-family: Helvetica, arial, freesans, clean, sans-serif; font-size: 14px; line-height: 1.6; color: rgb(51, 51, 51); max-width: 960px;"><h2 style="margin-top: 0px; border-width: 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 24px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); color: rgb(0, 0, 0);">1 开启I18N支持</h2><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">USE_I18N = True
+USE_L10N = True
+</code></pre><h2 style="border-width: 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 24px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); color: rgb(0, 0, 0);">2 设置</h2><ul style="margin-top: 15px; margin-bottom: 15px; padding-left: 30px; border-width: 0px; border-style: initial; border-color: initial;"><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">1. 设置支持语言</h3><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;"># 语言选项
+LANGUAGES = (
+    ('zh-hans', '简体中文'),
+    ('zh-hant', '繁体中文'),
+    ('en', '英语'),
+    ('es', '西班牙语'),
+    ('bn', '孟加拉语'),
+    ('id', '印地语'),
+    ('pt', '葡萄牙语'),
+    ('ru', '俄语'),
+    ('ja', '日语'),
+    ('de', '德语'),
+    ('ko', '韩语'),
+    ('fr', '法语'),
+    ('ar', '阿拉伯语'),
+)
+</code></pre></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">2. 设置默认语言</h3><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;"># 汉语 上海时区
+LANGUAGE_CODE = 'zh-hans'
+</code></pre></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">3. 添加<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: inherit; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">LocaleMiddleware</code>至<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: inherit; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">MIDDLEWARE</code>中</h3><p style="margin-top: 10px; margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;"><code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">LocaleMiddleware</code>必须在<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">Session</code>之后，因为语言区域来源于<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">session</code>中的设置，必须在<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">CommonMiddleware</code>之前，因为<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">CommonMiddleware</code>需要选择一个语言去反查url。</p><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">MIDDLEWARE = [
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+</code></pre></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">4. 设置翻译文件存储位置</h3><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">LOCALE_PATHS = (
+    os.path.join(BASE_DIR, "locale/"),
+)
+</code></pre></li></ul><h2 style="border-width: 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 24px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); color: rgb(0, 0, 0);">3 模板翻译</h2><ul style="margin-top: 15px; margin-bottom: 15px; padding-left: 30px; border-width: 0px; border-style: initial; border-color: initial;"><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">1. 简单翻译语法</h3><ul style="padding-left: 30px; border-width: 0px; border-style: initial; border-color: initial;"><li style="border-width: 0px; border-style: initial; border-color: initial;">所有待翻译html必须加入<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">{% load i18n %}</code>标签，即使是被include的父html里加载过该标签，被include的html依旧需要加载。</li><li style="border-width: 0px; border-style: initial; border-color: initial;">单独文字<span class="Apple-converted-space">&nbsp;</span><code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">{% trans "我是待翻译文字" %}</code></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><p style="margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">区块文字</p><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">{% blocktrans with year=product.publish_time|date:'Y' %}
+    {{ year }}年上市
+{% endblocktrans %}
+</code></pre></li></ul></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">2. 运行<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: inherit; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">django-admin makemessages --all</code>生成待翻译的<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: inherit; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">django.po</code>文件。</h3></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">3. 翻译<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: inherit; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">django.po</code>文件</h3><p style="margin-top: 10px; margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">安装<a href="https://github.com/mbi/django-rosetta" target="_blank" style="margin: 0px; padding: 0px; border-width: 0px; border-style: initial; border-color: initial; color: rgb(65, 131, 196);">django-rosetta</a>插件，即可在admin中看到rosetta面板，进入即可对生成的待翻译的<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">django.po</code>文件进行翻译，无需再在代码中翻译。</p><p style="margin-top: 15px; margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">或者直接在代码中打开<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">django.po</code>文件进行翻译。</p></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">4. 运行<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: inherit; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">django-admin compilemessages</code>命令编译翻译好的<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: inherit; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">django.po</code>文件以生成<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: inherit; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">django.mo</code>文件。</h3></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">5. 复数翻译</h3><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">{% blocktrans count news.view_times as news_view_times %}
+    查看次数:{{ news_view_times }}
+{% plural %}
+    查看次数:{{ news_view_times }}
+{% endblocktrans %}
+</code></pre><p style="margin-top: 15px; margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">一个未发现原因的Bug,0会被识别为复数，暂未找到解决方法，可见<a href="https://stackoverflow.com/questions/33220269/django-template-translation-zero-is-plural-in-fr" target="_blank" style="margin: 0px; padding: 0px; border-width: 0px; border-style: initial; border-color: initial; color: rgb(65, 131, 196);">此处</a>。</p></li></ul><h2 style="border-width: 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 24px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); color: rgb(0, 0, 0);">4 内容翻译</h2><ul style="margin-top: 15px; margin-bottom: 15px; padding-left: 30px; border-width: 0px; border-style: initial; border-color: initial;"><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">1. 安装<a href="https://github.com/KristianOellegaard/django-hvad" target="_blank" style="margin: 0px; padding: 0px; border-width: 0px; border-style: initial; border-color: initial; color: rgb(65, 131, 196);">django-hvad</a></h3></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">2. models.py</h3><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">from django.db import models
+from hvad.models import TranslatableModel, TranslatedFields
+
+
+class Demo(TranslatableModel):
+    translations = TranslatedFields(
+        # 标题
+        title=models.CharField(max_length=100,
+                               verbose_name=u'标题'),
+    )
+
+    class Meta:
+        verbose_name = 'Demo'
+        verbose_name_plural = 'Demo'
+        ordering = ('-id',)
+
+    def trans_title(self):
+        return self.lazy_translation_getter('title', str(self.id))
+
+    def __str__(self):
+        title = self.trans_title()
+        return title if title else ''
+</code></pre></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">3. forms.py</h3><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">from django import forms
+from hvad.admin import TranslatableModelForm
+
+from .models import *
+
+
+class DemoForm(TranslatableModelForm):
+
+    def __init__(self, *args, **kwargs):
+        super(ExhibitForm, self).__init__(*args, **kwargs)
+        self.fields['title'].widget.attrs.update({'class': 'form-control'})
+
+    class Meta:
+        model = Exhibit
+        fields = ['title']
+</code></pre></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">4. 如果使用django rest framework，不使用请忽略本部分。</h3><p style="margin-top: 10px; margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">serializers.py</p><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">from rest_framework import serializers
+from hvad.contrib.restframework import TranslatableModelSerializer
+
+from .models import *
+
+class DemoSerializer(TranslatableModelSerializer):
+
+    class Meta:
+        model = Demo
+        fields = ['title']
+</code></pre></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">5. 全部语言列表</h3><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">class DemoAllListView(ListView):
+    template_name = 'demo/list_all.html'
+    context_object_name = 'demo_list'
+    paginate_by = settings.PAGE_NUM
+
+    def get_queryset(self):
+        return Demo.objects.language('all').order_by('-id')
+</code></pre></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">6. 当前语言列表</h3><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">class DemoListView(ListView):
+    queryset = Demo.objects.language().order_by('-id')
+    template_name = 'demo/list_lang.html'
+    context_object_name = 'demo_list'
+    paginate_by = settings.PAGE_NUM
+</code></pre></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">7. 创建当前语言的对象</h3><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">class DemoCreateView(CreateView):
+    form_class = DemoForm
+    template_name = 'demo/create.html'
+    success_url = reverse_lazy('demo_list')
+</code></pre></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><h3 style="margin-top: 0px; border-width: 0px; border-style: initial; border-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 18px;">8. 查看当前语言的对象详情</h3><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">class DemoDetailView(DetailView):
+    queryset = Demo.objects.language().all()
+    slug_field = 'id'
+    template_name = 'demo/detail.html'
+</code></pre></li><li style="border-width: 0px; border-style: initial; border-color: initial;">### 9. 路由中设置了i18n_patterns时，当前获取到的<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">{{demo.title}}</code>既是对应语言的title。</li></ul><h2 style="border-width: 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 24px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); color: rgb(0, 0, 0);">5 url设置</h2><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">from django.conf.urls.i18n import i18n_patterns
+
+urlpatterns += i18n_patterns(
+    url(r'^', include('web.urls')),
+    prefix_default_language=False,
+)
+
+# 设置rosetta支持
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        url(r'^rosetta/', include('rosetta.urls')),
+    ]
+</code></pre><p style="margin-top: 15px; margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;"><code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">prefix_default_language</code>为<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">False</code>时，默认语言不再出现在url中。</p><h2 style="border-width: 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 24px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); color: rgb(0, 0, 0);">6 可直接切换当前url语言的标签</h2><p style="margin-top: 10px; margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;"><code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">web/templatetags/translate_url.py</code><span class="Apple-converted-space">&nbsp;</span>:</p><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">from django.template import Library
+from django.urls.exceptions import Resolver404
+from django.core.urlresolvers import resolve, reverse
+from django.utils.translation import activate, get_language
+from urllib.parse import urlencode
+
+register = Library()
+
+
+@register.simple_tag(takes_context=True)
+def translate_url(context, lang=None, *args, **kwargs):
+    """
+    将当前页面url转换至其他语言的url
+    用法: {% translate_url language.code %}
+    """
+    # request 对象
+    request = context['request']
+    # 当前语言环境
+    cur_language = get_language()
+    try:
+        # 根据当前url检索url别名
+        url_parts = resolve(request.path)
+        # 激活欲转换的语言环境
+        activate(lang)
+        # 根据url别名检索出对应语言环境的url
+        url = reverse(url_parts.url_name, args=url_parts.args, kwargs=url_parts.kwargs)
+        # 保持request parameters不丢失
+        parameters = urlencode(request.GET, doseq=True)
+        if parameters:
+            url = '{}?{}'.format(url, parameters)
+    except Resolver404:
+        # 未检索到则返回主页
+        url = '/'
+    finally:
+        # 还原至当前语言环境
+        activate(cur_language)
+    return url
+</code></pre><p style="margin-top: 15px; margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">使用方法：</p><p style="margin-top: 15px; margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;"><code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">navbar.html</code>:</p><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">{% load translate_url %}
+&lt;div class="head_bg"&gt;
+    &lt;div class="container"&gt;
+        &lt;div class="row"&gt;
+            &lt;div class="nav_language_select"&gt;
+                {% get_language_info_list for current_languages as languages %}
+                    &lt;div class="col-md-2 col-sm-3 col-xs-5 text-right nav_language_div"&gt;
+                    &lt;div class="nav_language_div2"&gt;
+                        {% get_language_info_list for current_languages as languages %}
+                        {% for language in languages %}
+                            {% if not forloop.first %}
+                                &lt;span&gt;/&lt;/span&gt;
+                            {% endif %}
+                            {% ifequal LANGUAGE_CODE language.code %}
+                                &lt;a href="{% translate_url language.code %}" class='nav_color_active'&gt;
+                                    {{ language.name_local }}
+                                &lt;/a&gt;
+                            {% else %}
+                                &lt;a href="{% translate_url language.code %}"&gt;
+                                    {{ language.name_local }}
+                                &lt;/a&gt;
+                            {% endifequal %}
+                        {% endfor %}
+                    &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+</code></pre><h2 style="border-width: 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 24px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); color: rgb(0, 0, 0);">Q&amp;A</h2><ul style="margin-top: 15px; margin-bottom: 15px; padding-left: 30px; border-width: 0px; border-style: initial; border-color: initial;"><li style="border-width: 0px; border-style: initial; border-color: initial;"><p style="margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">Q:运行<span class="Apple-converted-space">&nbsp;</span><code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">django-admin makemessages --all</code><span class="Apple-converted-space">&nbsp;</span>命令后提示<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">can't find msguniq. make sure you have gnu gettext tools 0.15 or newer installed.</code>（window7 django1.11.1）</p><p style="margin-top: 15px; margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">A：前往<a href="https://mlocati.github.io/articles/gettext-iconv-windows.html" target="_blank" style="margin: 0px; padding: 0px; border-width: 0px; border-style: initial; border-color: initial; color: rgb(65, 131, 196);">此处</a>下载软件包解压，并设置其子bin目录至环境变量。</p></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><p style="margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">Q:运行<span class="Apple-converted-space">&nbsp;</span><code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">django-admin compilemessages</code><span class="Apple-converted-space">&nbsp;</span>命令后，django提示<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">ValueError: plural forms expression could be dangerous</code></p><p style="margin-top: 15px; margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">A：修改生成的django.po文件中的<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"为"Plural-Forms: nplurals=1; plural=0;\n"</code>即可。</p></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><p style="margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">Q:zh_Hans命名问题</p><p style="margin-top: 15px; margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">A：setting中<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">LANGUAGE_CODE = 'zh_Hans'</code>,locale中文件夹名称未zh_Hans,其余地方用zh-hans,如：</p><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">LANGUAGES = (
+    ('en', 'English'),
+    ('zh-hans', 'Chinese'),
+)
+</code></pre><p style="margin-top: 15px; margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">具体原因参见下列<span class="Apple-converted-space">&nbsp;</span><code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">lang2locale</code><span class="Apple-converted-space">&nbsp;</span>函数，做了如下操作：Basically, for our Chinese language codes, the - is replaced with a _, and the first letter of the second word is capitalized(只在后一个单词长度大于2的时候转换).</p><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">def to_locale(language, to_lower=False):
+    """
+    Turns a language name (en-us) into a locale name (en_US). If 'to_lower' is
+    True, the last component is lower-cased (en_us).
+    """
+    p = language.find('-')
+    if p &gt;= 0:
+        if to_lower:
+            return language[:p].lower() + '_' + language[p + 1:].lower()
+        else:
+            # Get correct locale for sr-latn
+            if len(language[p + 1:]) &gt; 2:
+                return language[:p].lower() + '_' + language[p + 1].upper() + language[p + 2:].lower()
+            return language[:p].lower() + '_' + language[p + 1:].upper()
+    else:
+        return language.lower()
+</code></pre></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><p style="margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">Q:加入django-rosetta后出现如2中描述的问题</p><p style="margin-top: 15px; margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">A:找到rosetta安装目录，按2中解决方法修改<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">rosetta/locale/en/LC_MESSAGE/django.po</code>文件即可。</p></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><p style="margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">Q:需要只生成某个app的locale文件</p><p style="margin-top: 15px; margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">A:需要进入该app目录后再执行<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">makemessages</code>命令，<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">makemessages</code>命令会生成当前执行命令的文件夹及子文件夹中的所有<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">locale</code>文件。所以在根目录执行<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">makemessages</code>命令会出现<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">CommandError: Unable to find a locale path to store translations for file Porject\__init__.py</code>的错误。</p></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><p style="margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">Q:翻译后的内容不实时生效</p><p style="margin-top: 15px; margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">A:重启服务器翻译内容才能生效</p></li></ul><h2 style="border-width: 0px 0px 1px; border-top-style: initial; border-right-style: initial; border-left-style: initial; border-top-color: initial; border-right-color: initial; border-left-color: initial; font-weight: bold; -webkit-font-smoothing: antialiased; font-size: 24px; border-bottom-style: solid; border-bottom-color: rgb(204, 204, 204); color: rgb(0, 0, 0);">相关知识</h2><ol style="margin-top: 15px; padding-left: 30px; border-width: 0px; border-style: initial; border-color: initial; margin-bottom: 0px !important;"><li style="border-width: 0px; border-style: initial; border-color: initial;"><p style="margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">Django决定当前语言的顺序（使用LocaleMiddleware的情况下，未使用则优先使用LANGUAGE_CODE）：</p><pre style="margin-top: 15px; margin-bottom: 15px; padding: 6px 10px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; background-color: rgb(248, 248, 248); line-height: 19px; border-radius: 3px;"><code style="margin: 0px; font-size: 12px; font-family: Consolas, &quot;Liberation Mono&quot;, Courier, monospace; white-space: pre; border-style: none; border-radius: 3px; background-image: initial; background-attachment: initial; background-origin: initial; background-clip: initial; border-width: initial; border-color: initial;">    使用i18_patterns时，将优先匹配url中的语言代码。
+    没有语言代码，使用session中的LANGUAGE_SESSION_KEY。
+    没有session，检索cookie中的django_language参数，该参数使用LANGUAGE_COOKIE_NAME设置。
+    没有cookie,使用http请求头中的Accept-Language。
+    没有Accept-Language请求头，则使用系统默认设置的LANGUAGE_CODE。
+</code></pre></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><p style="margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;"><code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">locale name</code><span class="Apple-converted-space">&nbsp;</span>和<span class="Apple-converted-space">&nbsp;</span><code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">language code</code>不同，<code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">locale name</code>是混合了语言与城市的简写，语言部分总是小写，城市部分总是大写，用下划线连接，如it,de<em style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 0px; border-right-width: 0px; border-bottom-width: 0px; border-left-width: 0px; border-style: initial; border-color: initial; ">AT,es,pt</em>BR等;language总是小写，用破则号连接，如it，de-at,es,ot-br。</p></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><p style="margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;"><code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">django-admin compilemessages --settings=path.to.settings</code><span class="Apple-converted-space">&nbsp;</span>只编译设置中设置的LOCALE_PATHS中的语言文件。</p></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><p style="margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">Django默认假设用户使用的可翻译的项目的基础语言为英文，不使用英文使用英文做为基础语言时（详见此处），需要注意： gettext 方法为原始语言只提供了两种复数形式，所以你需要为其他复数形式不同于英语的语言提供复数形式规则。当其他英文的子语言被使用并且英文翻译缺失时，返回的语言不会是LANGUAGE_CODE里面的语言，而是其原始语言。例如，一个英文用户访问一个西班牙语作为默认语言的网站，其原始字符是使用俄语写的，那么他将看到的是俄语而不是西班牙语。</p></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><p style="margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">使用<span class="Apple-converted-space">&nbsp;</span><code style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; border-top-width: 1px; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-style: initial; border-color: initial; font-size: 12px; font-family: Consolas, &#39;Liberation Mono&#39;, Courier, monospace; white-space: nowrap; border-top-style: solid; border-right-style: solid; border-bottom-style: solid; border-left-style: solid; border-top-color: rgb(234, 234, 234); border-right-color: rgb(234, 234, 234); border-bottom-color: rgb(234, 234, 234); border-left-color: rgb(234, 234, 234); background-color: rgb(248, 248, 248); border-top-left-radius: 3px 3px; border-top-right-radius: 3px 3px; border-bottom-right-radius: 3px 3px; border-bottom-left-radius: 3px 3px; ">USE_L10N = True</code><span class="Apple-converted-space">&nbsp;</span>可以启用formatting system，根据语言区域对页面显示格式做出个性化适配。</p></li><li style="border-width: 0px; border-style: initial; border-color: initial;"><p style="margin-bottom: 15px; border-width: 0px; border-style: initial; border-color: initial;">Internationalization，i 和 n 之间有 18 个字母，简称 I18N。本地化 -- localization， l 和 n 之间有 10 个字母，简称 L10N。国际化意味着 Web产品有适用于任何地方的潜力，针对程序开发人员；本地化则是指使一个国际化的程序为了在某个特定地区使用而进行实际翻译的过程，针对翻译人员而言。</p></li></ol></div></span><p><span style="font-size: 18px;"><br></span></p><p><span style="font-size: 18px;"><br></span></p><p><span style="font-size: 18px;"><br></span><br></p>
+                    </div>
+                </div>
+            </div>
+
+            <!--评论框 -->
+            <div id="anchor-quote"></div>
+<div class="well">
+    
+        <p>登陆后才可评论 <a href="https://blog.dreamgotech.com/user/login/">去登陆</a></p>
+    
+</div>
+<script language="javascript" type="text/javascript">
+    function CommentQuote(user_name, commend_id) {
+        comment = document.getElementById('comment');
+        comment.value = "@['" + user_name + "', " + commend_id + "]: ";
+        comment.focus();
+        comment.setSelectionRange(comment.value.length, comment.value.length);
+    }
+
+    $('#vmaig-comment-form').submit(function () {
+        $.ajax({
+            type: "POST",
+            url: "/article/comment/45/",
+            data: {"comment": $("#comment").val()},
+            beforeSend: function (xhr) {
+                xhr.setRequestHeader("X-CSRFToken", $.cookie('csrftoken'));
+            },
+            success: function (data, textStatus) {
+                $("#comment").val("");
+                $(".vmaig-comment ul").append(data);
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(XMLHttpRequest.responseText);
+            }
+        });
+        return false;
+    });
+</script>
+
+        </div>
+
+        <div id="vmaig-side" class="col-md-4 col-lg-3 hidden-xs">
+            <div id="tags_cloud" class="">
+<svg width="250" height="250"><g transform="translate(125,125)"><a href="/article/?tags__icontains=ManyToMany"><text text-anchor="middle" transform="translate(-44,8)rotate(90)" style="font-size: 34px; font-family: &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;tohoma,sans-serif&quot;; fill: rgb(31, 119, 180);">ManyToMany</text></a><a href="/article/?tags__icontains=django"><text text-anchor="middle" transform="translate(42,-25)rotate(90)" style="font-size: 34px; font-family: &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;tohoma,sans-serif&quot;; fill: rgb(174, 199, 232);">django</text></a><a href="/article/?tags__icontains=apache"><text text-anchor="middle" transform="translate(42,85)rotate(0)" style="font-size: 34px; font-family: &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;tohoma,sans-serif&quot;; fill: rgb(255, 127, 14);">apache</text></a><a href="/article/?tags__icontains=django"><text text-anchor="middle" transform="translate(80,-56)rotate(90)" style="font-size: 30px; font-family: &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;tohoma,sans-serif&quot;; fill: rgb(255, 187, 120);">django</text></a><a href="/article/?tags__icontains=mysql"><text text-anchor="middle" transform="translate(-87,31)rotate(90)" style="font-size: 29px; font-family: &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;tohoma,sans-serif&quot;; fill: rgb(44, 160, 44);">mysql</text></a><a href="/article/?tags__icontains=note"><text text-anchor="middle" transform="translate(38,-98)rotate(0)" style="font-size: 29px; font-family: &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;tohoma,sans-serif&quot;; fill: rgb(152, 223, 138);">note</text></a><a href="/article/?tags__icontains=ssh"><text text-anchor="middle" transform="translate(-10,-20)rotate(90)" style="font-size: 26px; font-family: &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;tohoma,sans-serif&quot;; fill: rgb(214, 39, 40);">ssh</text></a><a href="/article/?tags__icontains=server"><text text-anchor="middle" transform="translate(-61,-106)rotate(0)" style="font-size: 21px; font-family: &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;tohoma,sans-serif&quot;; fill: rgb(255, 152, 150);">server</text></a><a href="/article/?tags__icontains=note"><text text-anchor="middle" transform="translate(11,33)rotate(90)" style="font-size: 21px; font-family: &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;tohoma,sans-serif&quot;; fill: rgb(148, 103, 189);">note</text></a><a href="/article/?tags__icontains=note"><text text-anchor="middle" transform="translate(91,12)rotate(0)" style="font-size: 18px; font-family: &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;tohoma,sans-serif&quot;; fill: rgb(197, 176, 213);">note</text></a><a href="/article/?tags__icontains=pycharm"><text text-anchor="middle" transform="translate(-81,-57)rotate(90)" style="font-size: 16px; font-family: &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;tohoma,sans-serif&quot;; fill: rgb(140, 86, 75);">pycharm</text></a><a href="/article/?tags__icontains=ssh"><text text-anchor="middle" transform="translate(72,44)rotate(0)" style="font-size: 16px; font-family: &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;tohoma,sans-serif&quot;; fill: rgb(196, 156, 148);">ssh</text></a><a href="/article/?tags__icontains=server"><text text-anchor="middle" transform="translate(-83,89)rotate(0)" style="font-size: 15px; font-family: &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;tohoma,sans-serif&quot;; fill: rgb(227, 119, 194);">server</text></a><a href="/article/?tags__icontains=supervisor celery"><text text-anchor="middle" transform="translate(46,111)rotate(0)" style="font-size: 13px; font-family: &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;tohoma,sans-serif&quot;; fill: rgb(247, 182, 210);">supervisor celery</text></a><a href="/article/?tags__icontains=popup"><text text-anchor="middle" transform="translate(18,-80)rotate(0)" style="font-size: 10px; font-family: &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;tohoma,sans-serif&quot;; fill: rgb(127, 127, 127);">popup</text></a><a href="/article/?tags__icontains=ssh"><text text-anchor="middle" transform="translate(24,-23)rotate(0)" style="font-size: 10px; font-family: &quot;Microsoft YaHei&quot;, &quot;WenQuanYi Micro Hei&quot;, &quot;tohoma,sans-serif&quot;; fill: rgb(199, 199, 199);">ssh</text></a></g></svg></div>
+
+<style>
+#tags_cloud {
+    background-color: rgba(0,0,0,0.6);
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+</style>
+
+<script src="./Django多语言支 _ 诗远启博客_files/d3.js"></script>
+<script src="./Django多语言支 _ 诗远启博客_files/d3.layout.cloud.js"></script>
+<script>
+    var fill = d3.scale.category20();
+
+    //在tags数组中存放blog的tags,用于在标签云中显示
+    var tags = ['ForeignKey', 'supervisor celery', 'ssh', 'apache', 'popup', 'xsendfile', 'mysql', 'server', 'note', 'django', 'pycharm', 'django extensions', 'django permissions', 'ManyToMany', 'rest_framework', 'translation', 'django django_constance'];
+
+    var words = tags.concat(tags).concat(tags);
+      
+    d3.layout.cloud().size([250, 250])
+        .words(words.map(function(d) {
+            return {text: d, size: 10 + Math.random() * 25};
+        }))
+        .padding(5)
+        .rotate(function() { return ~~(Math.random() * 2) * 90; })
+        .font("Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol'")
+        .fontSize(function(d) { return d.size; })
+        .on("end", draw)
+        .start();
+
+    function draw(words) {
+        d3.select("#tags_cloud").append("svg")
+          .attr("width", 250)
+          .attr("height", 250)
+          .append("g")
+          .attr("transform", "translate(125,125)");
+
+        for (var i=0; i< words.length;++i)
+        {
+            var str = words[i];
+            d3.select("g").append("a").attr("xlink:href","/article/?tags__icontains="+words[i].text)
+                .append("text").text(words[i].text) .style("font-size", words[i].size+"px")
+                .style("font-family", "'Microsoft YaHei','WenQuanYi Micro Hei','tohoma,sans-serif'")
+                .style("fill", fill(i))
+                .attr("text-anchor", "middle")
+                .attr("transform", 
+                    "translate(" + [words[i].x, words[i].y] + ")rotate(" + words[i].rotate + ")"
+          )
+        }
+    }
+</script>
+
+
+
+
+
+            <div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <span class="glyphicon glyphicon-search"></span>
+            搜索文章
+            <span class="glyphicon glyphicon-chevron-up  panel-collapse" style="margin-left:45%;padding: 0px" data-toggle="collapse" data-target="#search"></span>
+            <span class="glyphicon glyphicon-remove  panel-close" style="padding: 0px"></span>
+        </h3>
+    </div>
+    <div id="search" class="" style="padding-left: 10px;padding-right: 10px">
+        <form class="form-group label-floating" role="form" method="get" action="https://blog.dreamgotech.com/article/">
+            <label class="control-label" for="focusedInput2">博客名、标签、摘要</label>
+            <input type="text" class="form-control" id="search" name="search">
+        </form>
+    </div>
+</div>
+            <div class="panel panel-primary">
+    <div class="panel-heading ">
+        <h3 class="panel-title">
+            <span class="glyphicon glyphicon-flag"></span>
+            热门文章
+             <span class="glyphicon glyphicon-chevron-up  panel-collapse" style="margin-left:45%;padding: 0px" data-toggle="collapse" data-target="#hotest-post-list"></span>
+             <span class="glyphicon glyphicon-remove  panel-close" style="padding: 0px"></span>
+        </h3>
+    </div>
+
+    <ul id="hotest-post-list" class="padding10 list-group collapse in">
+        
+            <li class="list-group-item">
+                <span class="badge badge-info">802</span>
+                <a href="https://blog.dreamgotech.com/article/26/"><p>DjangoRestFramework笔记</p></a>
+            </li>
+        
+            <li class="list-group-item">
+                <span class="badge badge-info">432</span>
+                <a href="https://blog.dreamgotech.com/article/45/"><p>Django多语言支持</p></a>
+            </li>
+        
+            <li class="list-group-item">
+                <span class="badge badge-info">360</span>
+                <a href="https://blog.dreamgotech.com/article/53/"><p>Django弹窗新增、修改、删除ForeignKey、ManyToMany</p></a>
+            </li>
+        
+            <li class="list-group-item">
+                <span class="badge badge-info">282</span>
+                <a href="https://blog.dreamgotech.com/article/22/"><p>Django笔记</p></a>
+            </li>
+        
+            <li class="list-group-item">
+                <span class="badge badge-info">266</span>
+                <a href="https://blog.dreamgotech.com/article/49/"><p>部署Apache生产环境</p></a>
+            </li>
+        
+            <li class="list-group-item">
+                <span class="badge badge-info">261</span>
+                <a href="https://blog.dreamgotech.com/article/33/"><p>django-constance实现动态设置</p></a>
+            </li>
+        
+            <li class="list-group-item">
+                <span class="badge badge-info">229</span>
+                <a href="https://blog.dreamgotech.com/article/50/"><p>Pycharm中利用ssh远程部署</p></a>
+            </li>
+        
+            <li class="list-group-item">
+                <span class="badge badge-info">172</span>
+                <a href="https://blog.dreamgotech.com/article/28/"><p>Django权限机制</p></a>
+            </li>
+        
+            <li class="list-group-item">
+                <span class="badge badge-info">164</span>
+                <a href="https://blog.dreamgotech.com/article/30/"><p>Django模型依赖可视化</p></a>
+            </li>
+        
+            <li class="list-group-item">
+                <span class="badge badge-info">152</span>
+                <a href="https://blog.dreamgotech.com/article/47/"><p>Supervisor使用笔记及celery生产部署</p></a>
+            </li>
+        
+    </ul>
+
+</div>
+
+
+            <div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">
+            <span class="glyphicon glyphicon-comment"></span>
+            最新评论
+            <span class="glyphicon glyphicon-chevron-up  panel-collapse" style="margin-left:45%;padding: 0px" data-toggle="collapse" data-target="#latest-comment-list"></span>
+            <span class="glyphicon glyphicon-remove  panel-close" style="padding: 0px"></span>
+
+        </h3>
+    </div>
+    <ul id="latest-comment-list" class="list-group collapse in">
+        
+    </ul>
+</div>
+
+
+        </div>
+    </div>
+
+    </div>
+    <footer class="footer">
+    <div class="row ">
+        <div class="col-sm-6">
+            基于
+            <a href="https://docs.djangoproject.com/en/2.0/" target="_blank">Django 2.0</a>,
+            <a href="https://github.com/billvsme/vmaig_blog" target="_blank">VmaigBlog</a>,
+            <a href="http://v3.bootcss.com/" target="_blank">Bootsratp3</a>.
+            &nbsp;
+            <a href="mailto:614457662@qq.com" title="邮箱 614457662@qq.com"> <i class="icon iconfont icon-youxiang"></i>&nbsp;</a>
+            <a href="https://blog.dreamgotech.com/rss/" title="订阅" target="_blank"> <i class="icon iconfont icon-rss"></i>&nbsp;</a>
+            <a href="https://stackoverflow.com/users/6786283/ykh" title="Stack Overflow" target="_blank">
+                <i class="icon iconfont icon-stackoverflow"></i>&nbsp;
+            </a>
+            <a href="https://blog.dreamgotech.com/sitemap%5C.xml" title="站点地图" target="_blank" style="color: black"> <i class="icon iconfont icon-ditu1"></i>&nbsp;</a>
+            <a href="https://github.com/yinkanghong/Blog" title="Github" target="_blank"> <i class="icon iconfont icon-github"></i>&nbsp;</a>
+            <a href="javascript:;" id="share"> <i class="icon iconfont icon-fenxiang"></i>&nbsp;</a>
+        </div>
+
+
+        <div class="pull-right hidden-xs">
+            <b> Copyright © 2015-2018 <a target="_blank" href="http://www.dreamgotech.com/">DreamGo</a>. </b>
+            All rights reserved.
+            <a href="https://blog.dreamgotech.com/version/"><b> Version </b> 1.2</a>
+        </div>
+    </div>
+
+    <script>
+        layui.use(['util', 'layer'], function () {
+            var layer = layui.layer, util = layui.util;
+
+
+            var href = window.location.href;
+            var clipboard = new ClipboardJS('#share', {
+                text: function () {
+                    return href;
+                }
+            });
+            clipboard.on('success', function (e) {
+                layer.open({
+                    type: 4,
+                    shade: 0,
+                    time: 5000,
+                    tips: [3, '#000'],
+                    content: ['复制本页url成功,快去粘贴分享吧。', '#share'],
+                });
+            });
+            clipboard.on('error', function (e) {
+                layer.open({
+                    type: 4,
+                    shade: 0,
+                    time: 5000,
+                    tips: [3, '#000'],
+                    content: ['复制本页url失败,请刷新后重试或邮件反馈。', '#share'],
+                });
+            });
+        });
+    </script>
+</footer>
+</div>
+
+
+<script type="text/javascript" src="./Django多语言支 _ 诗远启博客_files/vmaig.js"></script>
+
+
+
+<div id="gtx-trans" style="position: absolute; left: 484px; top: 672px;"><div class="gtx-trans-icon"></div></div></body></html>
