@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
-
+from django.utils.translation import gettext_lazy as _
 
 # ------ BEGIN DON'T TOUCH AREA ------ #
 
@@ -18,7 +18,12 @@ WSGI_APPLICATION = 'dev.wsgi.application'
 DEBUG = True
 DOMAIN = 'localhost'
 SUBDIR = '/'  # edit this line if you are installing in a sub directory, like /nodeshot
-SITE_NAME = 'dev'  # site name, you can change this
+#SITE_NAME = 'dev'  # site name, you can change this
+SITE_NAME = 'china mobile'  # site name, you can change this
+
+# 使用中文名字，会在`发送邮件`时，报编码错误。
+#为了简化处理，我们使用英文名称,暂不采用中文名称。
+#SITE_NAME = '中国移动设备管理平台'  # site name, you can change this
 
 DATABASES = {
     'default': {
@@ -64,13 +69,52 @@ from nodeshot.conf.settings import *
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'Europe/Amsterdam'
+#TIME_ZONE = 'Europe/Amsterdam'
+# 上海时区
+TIME_ZONE = 'Asia/Shanghai'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
 #LANGUAGE_CODE = 'en-gb'
-# 添加中文语言支持
-LANGUAGE_CODE = 'zh-Hans'
+# 简体中文
+# django1.8,使用`zh-cn`,或者`zh-Hans`
+LANGUAGE_CODE = 'zh-cn'
+
+# `zh-Hans` also work well
+# you need create a directory in `locale`,called `zh_Hans`
+#LANGUAGE_CODE = 'zh-Hans'
+
+# LANGUAGE_CODE = 'es'
+
+# `语言选项`
+# 如果什么也不加，那么就会是所有的语言都支持，
+#只要其被翻译了，`locale`文件夹下有其对应的目录，即可。
+
+# 添加`语言选项`
+# 只支持: 中文简体,英文，
+# 不支持: 意大利文，西班牙文，加泰罗尼亚文
+LANGUAGES = (
+    ('zh-cn', 'Chinese Simplified'),
+    ('en', 'English'),
+)
+
+# 添加`语言选项`
+# 支持: 中文简体,英文，意大利文，西班牙文，加泰罗尼亚文
+# LANGUAGES = (
+    # ('zh-cn', 'Chinese Simplified'),
+    # ('en', 'English'),
+    # ('es', 'Spanish'),
+    # ('de', 'Germany'),
+    # ('ca', 'Catalan'),
+    # ('it', 'Italy'),
+# )
+
+# 表明我们的 locale 文件默认会放在 app 目录中的 locale 目录下
+# 注释掉，实际测试，不需要，默认就是会搜索`app`下面的目录。
+# LOCALE_PATHS = (
+    # 'locale',
+# )
+
 
 ADMINS = (
     #('Your name', 'your@email.com'),

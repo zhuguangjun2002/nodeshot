@@ -1,0 +1,160 @@
+最终解决方案如下：
+
+由于使用的是 django 框架，所以 django 官方有现成的命令可直接使用：
+------------------
+python manage.py sqlsequencereset participation | python manage.py dbshell
+------------------
+可以解决报错问题。
+
+直接执行上面的命令即可重建 id 起始值.
+
+===================================================
+------------------
+./manage.py sqlsequencereset layers
+------------------
+执行的结果如下：
+------------------
+(env) user@osgeolive:~/project/nodeshot-official/nodeshot-official/dev$ ./manage.py sqlsequencereset layers
+BEGIN;
+SELECT setval(pg_get_serial_sequence('"layers_layer_mantainers"','id'), coalesce(max("id"), 1), max("id") IS NOT null) FROM "layers_layer_mantainers";
+SELECT setval(pg_get_serial_sequence('"layers_layer"','id'), coalesce(max("id"), 1), max("id") IS NOT null) FROM "layers_layer";
+
+COMMIT;
+------------------
+然后使用`pgadminIII`,执行上述命令：
+------------------
+SELECT setval(pg_get_serial_sequence('"layers_layer"','id'), coalesce(max("id"), 1), max("id") IS NOT null) FROM "layers_layer";
+------------------
+不行，不起作用。
+
+
+------------------
+./manage.py sqlsequencereset participation
+------------------
+执行的结果如下：
+------------------
+(env) user@osgeolive:~/project/nodeshot-official/nodeshot-official/dev$ ./manage.py sqlsequencereset participation
+BEGIN;
+SELECT setval(pg_get_serial_sequence('"participation_comment"','id'), coalesce(max("id"), 1), max("id") IS NOT null) FROM "participation_comment";
+SELECT setval(pg_get_serial_sequence('"participation_vote"','id'), coalesce(max("id"), 1), max("id") IS NOT null) FROM "participation_vote";
+SELECT setval(pg_get_serial_sequence('"participation_rating"','id'), coalesce(max("id"), 1), max("id") IS NOT null) FROM "participation_rating";
+SELECT setval(pg_get_serial_sequence('"participation_node_settings"','id'), coalesce(max("id"), 1), max("id") IS NOT null) FROM "participation_node_settings";
+SELECT setval(pg_get_serial_sequence('"participation_node_counts"','id'), coalesce(max("id"), 1), max("id") IS NOT null) FROM "participation_node_counts";
+SELECT setval(pg_get_serial_sequence('"participation_layer_settings"','id'), coalesce(max("id"), 1), max("id") IS NOT null) FROM "participation_layer_settings";
+
+COMMIT;
+(env) user@osgeolive:~/project/nodeshot-official/nodeshot-official/dev$ 
+------------------
+然后，尝试执行如下命令：
+------------------
+SELECT setval(pg_get_serial_sequence('"participation_layer_settings"','id'), coalesce(max("id"), 1), max("id") IS NOT null) FROM "participation_layer_settings";
+------------------
+
+=====================================
+使用`\ds`命令，查看序列：
+------------------
+nodeshot=# \ds layers_layer_id_seq
+                 List of relations
+ Schema |        Name         |   Type   |  Owner   
+--------+---------------------+----------+----------
+ public | layers_layer_id_seq | sequence | nodeshot
+(1 row)
+
+nodeshot=# \d layers_layer_id_seq
+     Sequence "public.layers_layer_id_seq"
+    Column     |  Type   |        Value        
+---------------+---------+---------------------
+ sequence_name | name    | layers_layer_id_seq
+ last_value    | bigint  | 2
+ start_value   | bigint  | 1
+ increment_by  | bigint  | 1
+ max_value     | bigint  | 9223372036854775807
+ min_value     | bigint  | 1
+ cache_value   | bigint  | 1
+ log_cnt       | bigint  | 32
+ is_cycled     | boolean | f
+ is_called     | boolean | t
+Owned by: public.layers_layer.id
+------------------
+
+显示某一数据表：
+\d participation_layer_settings
+结果如下：
+------------------
+nodeshot=# \d participation_layer_settings
+                              Table "public.participation_layer_settings"
+      Column      |  Type   |                                 Modifiers                                 
+------------------+---------+---------------------------------------------------------------------------
+ id               | integer | not null default nextval('participation_layer_settings_id_seq'::regclass)
+ voting_allowed   | boolean | not null
+ rating_allowed   | boolean | not null
+ comments_allowed | boolean | not null
+ layer_id         | integer | not null
+Indexes:
+    "participation_layer_settings_pkey" PRIMARY KEY, btree (id)
+    "participation_layer_settings_layer_id_key" UNIQUE CONSTRAINT, btree (layer_id)
+Foreign-key constraints:
+    "participation_laye_layer_id_79a1bf6ced1f0153_fk_layers_layer_id" FOREIGN KEY (layer_id) REFERENCES layers_layer(id) DEFERRABLE INITIALLY DEFERRED
+------------------
+
+nodeshot=# \d participation_layer_settings_id_seq 
+     Sequence "public.participation_layer_settings_id_seq"
+    Column     |  Type   |                Value                
+---------------+---------+-------------------------------------
+ sequence_name | name    | participation_layer_settings_id_seq
+ last_value    | bigint  | 2
+ start_value   | bigint  | 1
+ increment_by  | bigint  | 1
+ max_value     | bigint  | 9223372036854775807
+ min_value     | bigint  | 1
+ cache_value   | bigint  | 1
+ log_cnt       | bigint  | 32
+ is_cycled     | boolean | f
+ is_called     | boolean | t
+Owned by: public.participation_layer_settings.id
+
+我们现在查询下 participation_layer_settings_id_seq 的 last_value（当前的序列值）和 increment_by (当 nextval() 被调用，当前值将会被增加)。
+
+SELECT last_value, increment_by FROM participation_layer_settings_id_seq;
+
+由于序列刚刚被创建，因此 last_value 被设置成 0。
+
+-----------------------------------
+
+===================================================
+
+postgres=# \c nodeshot_yantai 
+You are now connected to database "nodeshot_yantai" as user "postgres".
+nodeshot_yantai=# ls
+nodeshot_yantai-# \d participation_layer_settings
+                              Table "public.participation_layer_settings"
+      Column      |  Type   |                                 Modifiers                                 
+------------------+---------+---------------------------------------------------------------------------
+ id               | integer | not null default nextval('participation_layer_settings_id_seq'::regclass)
+ voting_allowed   | boolean | not null
+ rating_allowed   | boolean | not null
+ comments_allowed | boolean | not null
+ layer_id         | integer | not null
+Indexes:
+    "participation_layer_settings_pkey" PRIMARY KEY, btree (id)
+    "participation_layer_settings_layer_id_key" UNIQUE CONSTRAINT, btree (layer_id)
+Foreign-key constraints:
+    "participation_laye_layer_id_79a1bf6ced1f0153_fk_layers_layer_id" FOREIGN KEY (layer_id) REFERENCES layers_layer(id) DEFERRABLE INITIALLY DEFERRED
+
+nodeshot_yantai-# \d participation_layer_settings_id_seq 
+     Sequence "public.participation_layer_settings_id_seq"
+    Column     |  Type   |                Value                
+---------------+---------+-------------------------------------
+ sequence_name | name    | participation_layer_settings_id_seq
+ last_value    | bigint  | 1
+ start_value   | bigint  | 1
+ increment_by  | bigint  | 1
+ max_value     | bigint  | 9223372036854775807
+ min_value     | bigint  | 1
+ cache_value   | bigint  | 1
+ log_cnt       | bigint  | 0
+ is_cycled     | boolean | f
+ is_called     | boolean | f
+Owned by: public.participation_layer_settings.id
+
+===================================================

@@ -1,16 +1,13 @@
-=============================================
-=============================================
+从头开始创建nodeshot
+
 1.删除旧的数据库
 直接用`pgadminIII`删除数据库`nodeshot`
 =============================================
-=============================================
 
-=============================================
-=============================================
 2. 创建新的数据库
 执行`scripts/create_database.sh`脚本文件。
 `nodeshot`角色，其密码为`nodeshot`。
-=============================================
+
 Create database
 创建数据库
 
@@ -23,12 +20,30 @@ sudo su postgres
 Create database, create required postgresql extensions, create a superuser:
 创建数据库，创建所需的postgresql扩展，创建一个超级用户：
 --------------------
+# 创建nodeshot数据库
 createdb nodeshot
+# 连接数据库nodeshot,并进入命令行模式
 psql nodeshot
+--------------------
+# 创建扩展
 CREATE EXTENSION postgis;
 CREATE EXTENSION hstore;
+# 创建用户nodeshot,设定密码
 CREATE USER nodeshot WITH PASSWORD 'your_password';
+# 赋予nodeshot用户，SUPERUSER权限
 ALTER USER nodeshot SUPERUSER;
+# 修改数据库`nodeshot`的`所有者`OWNER，为`nodeshot`用户
+alter database nodeshot owner to nodeshot;
+# 查看`数据库`-`nodeshot`的`所有者`是否是`nodeshot`用户.
+\l
+# 显示所有的用户
+\du
+#显示表的权限分配情况： 
+\dp
+#已列的形式展示：可以查看postgis的版本号。 
+\dx 
+#（当不想列展示时，再次\x即可）
+
 --------------------
 
 exit (press CTRL+D) and go back to being your user:
@@ -38,22 +53,16 @@ exit
 --------------------
 =============================================
 
-
-
-=============================================
-=============================================
-3. Project configuration
-项目配置
+3. Project configuration 项目配置
 
 Open settings.py:
 打开settings.py：
-
 --------------------
 vim dev/settings.py
 --------------------
+
 And edit the following settings:
 并编辑以下设置：
-
 --------------------
 DOMAIN: set localhost
 DATABASE['default']['USER']: set nodeshot
@@ -74,9 +83,9 @@ Create the database tables and initial data:
 ＃会提示你创建一个超级用户，继续！
 ./manage.py migrate --no-initial-data && ./manage.py loaddata initial_data
 --------------------
+
 Run the development server:
 运行开发服务器：
-
 --------------------
 ./manage.py runserver
 --------------------
@@ -90,17 +99,14 @@ Alternatively, if you need to reach the dev server for other hosts on the same L
 Now you can open your browser at http://localhost:8000/ or at http://localhost:8000/admin/.
 现在，您可以在http://localhost:8000/或http://localhost:8000/admin/中打开浏览器。
 =============================================
-=============================================
 
 
-=============================================
-=============================================
 4. 创建超级管理员
 ----------------
 ./manage.py createsuperuser
 ----------------
 
-在终端上，监听邮件发送情况：
+5.在终端上，监听邮件发送情况：
 ==========================================
 # 如果你需要开发，测试。
 # 你可以使用如下命令，在终端上查看发送的邮件信息：
@@ -109,7 +115,10 @@ python -m smtpd -n -c DebuggingServer localhost:1025
 -----------------
 ==========================================
 
-=============================================
-=============================================
+6. 运行'开发服务器'
+------------------
+./manage.py runserver
+------------------
+将监听的邮件里面的注册链接，拷贝到浏览器上，以便进行邮件认证。
 
 

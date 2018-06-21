@@ -1,0 +1,13 @@
+------------
+pip install -r requirements.txt
+------------
+
+当你执行上述命令时，提示如下错误：
+---------------
+django-redis 4.9.0 has requirement Django>=1.11, but you'll have django 1.8.18 which is incompatible.
+---------------
+
+你需要修改为：
+---------------
+django-redis==4.5.0
+---------------
